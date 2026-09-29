@@ -1,7 +1,86 @@
+'use client';
+
 import React from 'react';
 import { AnimatedSection } from '@/components/AnimatedSection';
+import { usePathname } from 'next/navigation';
 
 export function Footer() {
+  const pathname = usePathname();
+  const isPremiumPage = pathname === '/course' || pathname === '/course/introduction';
+
+  if (isPremiumPage) {
+    return (
+      <footer className="w-full relative z-40 bg-[#042B29] overflow-hidden border-t border-[#0A4F4C]">
+        {/* Interactive Pixel Grid Background */}
+        <div className="absolute inset-0 z-0 flex flex-wrap" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(40px, 1fr))',
+          gridAutoRows: '40px'
+        }}>
+          {/* We render 300 divs to fill the background. CSS handles the trail animation perfectly. */}
+          {[...Array(300)].map((_, i) => (
+            <div 
+              key={i} 
+              className="w-full h-full border-[0.5px] border-[#19A67A]/10 transition-colors duration-1000 hover:duration-0 hover:bg-[#FDB813]/60"
+            />
+          ))}
+        </div>
+
+        {/* Floating Abstract Glows behind text */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#0B7A75] rounded-[100%] blur-[120px] opacity-40 pointer-events-none z-0"></div>
+
+        {/* Content Container (pointer-events-none so we can 'draw' on the grid through the text) */}
+        <div className="max-w-7xl mx-auto pt-24 pb-12 px-4 md:px-8 relative z-10 pointer-events-none">
+          
+          <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-16">
+            
+            <div className="max-w-2xl pointer-events-auto">
+              <h3 className="text-[#FDB813] uppercase tracking-[0.2em] text-sm font-bold mb-4 flex items-center">
+                <span className="w-8 h-[1px] bg-[#FDB813] mr-4"></span>
+                VMIND COUNSELLING
+              </h3>
+              <p className="text-2xl md:text-4xl font-light text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                Your mind is your most powerful tool.<br />Let us help you sharpen it.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-12 pointer-events-auto">
+              <div className="space-y-4">
+                <p className="text-white/40 uppercase tracking-widest text-xs font-bold">Location</p>
+                <p className="text-white text-base font-light">Trivandrum &<br/>Attingal, Kerala</p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-white/40 uppercase tracking-widest text-xs font-bold">Connect</p>
+                <p className="text-white text-base font-light hover:text-[#FDB813] transition-colors cursor-pointer">Email Us</p>
+                <p className="text-white text-base font-light hover:text-[#FDB813] transition-colors cursor-pointer">+91 8157039987</p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* High-Converting Sales Quote / CTA */}
+          <div className="border-t border-white/10 pt-10 flex flex-col items-center pointer-events-auto">
+            <h2 className="text-[9vw] md:text-[6vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 tracking-tighter w-full text-center hover:scale-[1.01] transition-transform duration-700 cursor-default" style={{ letterSpacing: '-0.03em' }}>
+              MASTER YOUR MIND.
+            </h2>
+            
+            <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-4">
+              <span className="text-white/40 text-xs font-medium tracking-widest uppercase">Founder of Oruma • Clinical Psychologist</span>
+              
+              <a href="/contact" className="px-8 py-3 bg-[#FDB813] text-[#042B29] font-bold rounded-full text-sm uppercase tracking-widest hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(253,184,19,0.3)]">
+                Enroll Today
+              </a>
+
+              <span className="text-white/30 text-xs font-medium tracking-widest uppercase">© 2026 Ranjini Vijith</span>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+    );
+  }
+
+  // Original Standard Footer for all other pages
   return (
     <footer className="w-full">
       <div className="bg-[#19A67A] text-white py-16 px-4 relative overflow-hidden">

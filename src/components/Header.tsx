@@ -1,31 +1,17 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isCoursePage = pathname?.includes('/course');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    
-    // Check initial scroll position on mount
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header 
-      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0B7A75] shadow-md py-2' : 'bg-[#0B7A75]/90 lg:bg-transparent py-4'
-      }`}
-    >
+    <header className={`w-full fixed top-0 z-50 backdrop-blur-md shadow-md py-4 ${isCoursePage ? 'bg-[#0B7A75]/30' : 'bg-[#0B7A75]/90'}`}>
       <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center">
         {/* Logo */}
         <div className="logo flex items-center">
@@ -35,7 +21,7 @@ export function Header() {
               alt="VMind Counselling Center" 
               width={50}
               height={50}
-              className="h-12 w-12 rounded-full object-cover bg-white p-0.5"
+              className="h-12 w-12 rounded-full object-cover p-0.5 bg-white"
             />
           </Link>
         </div>
@@ -48,6 +34,10 @@ export function Header() {
           </Link>
           <Link href="/service/" className="text-white hover:text-gray-200 text-sm font-bold uppercase tracking-wider relative group">
             Services
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FDB813] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link href="/course/" className="text-white hover:text-gray-200 text-sm font-bold uppercase tracking-wider relative group">
+            Courses
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FDB813] transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link href="/contact/" className="text-white hover:text-gray-200 text-sm font-bold uppercase tracking-wider relative group">
@@ -65,7 +55,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-white" 
+          className="md:hidden p-2 text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu"
         >
@@ -88,6 +78,7 @@ export function Header() {
             <nav className="flex flex-col space-y-6">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-2xl font-bold uppercase tracking-wider">Home</Link>
               <Link href="/service/" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-2xl font-bold uppercase tracking-wider">Services</Link>
+              <Link href="/course/" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-2xl font-bold uppercase tracking-wider">Courses</Link>
               <Link href="/contact/" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-2xl font-bold uppercase tracking-wider">Contact Us</Link>
             </nav>
             <div className="mt-10">
