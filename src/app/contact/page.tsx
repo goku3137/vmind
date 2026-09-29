@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { AnimatedSection } from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: 'Contact Us | VMind Counselling Center',
@@ -18,18 +19,18 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Image */}
-          <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+          <AnimatedSection animation="fadeInLeft" className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl group">
             <Image 
               src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" 
               alt="Therapist Ranjini Vijith" 
               fill 
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover" 
+              className="object-cover group-hover:scale-105 transition-transform duration-500" 
             />
-          </div>
+          </AnimatedSection>
 
           {/* Right Column: Contact Form */}
-          <div className="space-y-8">
+          <AnimatedSection animation="fadeInRight" className="space-y-8">
             <div className="space-y-4">
               <div className="flex items-center text-[#19A67A] font-bold tracking-widest text-sm uppercase">
                 <span className="w-8 h-[2px] bg-[#19A67A] mr-4"></span>
@@ -66,13 +67,13 @@ export default function Contact() {
               <div className="pt-6">
                 <button 
                   type="button" 
-                  className="bg-[#19A67A] text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-[#148C66] transition-colors uppercase shadow-lg"
+                  className="bg-[#19A67A] text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-[#148C66] hover:scale-105 transition-all uppercase shadow-lg"
                 >
                   SUBMIT
                 </button>
               </div>
             </form>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
       

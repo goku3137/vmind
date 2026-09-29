@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { AnimatedSection } from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -49,35 +50,39 @@ export default function Services() {
   return (
     <div className="flex flex-col w-full">
       {/* Page Header */}
-      <section className="w-full bg-[#f8f9fa] py-16 px-4 text-center">
-        <h1 className="text-4xl font-bold font-heading text-gray-900 mb-4">Our Services</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          We offer a range of professional psychological therapies tailored to meet your unique needs and challenges.
-        </p>
+      <section className="w-full bg-[#f8f9fa] py-16 px-4 text-center overflow-hidden">
+        <AnimatedSection animation="fadeInUp" className="max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold font-heading text-gray-900 mb-4">Our Services</h1>
+          <p className="text-lg text-gray-600">
+            We offer a range of professional psychological therapies tailored to meet your unique needs and challenges.
+          </p>
+        </AnimatedSection>
       </section>
 
       {/* Services Grid */}
-      <section className="w-full py-20 px-4">
+      <section className="w-full py-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="text-4xl mb-4">{service.icon}</div>
+            <AnimatedSection key={index} animation="fadeInUp" delay={index * 0.1} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-4xl mb-4 transform transition-transform group-hover:scale-110">{service.icon}</div>
               <h3 className="text-xl font-bold font-heading mb-3">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-[#00d084] py-16 px-4 text-center text-white">
-        <h2 className="text-3xl font-bold font-heading mb-6">Ready to start your journey?</h2>
-        <Link 
-          href="https://wa.me/918157039987"
-          className="inline-block bg-white text-[#00d084] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors w-full sm:w-auto"
-        >
-          Book an Appointment
-        </Link>
+      <section className="w-full bg-[#00d084] py-16 px-4 text-center text-white overflow-hidden">
+        <AnimatedSection animation="zoomIn" className="max-w-xl mx-auto">
+          <h2 className="text-3xl font-bold font-heading mb-6">Ready to start your journey?</h2>
+          <Link 
+            href="https://wa.me/918157039987"
+            className="inline-block bg-white text-[#00d084] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 hover:scale-105 transition-all w-full sm:w-auto shadow-lg"
+          >
+            Book an Appointment
+          </Link>
+        </AnimatedSection>
       </section>
     </div>
   );
