@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Unwanted migration / scratch files
+/wp_backup/
+/zip/
+scratch_urls.js
+*.css
+

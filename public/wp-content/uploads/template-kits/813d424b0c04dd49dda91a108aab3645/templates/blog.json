@@ -1,0 +1,467 @@
+{
+    "version": "0.4",
+    "title": "Blog",
+    "type": "page",
+    "metadata": {
+        "template_type": "single-page",
+        "include_in_zip": "1",
+        "elementor_pro_required": null,
+        "wp_page_template": "elementor_canvas"
+    },
+    "content": [
+        {
+            "id": "69d7a1b5",
+            "settings": {
+                "layout": "full_width",
+                "background_background": "classic",
+                "background_image": {
+                    "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/smiling-advisor-and-burnt-out-employee-XCM5YKB.jpg",
+                    "id": 163
+                },
+                "background_position": "center center",
+                "background_attachment": "fixed",
+                "background_repeat": "no-repeat",
+                "background_size": "cover",
+                "background_overlay_background": "classic",
+                "background_overlay_opacity": {
+                    "unit": "px",
+                    "size": 0.8000000000000000444089209850062616169452667236328125,
+                    "sizes": []
+                },
+                "padding": {
+                    "unit": "px",
+                    "top": "100",
+                    "right": "0",
+                    "bottom": "90",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "__globals__": {
+                    "background_overlay_color": "globals\/colors?id=accent"
+                }
+            },
+            "elements": [
+                {
+                    "id": "2078118d",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "33e733f2",
+                            "settings": {
+                                "title": "BLOG",
+                                "header_size": "h1",
+                                "align": "center",
+                                "title_color": "#FFFFFF"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        },
+        {
+            "id": "61d8264d",
+            "settings": {
+                "padding": {
+                    "unit": "px",
+                    "top": "140",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "margin_tablet": {
+                    "unit": "px",
+                    "top": "",
+                    "right": 0,
+                    "bottom": "",
+                    "left": 0,
+                    "isLinked": true
+                },
+                "padding_tablet": {
+                    "unit": "px",
+                    "top": "100",
+                    "right": "30",
+                    "bottom": "0",
+                    "left": "30",
+                    "isLinked": false
+                },
+                "padding_mobile": {
+                    "unit": "px",
+                    "top": "70",
+                    "right": "30",
+                    "bottom": "0",
+                    "left": "30",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "325c47e9",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "29572239",
+                            "settings": {
+                                "ekit_blog_posts_layout_style": "elementskit-post-image-card",
+                                "ekit_blog_posts_content": "",
+                                "ekit_blog_posts_read_more": "",
+                                "ekit_blog_posts_cats": [
+                                    "5",
+                                    "4",
+                                    "6"
+                                ],
+                                "ekit_blog_posts_order_by": "author",
+                                "ekit_blog_posts_floating_date": "yes",
+                                "ekit_blog_posts_meta_select": [
+                                    "category"
+                                ],
+                                "ekit_blog_posts_btn_text": "Learn more ",
+                                "ekit_blog_posts_background_background": "classic",
+                                "ekit_blog_posts_background_color": "#FFFFFF",
+                                "ekit_blog_posts_radius": {
+                                    "unit": "px",
+                                    "top": "30",
+                                    "right": "30",
+                                    "bottom": "30",
+                                    "left": "30",
+                                    "isLinked": true
+                                },
+                                "ekit_blog_posts_text_content_wraper_padding": {
+                                    "unit": "px",
+                                    "top": "20",
+                                    "right": "20",
+                                    "bottom": "25",
+                                    "left": "30",
+                                    "isLinked": false
+                                },
+                                "ekit_blog_posts_meta_margin": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "ekit_blog_posts_floating_date_top_pos": {
+                                    "unit": "px",
+                                    "size": 248,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_floating_date_top_pos_mobile": {
+                                    "unit": "px",
+                                    "size": 173,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_floating_date_typography_group_typography": "custom",
+                                "ekit_blog_posts_floating_date_typography_group_font_family": "Viga",
+                                "ekit_blog_posts_floating_date_typography_group_font_size": {
+                                    "unit": "px",
+                                    "size": 18,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_floating_date_month_typography_group_typography": "custom",
+                                "ekit_blog_posts_floating_date_month_typography_group_font_family": "Viga",
+                                "ekit_blog_posts_floating_date_bg_color_group_background": "classic",
+                                "ekit_blog_posts_title_typography_typography": "custom",
+                                "ekit_blog_posts_title_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 20,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_title_typography_font_weight": "700",
+                                "ekit_blog_posts_title_typography_line_height": {
+                                    "unit": "px",
+                                    "size": 30,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_title_typography_letter_spacing": {
+                                    "unit": "px",
+                                    "size": 0.75,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_title_color": "#000000",
+                                "ekit_blog_posts_title_margin": {
+                                    "unit": "px",
+                                    "top": "15",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "__globals__": {
+                                    "ekit_blog_posts_meta_color_normal": "globals\/colors?id=accent",
+                                    "ekit_blog_posts_floating_date_bg_color_group_color": "globals\/colors?id=accent"
+                                },
+                                "ekit_blog_posts_meta_category_icons": {
+                                    "value": "icon icon-minus",
+                                    "library": "ekiticons"
+                                },
+                                "ekit_blog_posts_meta_color_normal": "#1DA678",
+                                "_z_index": 2,
+                                "_animation": "fadeInUp",
+                                "_animation_delay": 500
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "elementskit-blog-posts",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "5e2396f5",
+                            "settings": {
+                                "image": {
+                                    "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/square-pattern.png",
+                                    "id": 397
+                                },
+                                "image_size": "full",
+                                "_animation": "fadeInRight",
+                                "_animation_delay": 600,
+                                "_element_width": "auto",
+                                "_position": "absolute",
+                                "_offset_orientation_h": "end",
+                                "_offset_x": {
+                                    "size": -52,
+                                    "unit": "px"
+                                },
+                                "_offset_x_end": {
+                                    "unit": "px",
+                                    "size": -52.10000000000000142108547152020037174224853515625,
+                                    "sizes": []
+                                },
+                                "_offset_y": {
+                                    "unit": "px",
+                                    "size": -51,
+                                    "sizes": []
+                                },
+                                "_offset_y_end": {
+                                    "size": -31.300000000000000710542735760100185871124267578125,
+                                    "unit": "px"
+                                },
+                                "_element_width_mobile": "initial",
+                                "_element_custom_width_mobile": {
+                                    "unit": "px",
+                                    "size": 100,
+                                    "sizes": []
+                                },
+                                "_offset_x_end_mobile": {
+                                    "size": -33.10000000000000142108547152020037174224853515625,
+                                    "unit": "px"
+                                },
+                                "_offset_y_mobile": {
+                                    "size": -30,
+                                    "unit": "px"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "image",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        },
+        {
+            "id": "6dd3542c",
+            "settings": {
+                "padding": {
+                    "unit": "px",
+                    "top": "30",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "padding_mobile": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "30",
+                    "bottom": "0",
+                    "left": "30",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "33bd5cea",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "1df5ec37",
+                            "settings": {
+                                "ekit_blog_posts_layout_style": "elementskit-post-image-card",
+                                "ekit_blog_posts_content": "",
+                                "ekit_blog_posts_read_more": "",
+                                "ekit_blog_posts_cats": [
+                                    "5",
+                                    "4",
+                                    "6"
+                                ],
+                                "ekit_blog_posts_order_by": "author",
+                                "ekit_blog_posts_floating_date": "yes",
+                                "ekit_blog_posts_meta_select": [
+                                    "category"
+                                ],
+                                "ekit_blog_posts_btn_text": "Learn more ",
+                                "ekit_blog_posts_background_background": "classic",
+                                "ekit_blog_posts_background_color": "#FFFFFF",
+                                "ekit_blog_posts_radius": {
+                                    "unit": "px",
+                                    "top": "30",
+                                    "right": "30",
+                                    "bottom": "30",
+                                    "left": "30",
+                                    "isLinked": true
+                                },
+                                "ekit_blog_posts_text_content_wraper_padding": {
+                                    "unit": "px",
+                                    "top": "20",
+                                    "right": "20",
+                                    "bottom": "25",
+                                    "left": "30",
+                                    "isLinked": false
+                                },
+                                "ekit_blog_posts_meta_margin": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "ekit_blog_posts_floating_date_top_pos": {
+                                    "unit": "px",
+                                    "size": 248,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_floating_date_top_pos_mobile": {
+                                    "unit": "px",
+                                    "size": 173,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_floating_date_typography_group_typography": "custom",
+                                "ekit_blog_posts_floating_date_typography_group_font_family": "Viga",
+                                "ekit_blog_posts_floating_date_typography_group_font_size": {
+                                    "unit": "px",
+                                    "size": 18,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_floating_date_month_typography_group_typography": "custom",
+                                "ekit_blog_posts_floating_date_month_typography_group_font_family": "Viga",
+                                "ekit_blog_posts_floating_date_bg_color_group_background": "classic",
+                                "ekit_blog_posts_title_typography_typography": "custom",
+                                "ekit_blog_posts_title_typography_font_size": {
+                                    "unit": "px",
+                                    "size": 20,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_title_typography_font_weight": "700",
+                                "ekit_blog_posts_title_typography_line_height": {
+                                    "unit": "px",
+                                    "size": 30,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_title_typography_letter_spacing": {
+                                    "unit": "px",
+                                    "size": 0.75,
+                                    "sizes": []
+                                },
+                                "ekit_blog_posts_title_color": "#000000",
+                                "ekit_blog_posts_title_margin": {
+                                    "unit": "px",
+                                    "top": "15",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "__globals__": {
+                                    "ekit_blog_posts_meta_color_normal": "globals\/colors?id=accent",
+                                    "ekit_blog_posts_floating_date_bg_color_group_color": "globals\/colors?id=accent"
+                                },
+                                "ekit_blog_posts_meta_category_icons": {
+                                    "value": "icon icon-minus",
+                                    "library": "ekiticons"
+                                },
+                                "ekit_blog_posts_meta_color_normal": "#1DA678",
+                                "_z_index": 2,
+                                "_animation": "fadeInUp",
+                                "_animation_delay": 500
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "elementskit-blog-posts",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "60f4a46a",
+                            "settings": {
+                                "image": {
+                                    "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/square-pattern.png",
+                                    "id": 397
+                                },
+                                "image_size": "full",
+                                "_animation": "fadeInLeft",
+                                "_animation_delay": 600,
+                                "_element_width": "auto",
+                                "_position": "absolute",
+                                "_offset_x": {
+                                    "size": -52,
+                                    "unit": "px"
+                                },
+                                "_offset_orientation_v": "end",
+                                "_offset_y_end": {
+                                    "size": -31.300000000000000710542735760100185871124267578125,
+                                    "unit": "px"
+                                },
+                                "_element_width_mobile": "initial",
+                                "_element_custom_width_mobile": {
+                                    "unit": "px",
+                                    "size": 100,
+                                    "sizes": []
+                                },
+                                "_offset_x_mobile": {
+                                    "size": -34,
+                                    "unit": "px"
+                                },
+                                "_offset_y_end_mobile": {
+                                    "size": 19.699999999999999289457264239899814128875732421875,
+                                    "unit": "px"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "image",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ]
+}

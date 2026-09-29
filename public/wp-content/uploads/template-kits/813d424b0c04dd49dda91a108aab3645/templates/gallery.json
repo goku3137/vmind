@@ -1,0 +1,194 @@
+{
+    "version": "0.4",
+    "title": "Gallery",
+    "type": "page",
+    "metadata": {
+        "template_type": "single-page",
+        "include_in_zip": "1",
+        "elementor_pro_required": null,
+        "wp_page_template": "elementor_canvas"
+    },
+    "content": [
+        {
+            "id": "41cdb1e0",
+            "settings": {
+                "layout": "full_width",
+                "background_background": "classic",
+                "background_image": {
+                    "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/smiling-advisor-and-burnt-out-employee-XCM5YKB.jpg",
+                    "id": 163
+                },
+                "background_position": "center center",
+                "background_attachment": "fixed",
+                "background_repeat": "no-repeat",
+                "background_size": "cover",
+                "background_overlay_background": "classic",
+                "background_overlay_opacity": {
+                    "unit": "px",
+                    "size": 0.8000000000000000444089209850062616169452667236328125,
+                    "sizes": []
+                },
+                "padding": {
+                    "unit": "px",
+                    "top": "100",
+                    "right": "0",
+                    "bottom": "90",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "__globals__": {
+                    "background_overlay_color": "globals\/colors?id=accent"
+                },
+                "ma_el_slider_delay": "5000"
+            },
+            "elements": [
+                {
+                    "id": "1ad0afc2",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null,
+                        "ma_el_slider_delay": "5000"
+                    },
+                    "elements": [
+                        {
+                            "id": "12acd4db",
+                            "settings": {
+                                "title": "Gallery",
+                                "header_size": "h1",
+                                "align": "center",
+                                "title_color": "#FFFFFF"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        },
+        {
+            "id": "4f996aa7",
+            "settings": {
+                "ma_el_slider_delay": "5000",
+                "margin": {
+                    "unit": "px",
+                    "top": "140",
+                    "right": 0,
+                    "bottom": "140",
+                    "left": 0,
+                    "isLinked": false
+                },
+                "margin_tablet": {
+                    "unit": "px",
+                    "top": "100",
+                    "right": 0,
+                    "bottom": "100",
+                    "left": 0,
+                    "isLinked": false
+                },
+                "margin_mobile": {
+                    "unit": "px",
+                    "top": "70",
+                    "right": 0,
+                    "bottom": "70",
+                    "left": 0,
+                    "isLinked": false
+                },
+                "padding_tablet": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "20",
+                    "bottom": "0",
+                    "left": "20",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "55becab1",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null,
+                        "ma_el_slider_delay": "5000"
+                    },
+                    "elements": [
+                        {
+                            "id": "813f207",
+                            "settings": {
+                                "wp_gallery": [
+                                    {
+                                        "id": 937,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/happy-family-at-home-LLVD2LX-2.jpg"
+                                    },
+                                    {
+                                        "id": 938,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/happy-couple-with-gadget-FR33W48-2.jpg"
+                                    },
+                                    {
+                                        "id": 939,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T-2.jpg"
+                                    },
+                                    {
+                                        "id": 944,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/work-of-counselor-6YGCWT7.jpg"
+                                    },
+                                    {
+                                        "id": 943,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/loving-husband-calming-his-crying-wife-at-psychoth-E93YAHK.jpg"
+                                    },
+                                    {
+                                        "id": 942,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/professional-therapist-and-happy-couple-in-office-BF74JD3.jpg"
+                                    },
+                                    {
+                                        "id": 941,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-supporting-depressed-girl-during-grou-7BKCVN6.jpg"
+                                    },
+                                    {
+                                        "id": 945,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-comforting-depressed-man-patient-at-c-CRMC45F.jpg"
+                                    },
+                                    {
+                                        "id": 940,
+                                        "url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/senior-woman-crying-during-therapy-session-SH6GXQ3.jpg"
+                                    }
+                                ],
+                                "thumbnail_size": "full",
+                                "gallery_columns": "3",
+                                "open_lightbox": "yes",
+                                "image_spacing": "custom",
+                                "image_spacing_custom": {
+                                    "unit": "px",
+                                    "size": 30,
+                                    "sizes": []
+                                },
+                                "image_border_radius": {
+                                    "unit": "px",
+                                    "top": "30",
+                                    "right": "30",
+                                    "bottom": "30",
+                                    "left": "30",
+                                    "isLinked": true
+                                },
+                                "_animation": "fadeInUp"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "image-gallery",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ]
+}

@@ -1,0 +1,1767 @@
+{
+    "manifest_version": "1.0.17",
+    "title": "Pzyche - Psychology & Counseling Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header Section",
+            "screenshot": "screenshots\/header-section.jpg",
+            "source": "templates\/header-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/header-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer Section",
+            "screenshot": "screenshots\/footer-section.jpg",
+            "source": "templates\/footer-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/footer-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.jpg",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services",
+            "screenshot": "screenshots\/services.jpg",
+            "source": "templates\/services.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/services\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Therapies",
+            "screenshot": "screenshots\/therapies.jpg",
+            "source": "templates\/therapies.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/therapies\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Pricing",
+            "screenshot": "screenshots\/pricing.jpg",
+            "source": "templates\/pricing.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/pricing\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQ",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Gallery",
+            "screenshot": "screenshots\/gallery.jpg",
+            "source": "templates\/gallery.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/gallery\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.jpg",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Slider Section",
+            "screenshot": "screenshots\/slider-section.jpg",
+            "source": "templates\/slider-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/slider-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-hero",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services Section",
+            "screenshot": "screenshots\/services-section.jpg",
+            "source": "templates\/services-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/services-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About Section",
+            "screenshot": "screenshots\/about-section.jpg",
+            "source": "templates\/about-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/about-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-about",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Fun Facts",
+            "screenshot": "screenshots\/fun-facts.jpg",
+            "source": "templates\/fun-facts.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/fun-facts\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Why Choose Us Section",
+            "screenshot": "screenshots\/why-choose-us-section.jpg",
+            "source": "templates\/why-choose-us-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/why-choose-us-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-features",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services With Image Section",
+            "screenshot": "screenshots\/services-with-image-section.jpg",
+            "source": "templates\/services-with-image-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/services-with-image-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Team Section",
+            "screenshot": "screenshots\/team-section.jpg",
+            "source": "templates\/team-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/team-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-team",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Testimonials Section",
+            "screenshot": "screenshots\/testimonials-section.jpg",
+            "source": "templates\/testimonials-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/testimonials-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-testimonial",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog Section",
+            "screenshot": "screenshots\/blog-section.jpg",
+            "source": "templates\/blog-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/blog-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Book Appointment Section",
+            "screenshot": "screenshots\/book-appointment-section.jpg",
+            "source": "templates\/book-appointment-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/book-appointment-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Title Section",
+            "screenshot": "screenshots\/title-section.jpg",
+            "source": "templates\/title-section.json",
+            "preview_url": "https:\/\/kinforce.net\/psyko\/template-kit\/title-section\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Contact Form 7",
+            "version": "5.3",
+            "file": "contact-form-7\/wp-contact-form-7.php",
+            "author": "Takayuki Miyoshi"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.0.13",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "ElementsKit Lite",
+            "version": "2.0.9.1",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        }
+    ],
+    "images": [
+        {
+            "filename": "shape-pattern-2.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/shape-pattern-2.png",
+            "templates": [
+                {
+                    "source": "templates\/footer-section.json",
+                    "name": "Footer Section"
+                }
+            ],
+            "filesize": 2378,
+            "dimensions": [
+                489,
+                473
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "shape-pattern-3.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/shape-pattern-3.png",
+            "templates": [
+                {
+                    "source": "templates\/footer-section.json",
+                    "name": "Footer Section"
+                }
+            ],
+            "filesize": 1286,
+            "dimensions": [
+                552,
+                328
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "smiling-woman-and-wellness-coach-DTWN35R.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/smiling-woman-and-wellness-coach-DTWN35R.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/slider-section.json",
+                    "name": "Slider Section"
+                }
+            ],
+            "filesize": 155616,
+            "dimensions": [
+                1920,
+                1196
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-woman-and-wellness-coach-DTWN35R"
+        },
+        {
+            "filename": "smiling-advisor-and-burnt-out-employee-XCM5YKB.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/smiling-advisor-and-burnt-out-employee-XCM5YKB.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/slider-section.json",
+                    "name": "Slider Section"
+                },
+                {
+                    "source": "templates\/fun-facts.json",
+                    "name": "Fun Facts"
+                },
+                {
+                    "source": "templates\/title-section.json",
+                    "name": "Title Section"
+                }
+            ],
+            "filesize": 165661,
+            "dimensions": [
+                1920,
+                1196
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-advisor-and-burnt-out-employee-XCM5YKB"
+        },
+        {
+            "filename": "young-woman-crying-in-therapy-session-5PNKVX8.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/young-woman-crying-in-therapy-session-5PNKVX8.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/slider-section.json",
+                    "name": "Slider Section"
+                }
+            ],
+            "filesize": 127792,
+            "dimensions": [
+                1920,
+                1196
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/young-woman-crying-in-therapy-session-5PNKVX8"
+        },
+        {
+            "filename": "elements-psychology-concept-line-design-style-icons-set-RUUMCJY.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-section.json",
+                    "name": "Services Section"
+                }
+            ],
+            "filesize": 2579,
+            "dimensions": [
+                91,
+                78
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY"
+        },
+        {
+            "filename": "elements-psychology-concept-line-design-style-icons-set-RUUMCJY-2.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY-2.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-section.json",
+                    "name": "Services Section"
+                }
+            ],
+            "filesize": 2874,
+            "dimensions": [
+                90,
+                80
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY"
+        },
+        {
+            "filename": "elements-psychology-concept-line-design-style-icons-set-ZF5PGA4.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-psychology-concept-line-design-style-icons-set-ZF5PGA4.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-section.json",
+                    "name": "Services Section"
+                }
+            ],
+            "filesize": 2632,
+            "dimensions": [
+                91,
+                80
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY"
+        },
+        {
+            "filename": "circle-pattern.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/circle-pattern.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/about-section.json",
+                    "name": "About Section"
+                },
+                {
+                    "source": "templates\/book-appointment-section.json",
+                    "name": "Book Appointment Section"
+                }
+            ],
+            "filesize": 11838,
+            "dimensions": [
+                745,
+                745
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "smiling-advisor-and-burnt-out-employee-XCM5YKB-2.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/smiling-advisor-and-burnt-out-employee-XCM5YKB-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/about-section.json",
+                    "name": "About Section"
+                }
+            ],
+            "filesize": 19576,
+            "dimensions": [
+                200,
+                200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-advisor-and-burnt-out-employee-XCM5YKB"
+        },
+        {
+            "filename": "counselor-and-happy-couple-after-effective-marital-6GBE9L5.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/counselor-and-happy-couple-after-effective-marital-6GBE9L5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/about-section.json",
+                    "name": "About Section"
+                }
+            ],
+            "filesize": 44318,
+            "dimensions": [
+                517,
+                517
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/counselor-and-happy-couple-after-effective-marital-6GBE9L5"
+        },
+        {
+            "filename": "experience-bg.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/experience-bg.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/about-section.json",
+                    "name": "About Section"
+                }
+            ],
+            "filesize": 4760,
+            "dimensions": [
+                180,
+                187
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "sign.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/sign.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/about-section.json",
+                    "name": "About Section"
+                }
+            ],
+            "filesize": 2793,
+            "dimensions": [
+                165,
+                49
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "circle-pattern-2.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/circle-pattern-2.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/fun-facts.json",
+                    "name": "Fun Facts"
+                }
+            ],
+            "filesize": 461,
+            "dimensions": [
+                123,
+                124
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "psychologist-interviewing-the-man-KJXDG6B.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-interviewing-the-man-KJXDG6B.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/why-choose-us-section.json",
+                    "name": "Why Choose Us Section"
+                }
+            ],
+            "filesize": 37558,
+            "dimensions": [
+                539,
+                539
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/psychologist-interviewing-the-man-KJXDG6B"
+        },
+        {
+            "filename": "square-pattern.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/square-pattern.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/why-choose-us-section.json",
+                    "name": "Why Choose Us Section"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                },
+                {
+                    "source": "templates\/blog-section.json",
+                    "name": "Blog Section"
+                }
+            ],
+            "filesize": 264,
+            "dimensions": [
+                154,
+                155
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "shape-lines.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/shape-lines.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 3424,
+            "dimensions": [
+                190,
+                258
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 40990,
+            "dimensions": [
+                370,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T"
+        },
+        {
+            "filename": "elements-70-psychology-mental-health-line-icons-MYM9N9G-1.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-70-psychology-mental-health-line-icons-MYM9N9G-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 1157,
+            "dimensions": [
+                49,
+                49
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-70-psychology-mental-health-line-icons-MYM9N9G"
+        },
+        {
+            "filename": "shape-triangle.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/shape-triangle.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 917,
+            "dimensions": [
+                125,
+                125
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "happy-couple-with-gadget-FR33W48.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/happy-couple-with-gadget-FR33W48.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 47806,
+            "dimensions": [
+                370,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-couple-with-gadget-FR33W48"
+        },
+        {
+            "filename": "elements-70-psychology-mental-health-line-icons-MYM9N9G-2.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-70-psychology-mental-health-line-icons-MYM9N9G-2.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 1411,
+            "dimensions": [
+                50,
+                54
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-70-psychology-mental-health-line-icons-MYM9N9G"
+        },
+        {
+            "filename": "happy-family-at-home-LLVD2LX.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/happy-family-at-home-LLVD2LX.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 54825,
+            "dimensions": [
+                370,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-family-at-home-LLVD2LX"
+        },
+        {
+            "filename": "elements-70-psychology-mental-health-line-icons-MYM9N9G-3.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-70-psychology-mental-health-line-icons-MYM9N9G-3.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-with-image-section.json",
+                    "name": "Services With Image Section"
+                }
+            ],
+            "filesize": 918,
+            "dimensions": [
+                47,
+                39
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-70-psychology-mental-health-line-icons-MYM9N9G"
+        },
+        {
+            "filename": "triangle-dots.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/triangle-dots.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/team-section.json",
+                    "name": "Team Section"
+                }
+            ],
+            "filesize": 1426,
+            "dimensions": [
+                372,
+                297
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "counselor-with-paper-C975Z6M.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/counselor-with-paper-C975Z6M.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/team-section.json",
+                    "name": "Team Section"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 20889,
+            "dimensions": [
+                270,
+                270
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/counselor-with-paper-C975Z6M"
+        },
+        {
+            "filename": "psychologist-with-document-8TLDY59.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-with-document-8TLDY59.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/team-section.json",
+                    "name": "Team Section"
+                }
+            ],
+            "filesize": 21051,
+            "dimensions": [
+                270,
+                270
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/psychologist-with-document-8TLDY59"
+        },
+        {
+            "filename": "beautiful-business-lady-with-gadget-76UCCRJ.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/beautiful-business-lady-with-gadget-76UCCRJ.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/team-section.json",
+                    "name": "Team Section"
+                }
+            ],
+            "filesize": 18978,
+            "dimensions": [
+                270,
+                270
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/beautiful-business-lady-with-gadget-76UCCRJ"
+        },
+        {
+            "filename": "professional-salesperson-in-car-dealership-6M4QTK3.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/professional-salesperson-in-car-dealership-6M4QTK3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/team-section.json",
+                    "name": "Team Section"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 19967,
+            "dimensions": [
+                270,
+                270
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/professional-salesperson-in-car-dealership-6M4QTK3"
+        },
+        {
+            "filename": "two-women-hugging-as-group-of-men-and-women-at-men-MT8TVKW.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/two-women-hugging-as-group-of-men-and-women-at-men-MT8TVKW.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 218919,
+            "dimensions": [
+                1920,
+                744
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/two-women-hugging-as-group-of-men-and-women-at-men-MT8TVKW"
+        },
+        {
+            "filename": "smiling-lady-in-eyeglasses-and-dress-standing-with-SBAK95C.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/smiling-lady-in-eyeglasses-and-dress-standing-with-SBAK95C.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 4168,
+            "dimensions": [
+                63,
+                63
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-lady-in-eyeglasses-and-dress-standing-with-SBAK95C"
+        },
+        {
+            "filename": "beautiful-business-lady-with-gadget-76UCCRJ-2.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/beautiful-business-lady-with-gadget-76UCCRJ-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 3307,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/beautiful-business-lady-with-gadget-76UCCRJ"
+        },
+        {
+            "filename": "female-entrepreneur-XFC8G53.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/female-entrepreneur-XFC8G53.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 3435,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/female-entrepreneur-XFC8G53"
+        },
+        {
+            "filename": "psychologist-with-document-8TLDY59-2.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-with-document-8TLDY59-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/testimonials-section.json",
+                    "name": "Testimonials Section"
+                }
+            ],
+            "filesize": 3545,
+            "dimensions": [
+                80,
+                80
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/psychologist-with-document-8TLDY59"
+        },
+        {
+            "filename": "customer-services-representative-7TU25GS.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/customer-services-representative-7TU25GS.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/book-appointment-section.json",
+                    "name": "Book Appointment Section"
+                }
+            ],
+            "filesize": 146689,
+            "dimensions": [
+                573,
+                791
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/customer-services-representative-7TU25GS"
+        },
+        {
+            "filename": "rectangle-dots.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/rectangle-dots.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/therapies.json",
+                    "name": "Therapies"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/book-appointment-section.json",
+                    "name": "Book Appointment Section"
+                }
+            ],
+            "filesize": 233,
+            "dimensions": [
+                276,
+                145
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "elements-psychology-concept-line-design-style-icons-set-B3DQEJC.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-psychology-concept-line-design-style-icons-set-B3DQEJC.png",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 2020,
+            "dimensions": [
+                82,
+                81
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-psychology-concept-line-design-style-icons-set-B3DQEJC"
+        },
+        {
+            "filename": "elements-psychology-concept-line-design-style-icons-set-RUUMCJY-4.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY-4.png",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 2150,
+            "dimensions": [
+                73,
+                82
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY"
+        },
+        {
+            "filename": "elements-psychology-concept-line-design-style-icons-set-RUUMCJY-3.png",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY-3.png",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 2334,
+            "dimensions": [
+                82,
+                82
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/elements-psychology-concept-line-design-style-icons-set-RUUMCJY"
+        },
+        {
+            "filename": "happy-family-at-home-LLVD2LX-2.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/happy-family-at-home-LLVD2LX-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 143502,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-family-at-home-LLVD2LX"
+        },
+        {
+            "filename": "happy-couple-with-gadget-FR33W48-2.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/happy-couple-with-gadget-FR33W48-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 111772,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-couple-with-gadget-FR33W48"
+        },
+        {
+            "filename": "emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T-2.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 90835,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/emotion-emoticons-used-by-a-psychologist-during-a-D2BFM6T"
+        },
+        {
+            "filename": "work-of-counselor-6YGCWT7.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/work-of-counselor-6YGCWT7.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 89360,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/work-of-counselor-6YGCWT7"
+        },
+        {
+            "filename": "loving-husband-calming-his-crying-wife-at-psychoth-E93YAHK.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/loving-husband-calming-his-crying-wife-at-psychoth-E93YAHK.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 100090,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/loving-husband-calming-his-crying-wife-at-psychoth-E93YAHK"
+        },
+        {
+            "filename": "professional-therapist-and-happy-couple-in-office-BF74JD3.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/professional-therapist-and-happy-couple-in-office-BF74JD3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 130363,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/professional-therapist-and-happy-couple-in-office-BF74JD3"
+        },
+        {
+            "filename": "psychologist-supporting-depressed-girl-during-grou-7BKCVN6.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-supporting-depressed-girl-during-grou-7BKCVN6.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 131767,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/psychologist-supporting-depressed-girl-during-grou-7BKCVN6"
+        },
+        {
+            "filename": "psychologist-comforting-depressed-man-patient-at-c-CRMC45F.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/psychologist-comforting-depressed-man-patient-at-c-CRMC45F.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 106604,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/psychologist-comforting-depressed-man-patient-at-c-CRMC45F"
+        },
+        {
+            "filename": "senior-woman-crying-during-therapy-session-SH6GXQ3.jpg",
+            "thumbnail_url": "https:\/\/kinforce.net\/psyko\/wp-content\/uploads\/2020\/11\/senior-woman-crying-during-therapy-session-SH6GXQ3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 107921,
+            "dimensions": [
+                1170,
+                1044
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/senior-woman-crying-during-therapy-session-SH6GXQ3"
+        }
+    ]
+}
