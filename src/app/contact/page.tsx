@@ -26,6 +26,7 @@ export default function Contact() {
               fill 
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover group-hover:scale-105 transition-transform duration-500" 
+              priority
             />
           </AnimatedSection>
 

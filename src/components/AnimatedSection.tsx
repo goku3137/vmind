@@ -45,7 +45,7 @@ export function AnimatedSection({
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={variants[animation]}
-      transition={{ duration: 1.25, delay: delay, ease: "easeOut" }}
+      transition={{ duration: 0.75, delay: delay, ease: "easeOut" }}
     >
       {children}
     </motion.div>

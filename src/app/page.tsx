@@ -33,7 +33,7 @@ export default function Home() {
           <p className="text-white text-lg md:text-xl font-sans max-w-3xl mx-auto font-medium">
             Life can feel overwhelming at times, especially during teenage years, parenting phases, relationship challenges, or stressful life transitions. You don&apos;t have to navigate it alone.
           </p>
-          <AnimatedSection animation="rotateInUpLeft" delay={0.4} className="pt-8">
+          <AnimatedSection animation="fadeInUp" delay={0.4} className="pt-8">
             <Link 
               href="https://wa.me/918157039987"
               className="inline-block bg-[#19A67A] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-[#148C66] hover:scale-105 transition-all uppercase shadow-lg"
@@ -103,6 +103,15 @@ export default function Home() {
                 <p className="text-gray-500 text-sm leading-relaxed">Helping new mothers feel supported and understood.</p>
               </div>
             </div>
+
+            <div className="pt-6">
+              <Link 
+                href="/service/"
+                className="inline-block bg-[#19A67A] text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-[#148C66] hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#19A67A]/50 transition-all uppercase tracking-wide shadow-lg outline-none"
+              >
+                EXPLORE SERVICES
+              </Link>
+            </div>
           </AnimatedSection>
 
           {/* Right Column: Image */}
@@ -119,6 +128,7 @@ export default function Home() {
             <div className="mt-8 text-center space-y-1">
               <h3 className="text-3xl font-bold font-heading text-black">Ranjini Vijith -Psychologist</h3>
               <h4 className="text-xl font-bold font-heading text-black">Founder of ORUMA</h4>
+              <p className="text-lg font-medium text-gray-700">Clinical Hypnotherapist & Clinical Access Bars Therapist</p>
             </div>
           </AnimatedSection>
         </div>
@@ -127,7 +137,7 @@ export default function Home() {
       {/* Available 24/7 Section */}
       <section className="w-full relative py-24 bg-[#19A67A] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <Image src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" alt="Background" fill sizes="100vw" className="object-cover" />
+          <Image src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" alt="Background" fill sizes="100vw" className="object-cover" priority />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <AnimatedSection animation="fadeInLeft" className="space-y-6">
