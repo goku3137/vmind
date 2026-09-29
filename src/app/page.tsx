@@ -33,14 +33,14 @@ export default function Home() {
           <p className="text-white text-lg md:text-xl font-sans max-w-3xl mx-auto font-medium">
             Life can feel overwhelming at times, especially during teenage years, parenting phases, relationship challenges, or stressful life transitions. You don&apos;t have to navigate it alone.
           </p>
-          <div className="pt-8">
+          <AnimatedSection animation="rotateInUpLeft" delay={0.4} className="pt-8">
             <Link 
               href="https://wa.me/918157039987"
               className="inline-block bg-[#19A67A] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-[#148C66] hover:scale-105 transition-all uppercase shadow-lg"
             >
               BOOK YOUR APPOINTMENT TODAY
             </Link>
-          </div>
+          </AnimatedSection>
         </AnimatedSection>
       </section>
 

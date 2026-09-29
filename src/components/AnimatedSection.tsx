@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
-  animation?: 'fadeInUp' | 'fadeInLeft' | 'fadeInRight' | 'zoomIn';
+  animation?: 'fadeInUp' | 'fadeInLeft' | 'fadeInRight' | 'zoomIn' | 'rotateInUpLeft';
   delay?: number;
 }
 
@@ -25,6 +25,10 @@ const variants = {
   zoomIn: {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1 }
+  },
+  rotateInUpLeft: {
+    hidden: { opacity: 0, y: 40, rotate: 15, transformOrigin: "left bottom" },
+    visible: { opacity: 1, y: 0, rotate: 0 }
   }
 };
 
@@ -41,7 +45,7 @@ export function AnimatedSection({
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={variants[animation]}
-      transition={{ duration: 0.6, delay: delay, ease: "easeOut" }}
+      transition={{ duration: 1.25, delay: delay, ease: "easeOut" }}
     >
       {children}
     </motion.div>

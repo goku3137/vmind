@@ -78,7 +78,7 @@ export default function Contact() {
       </section>
       
       {/* Jagged bottom border decoration */}
-      <div className="absolute bottom-0 left-0 w-full h-4 bg-[url('/wp-content/uploads/2026/02/jagged-border.png')] bg-repeat-x z-20"></div>
+
     </div>
   );
 }
