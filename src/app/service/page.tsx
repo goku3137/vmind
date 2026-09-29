@@ -50,7 +50,7 @@ export default function Services() {
   return (
     <div className="flex flex-col w-full">
       {/* Page Header */}
-      <section className="w-full bg-[#f8f9fa] py-16 px-4 text-center overflow-hidden">
+      <section className="w-full bg-[#f8f9fa] pt-32 pb-16 px-4 text-center overflow-hidden">
         <AnimatedSection animation="fadeInUp" className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold font-heading text-gray-900 mb-4">Our Services</h1>
           <p className="text-lg text-gray-600">
@@ -60,13 +60,17 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="w-full py-20 px-4 overflow-hidden">
+      <section className="w-full py-20 px-4 overflow-hidden" style={{ perspective: 1200 }}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
-            <AnimatedSection key={index} animation="fadeInUp" delay={index * 0.1} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <div className="text-4xl mb-4 transform transition-transform group-hover:scale-110">{service.icon}</div>
-              <h3 className="text-xl font-bold font-heading mb-3">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+            <AnimatedSection key={index} animation="fadeInUp" delay={index * 0.1}>
+              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col items-start transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 group cursor-pointer">
+                <div className="text-4xl mb-6 p-4 bg-[#e0efeb] rounded-2xl text-[#0B7A75] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-md">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold font-heading mb-3 text-gray-900 group-hover:text-[#19A67A] transition-colors">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              </div>
             </AnimatedSection>
           ))}
         </div>

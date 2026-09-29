@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="absolute top-0 right-0 w-full h-[30vh] md:h-[50vh] bg-white opacity-40 transform origin-top-right -skew-y-3 z-0"></div>
       
       {/* Contact Content */}
-      <section className="w-full py-16 md:py-24 px-4 relative z-10">
+      <section className="w-full pt-32 pb-16 md:pt-40 md:pb-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Image */}
