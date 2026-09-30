@@ -39,7 +39,7 @@ export default function CoursesListPage() {
             </div>
             <div className="pt-8 mt-auto">
               <Link 
-                href="/course/introduction"
+                href="/course/marriagecouncil"
                 className="inline-block text-[#19A67A] font-bold text-sm uppercase tracking-wide hover:text-[#148C66] group-hover:translate-x-2 transition-transform"
               >
                 View Course Details →
