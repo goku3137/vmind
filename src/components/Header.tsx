@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -8,14 +8,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 export function Header() {
   const pathname = usePathname();
   const isCoursePage = pathname?.includes('/course');
-  const isMarriageCouncilPage = pathname === '/course/marriagecouncil';
+  const isMarriageCouncilPage = pathname === '/course/marrywise';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  
   // Custom theme colors for the marriage council page
   const headerBg = isMarriageCouncilPage 
-    ? 'bg-[#2A1E22]/95 border-b border-[#EAD5D3]/10' 
+    ? (isScrolled ? 'bg-[#2A1E22]/50 backdrop-blur-md border-b border-[#EAD5D3]/20' : 'bg-[#2A1E22]/95 border-b border-[#EAD5D3]/10') 
     : isCoursePage ? 'bg-[#0B7A75] md:bg-[#0B7A75]/90' : 'bg-[#0B7A75]/90';
     
   const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#C47C76]' : 'hover:text-[#FDB813]';
@@ -59,8 +66,13 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Link href="/contact/" className={`text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide hover:scale-105 transition-all transform shadow-md ${buttonClass}`}>
-            CONTACT NOW
+          <Link 
+            href={isMarriageCouncilPage ? "https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling" : "/contact/"}
+            target={isMarriageCouncilPage ? "_blank" : undefined}
+            rel={isMarriageCouncilPage ? "noopener noreferrer" : undefined}
+            className={`text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide hover:scale-105 transition-all transform shadow-md ${buttonClass}`}
+          >
+            {isMarriageCouncilPage ? 'BOOK SESSION' : 'CONTACT NOW'}
           </Link>
         </div>
 
@@ -93,8 +105,14 @@ export function Header() {
               <Link href="/contact/" onClick={() => setIsMobileMenuOpen(false)} className={`text-white text-2xl font-bold uppercase tracking-wider ${hoverAccent}`}>Contact Us</Link>
             </nav>
             <div className="mt-12 text-center">
-              <Link href="/contact/" onClick={() => setIsMobileMenuOpen(false)} className={`inline-block text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide shadow-lg border border-white/20 active:scale-95 transition-transform ${buttonClass}`}>
-                CONTACT NOW
+              <Link 
+                href={isMarriageCouncilPage ? "https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling" : "/contact/"}
+                target={isMarriageCouncilPage ? "_blank" : undefined}
+                rel={isMarriageCouncilPage ? "noopener noreferrer" : undefined}
+                onClick={() => setIsMobileMenuOpen(false)} 
+                className={`inline-block text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide shadow-lg border border-white/20 active:scale-95 transition-transform ${buttonClass}`}
+              >
+                {isMarriageCouncilPage ? 'BOOK SESSION' : 'CONTACT NOW'}
               </Link>
             </div>
           </motion.div>

@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 
 export function Footer() {
   const pathname = usePathname();
-  const isPremiumPage = pathname === '/course' || pathname === '/course/marriagecouncil';
-  const isMarriageCouncilPage = pathname === '/course/marriagecouncil';
+  const isPremiumPage = pathname === '/course' || pathname === '/course/marrywise';
+  const isMarriageCouncilPage = pathname === '/course/marrywise';
   
   const footerBg = isMarriageCouncilPage ? 'bg-[#1F1518] border-[#EAD5D3]/20' : 'bg-[#0B7A75] border-[#148C66]';
   const glowColor = isMarriageCouncilPage ? 'bg-[#C47C76]' : 'bg-[#19A67A]';
@@ -53,7 +53,7 @@ export function Footer() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-12 pointer-events-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pointer-events-auto text-left md:text-right">
               <div className="space-y-4">
                 <p className="text-white/40 uppercase tracking-widest text-xs font-bold">Location</p>
                 <p className="text-white text-base font-light">Trivandrum &<br/>Attingal, Kerala</p>
@@ -69,11 +69,11 @@ export function Footer() {
 
           {/* High-Converting Sales Quote / CTA */}
           <div className="border-t border-white/10 pt-10 flex flex-col items-center pointer-events-auto">
-            <h2 className="text-[9vw] md:text-[6vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 tracking-tighter w-full text-center hover:scale-[1.01] transition-transform duration-700 cursor-default" style={{ letterSpacing: '-0.03em' }}>
+            <h2 className="text-[12vw] md:text-[6.5vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 tracking-tighter w-full text-center hover:scale-[1.01] transition-transform duration-700 cursor-default" style={{ letterSpacing: '-0.03em' }}>
               {giantText}
             </h2>
             
-            <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-4">
+            <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-6 md:gap-4">
               <span className="text-white/40 text-xs font-medium tracking-widest uppercase">Founder of Oruma • Clinical Psychologist</span>
               
               <a 
