@@ -10,12 +10,11 @@ export function Footer() {
   const isMarriageCouncilPage = pathname === '/course/marrywise';
   const isCourseListPage = pathname === '/course';
   
-  const footerBg = isMarriageCouncilPage ? 'bg-[#1F1518] border-[#EAD5D3]/20' : isCourseListPage ? 'bg-[#302A35] border-[#D8C7B8]/20' : 'bg-[#0B7A75] border-[#148C66]';
-  const glowColor = isMarriageCouncilPage ? 'bg-[#C47C76]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#19A67A]';
-  const giantText = isMarriageCouncilPage ? 'HEAL TOGETHER.' : isCourseListPage ? 'ORUMA PATHWAYS.' : 'MASTER YOUR MIND.';
-  const brandColor = isMarriageCouncilPage ? 'text-[#C47C76]' : isCourseListPage ? 'text-[#5F7A6A]' : 'text-[#F4E6E3]';
-  const lineBg = isMarriageCouncilPage ? 'bg-[#C47C76]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#F4E6E3]';
-  const buttonBg = isMarriageCouncilPage ? 'bg-[#C47C76] text-white hover:bg-[#A8635D]' : isCourseListPage ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
+  const footerBg = isMarriageCouncilPage ? 'bg-[#0F4C5C] border-[#E8E1D8]/20' : isCourseListPage ? 'bg-[#302A35] border-[#D8C7B8]/20' : 'bg-[#0B7A75] border-[#148C66]';
+  const glowColor = isMarriageCouncilPage ? 'bg-[#C97C6A]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#19A67A]';
+  const brandColor = isMarriageCouncilPage ? 'text-[#C97C6A]' : isCourseListPage ? 'text-[#5F7A6A]' : 'text-[#F4E6E3]';
+  const lineBg = isMarriageCouncilPage ? 'bg-[#C97C6A]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#F4E6E3]';
+  const buttonBg = isMarriageCouncilPage ? 'bg-gradient-to-br from-[#C97C6A] to-[#D98E48] text-white' : isCourseListPage ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
   const footerLink = isMarriageCouncilPage ? 'https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling' : '/contact';
 
   if (isPremiumPage) {
@@ -31,7 +30,7 @@ export function Footer() {
           {[...Array(300)].map((_, i) => (
             <div 
               key={i} 
-              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#C47C76]/5 hover:bg-[#C47C76]/20' : isCourseListPage ? 'border-[#5F7A6A]/10 hover:bg-[#5F7A6A]/30' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
+              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#C97C6A]/10 hover:bg-[#C97C6A]/20' : isCourseListPage ? 'border-[#5F7A6A]/10 hover:bg-[#5F7A6A]/30' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
             />
           ))}
         </div>
@@ -70,8 +69,16 @@ export function Footer() {
 
           {/* High-Converting Sales Quote / CTA */}
           <div className="border-t border-white/10 pt-10 flex flex-col items-center pointer-events-auto">
-            <h2 className="text-[12vw] md:text-[6.5vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 tracking-tighter w-full text-center hover:scale-[1.01] transition-transform duration-700 cursor-default" style={{ letterSpacing: '-0.03em' }}>
-              {giantText}
+            <h2 className="text-[13vw] md:text-[7vw] leading-none font-black tracking-tighter w-full text-center hover:scale-[1.02] transition-transform duration-700 cursor-default" style={{ letterSpacing: '-0.02em' }}>
+              {isMarriageCouncilPage ? (
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30">
+                  HEAL TOGETHER.
+                </span>
+              ) : (
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30">
+                  {isCourseListPage ? 'ORUMA PATHWAYS.' : 'MASTER YOUR MIND.'}
+                </span>
+              )}
             </h2>
             
             <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-6 md:gap-4">
@@ -81,7 +88,7 @@ export function Footer() {
                 href={footerLink} 
                 target={isMarriageCouncilPage ? "_blank" : undefined}
                 rel={isMarriageCouncilPage ? "noopener noreferrer" : undefined}
-                className={`px-10 py-4 font-bold rounded-full text-[13px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(196,124,118,0.2)] hover:shadow-[0_0_30px_rgba(196,124,118,0.5)] hover:-translate-y-1 ${buttonBg}`}
+                className={`px-10 py-4 font-bold rounded-full text-[13px] uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(201,124,106,0.3)] hover:shadow-[0_0_30px_rgba(201,124,106,0.5)] hover:-translate-y-1 ${buttonBg}`}
               >
                 {isMarriageCouncilPage ? 'SECURE YOUR SLOT' : 'Enroll Today'}
               </a>
@@ -122,7 +129,7 @@ export function Footer() {
             <ul className="space-y-6 pt-2">
               <li className="flex items-center text-white hover:translate-x-2 transition-transform duration-300">
                 <svg className="w-5 h-5 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                KERALAs
+                KERALA
               </li>
               <li className="flex items-center text-white hover:translate-x-2 transition-transform duration-300">
                 <svg className="w-5 h-5 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>

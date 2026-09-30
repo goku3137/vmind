@@ -20,27 +20,34 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Premium themes: Espresso for MarryWise, Sage Green for Course listing
+  // Premium themes: Deep Teal for MarryWise, Sage Green for Course listing
   const headerBg = isMarriageCouncilPage 
-    ? (isScrolled ? 'bg-[#2A1E22]/50 backdrop-blur-md border-b border-[#EAD5D3]/20' : 'bg-[#2A1E22]/95 border-b border-[#EAD5D3]/10') 
+    ? (isScrolled ? 'bg-[#0F4C5C]/50 backdrop-blur-md border-b border-[#E8E1D8]/20' : 'bg-[#0F4C5C]/95 border-b border-[#E8E1D8]/10') 
     : isCoursePage 
       ? (isScrolled ? 'bg-[#5F7A6A]/20 backdrop-blur-lg border-b border-[#F7F3EC]/30 shadow-md' : 'bg-[#5F7A6A] border-b border-[#F7F3EC]/10 shadow-sm')
       : 'bg-[#0B7A75]/90';
       
-  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#C47C76]' : isCoursePage ? 'hover:text-[#D8C7B8]' : 'hover:text-[#FDB813]';
+  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#D98E48]' : isCoursePage ? 'hover:text-[#D8C7B8]' : 'hover:text-[#FDB813]';
+  const activeColor = isMarriageCouncilPage ? 'text-[#D98E48]' : isCoursePage ? 'text-[#D8C7B8]' : 'text-[#FDB813]';
   
   const buttonClass = isMarriageCouncilPage 
-    ? 'bg-[#C47C76] hover:bg-[#A8635D] shadow-sm' 
+    ? 'bg-gradient-to-br from-[#C97C6A] to-[#D98E48] text-white shadow-[0_10px_25px_rgba(201,124,106,0.3)] hover:shadow-[0_15px_30px_rgba(201,124,106,0.5)]' 
     : isCoursePage
-      ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44] shadow-sm'
-      : 'bg-[#19A67A] hover:bg-[#148C66]';
+      ? 'bg-gradient-to-br from-[#7A4E5A] to-[#5C3A44] text-white shadow-[0_10px_25px_rgba(122,78,90,0.3)] hover:shadow-[0_15px_30px_rgba(122,78,90,0.5)]'
+      : 'bg-gradient-to-br from-[#19A67A] to-[#0B7A75] text-white shadow-[0_10px_25px_rgba(25,166,122,0.3)] hover:shadow-[0_15px_30px_rgba(25,166,122,0.5)]';
       
-  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#C47C76]' : isCoursePage ? 'focus:ring-[#D8C7B8]' : 'focus:ring-[#FDB813]';
-  const mobileMenuBg = isMarriageCouncilPage ? 'bg-[#2A1E22]' : isCoursePage ? 'bg-[#5F7A6A]' : 'bg-[#0B7A75]';
+  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#D98E48]' : isCoursePage ? 'focus:ring-[#D8C7B8]' : 'focus:ring-[#FDB813]';
+  
+  const mobileMenuBg = isMarriageCouncilPage 
+    ? 'bg-gradient-to-b from-[#0F4C5C]/98 to-[#0a313b]/98 backdrop-blur-3xl' 
+    : isCoursePage 
+      ? 'bg-gradient-to-b from-[#5F7A6A]/98 to-[#394a40]/98 backdrop-blur-3xl' 
+      : 'bg-gradient-to-b from-[#0B7A75]/98 to-[#06423f]/98 backdrop-blur-3xl';
 
   return (
-    <header className={`w-full fixed top-0 z-50 backdrop-blur-md shadow-md py-3 md:py-4 transition-colors duration-300 ${headerBg}`}>
-      <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center relative z-50">
+    <>
+      <header className={`w-full fixed top-0 z-50 backdrop-blur-md shadow-md py-3 md:py-4 transition-colors duration-300 ${headerBg}`}>
+        <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div className="logo flex items-center">
           <Link href="/">
@@ -49,6 +56,7 @@ export function Header() {
               alt="VMind Counselling Center" 
               width={40}
               height={40}
+              priority
               className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover p-0.5 bg-white shadow-sm"
             />
           </Link>
@@ -84,7 +92,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className={`md:hidden p-2 text-white rounded-md focus:outline-none focus:ring-2 z-50 relative ${mobileFocusRing} ${mobileMenuBg}`}
+          className={`md:hidden p-2 text-white rounded-md focus:outline-none focus:ring-2 z-50 relative ${mobileFocusRing}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu"
         >
@@ -93,6 +101,7 @@ export function Header() {
           </svg>
         </button>
       </div>
+    </header>
 
       {/* Off-canvas Mobile Menu */}
       <AnimatePresence>
@@ -104,26 +113,49 @@ export function Header() {
             transition={{ type: "tween", duration: 0.3 }}
             className={`fixed inset-0 z-40 flex flex-col pt-24 px-6 md:hidden overflow-y-auto pb-10 ${mobileMenuBg}`}
           >
-            <nav className="flex flex-col space-y-6 text-center mt-8">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`text-white text-2xl font-bold uppercase tracking-wider ${hoverAccent}`}>Home</Link>
-              <Link href="/service/" onClick={() => setIsMobileMenuOpen(false)} className={`text-white text-2xl font-bold uppercase tracking-wider ${hoverAccent}`}>Services</Link>
-              <Link href="/course/" onClick={() => setIsMobileMenuOpen(false)} className={`text-white text-2xl font-bold uppercase tracking-wider ${hoverAccent}`}>Courses</Link>
-              <Link href="/contact/" onClick={() => setIsMobileMenuOpen(false)} className={`text-white text-2xl font-bold uppercase tracking-wider ${hoverAccent}`}>Contact Us</Link>
+            <nav className="flex flex-col space-y-6 text-center mt-12">
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'Services', path: '/service/' },
+                { name: 'Courses', path: '/course/' },
+                { name: 'Contact Us', path: '/contact/' }
+              ].map((link, idx) => (
+                <motion.div 
+                  key={link.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: 0.1 + (idx * 0.05), type: "spring", stiffness: 200 }}
+                >
+                  <Link 
+                    href={link.path} 
+                    onClick={() => setIsMobileMenuOpen(false)} 
+                    className={`text-[28px] font-bold uppercase tracking-[0.15em] transition-colors block py-2 ${pathname === link.path || (link.path !== '/' && pathname?.startsWith(link.path)) ? activeColor : `text-white/80 hover:text-white ${hoverAccent}`}`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
             </nav>
-            <div className="mt-12 text-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.35, type: "spring" }}
+              className="mt-auto pt-16 text-center pb-8"
+            >
               <Link 
                 href={isMarriageCouncilPage ? "https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling" : "/contact/"}
                 target={isMarriageCouncilPage ? "_blank" : undefined}
                 rel={isMarriageCouncilPage ? "noopener noreferrer" : undefined}
                 onClick={() => setIsMobileMenuOpen(false)} 
-                className={`inline-block text-white px-10 py-4 rounded-full font-bold text-lg tracking-wide shadow-lg border border-white/20 active:scale-95 transition-transform ${buttonClass}`}
+                className={`inline-block text-white px-10 py-4 rounded-full font-bold text-[15px] tracking-widest shadow-lg active:scale-95 transition-transform w-full max-w-[280px] ${buttonClass}`}
               >
                 {isMarriageCouncilPage ? 'BOOK SESSION' : 'CONTACT NOW'}
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
