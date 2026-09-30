@@ -8,13 +8,14 @@ export function Footer() {
   const pathname = usePathname();
   const isPremiumPage = pathname === '/course' || pathname === '/course/marrywise';
   const isMarriageCouncilPage = pathname === '/course/marrywise';
+  const isCourseListPage = pathname === '/course';
   
-  const footerBg = isMarriageCouncilPage ? 'bg-[#1F1518] border-[#EAD5D3]/20' : 'bg-[#0B7A75] border-[#148C66]';
-  const glowColor = isMarriageCouncilPage ? 'bg-[#C47C76]' : 'bg-[#19A67A]';
-  const giantText = isMarriageCouncilPage ? 'HEAL TOGETHER.' : 'MASTER YOUR MIND.';
-  const brandColor = isMarriageCouncilPage ? 'text-[#C47C76]' : 'text-[#F4E6E3]';
-  const lineBg = isMarriageCouncilPage ? 'bg-[#C47C76]' : 'bg-[#F4E6E3]';
-  const buttonBg = isMarriageCouncilPage ? 'bg-[#C47C76] text-white hover:bg-[#A8635D]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
+  const footerBg = isMarriageCouncilPage ? 'bg-[#1F1518] border-[#EAD5D3]/20' : isCourseListPage ? 'bg-[#302A35] border-[#D8C7B8]/20' : 'bg-[#0B7A75] border-[#148C66]';
+  const glowColor = isMarriageCouncilPage ? 'bg-[#C47C76]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#19A67A]';
+  const giantText = isMarriageCouncilPage ? 'HEAL TOGETHER.' : isCourseListPage ? 'ORUMA PATHWAYS.' : 'MASTER YOUR MIND.';
+  const brandColor = isMarriageCouncilPage ? 'text-[#C47C76]' : isCourseListPage ? 'text-[#5F7A6A]' : 'text-[#F4E6E3]';
+  const lineBg = isMarriageCouncilPage ? 'bg-[#C47C76]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#F4E6E3]';
+  const buttonBg = isMarriageCouncilPage ? 'bg-[#C47C76] text-white hover:bg-[#A8635D]' : isCourseListPage ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
   const footerLink = isMarriageCouncilPage ? 'https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling' : '/contact';
 
   if (isPremiumPage) {
@@ -30,7 +31,7 @@ export function Footer() {
           {[...Array(300)].map((_, i) => (
             <div 
               key={i} 
-              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#C47C76]/5 hover:bg-[#C47C76]/20' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
+              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#C47C76]/5 hover:bg-[#C47C76]/20' : isCourseListPage ? 'border-[#5F7A6A]/10 hover:bg-[#5F7A6A]/30' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
             />
           ))}
         </div>

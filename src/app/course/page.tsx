@@ -109,19 +109,51 @@ export default function CoursesListPage() {
   ];
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[#FAF6F3] pt-32 pb-24 text-[#33252A] font-sans">
-      <section className="w-full max-w-7xl mx-auto px-4 space-y-12">
+    <div className="flex flex-col w-full min-h-screen bg-[#F7F3EC] pt-32 pb-24 text-[#302A35] font-sans relative overflow-hidden">
+      {/* Custom Keyframes for Ambient Background */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes drift1 {
+          0% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(5vw, -5vh) scale(1.1); }
+          66% { transform: translate(-3vw, 3vh) scale(0.9); }
+          100% { transform: translate(0, 0) scale(1); }
+        }
+        @keyframes drift2 {
+          0% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(-5vw, 4vh) scale(1.1); }
+          66% { transform: translate(4vw, -3vh) scale(0.9); }
+          100% { transform: translate(0, 0) scale(1); }
+        }
+      `}} />
+
+      {/* Ambient 2D/3D Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-70">
+        <div 
+          className="absolute -top-[10%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-[#5F7A6A]/10 blur-[120px] mix-blend-multiply"
+          style={{ animation: 'drift1 25s infinite ease-in-out' }}
+        ></div>
+        <div 
+          className="absolute top-[30%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-[#7A4E5A]/5 blur-[100px] mix-blend-multiply"
+          style={{ animation: 'drift2 30s infinite ease-in-out reverse' }}
+        ></div>
+        <div 
+          className="absolute -bottom-[20%] left-[20%] w-[70vw] h-[70vw] rounded-full bg-[#D8C7B8]/20 blur-[150px] mix-blend-multiply"
+          style={{ animation: 'drift1 35s infinite ease-in-out' }}
+        ></div>
+      </div>
+
+      <section className="w-full max-w-7xl mx-auto px-4 space-y-12 relative z-10">
         {/* Header Text */}
         <AnimatedSection animation="fadeInUp" className="text-center space-y-6">
-          <div className="flex items-center justify-center text-[#C47C76] font-bold tracking-[0.2em] text-xs uppercase">
-            <span className="w-8 h-[2px] bg-[#C47C76] mr-4"></span>
+          <div className="flex items-center justify-center text-[#5F7A6A] font-bold tracking-[0.2em] text-xs uppercase">
+            <span className="w-8 h-[2px] bg-[#5F7A6A] mr-4"></span>
             ORUMA Pathways
-            <span className="w-8 h-[2px] bg-[#C47C76] ml-4"></span>
+            <span className="w-8 h-[2px] bg-[#5F7A6A] ml-4"></span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
             Transformational Programs
           </h1>
-          <p className="text-[#5D4E54] text-[17px] md:text-[19px] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[#302A35]/80 text-[17px] md:text-[19px] max-w-3xl mx-auto leading-relaxed">
             Discover our specialized coaching, psychology, and mindset transformation programs designed to help you build a better life.
           </p>
         </AnimatedSection>
@@ -133,57 +165,60 @@ export default function CoursesListPage() {
               key={idx} 
               animation="fadeInUp" 
               delay={0.1 + (idx * 0.05)} 
-              className={`bg-white p-8 rounded-[24px] border flex flex-col h-full relative overflow-hidden transition-all ${
+              className={`bg-white p-8 rounded-[24px] border flex flex-col h-full relative overflow-hidden transition-all duration-500 ease-out transform-gpu ${
                 program.isActive 
-                  ? 'shadow-sm border-[#EAD5D3]/40 group hover:shadow-xl hover:-translate-y-1' 
-                  : 'shadow-none border-gray-100 opacity-[0.85] group hover:border-[#EAD5D3]/40'
+                  ? 'shadow-[0_4px_20px_rgba(0,0,0,0.04)] border-[#D8C7B8]/60 group hover:shadow-[0_30px_60px_rgba(48,42,53,0.15)] hover:-translate-y-4 hover:scale-[1.02] hover:-rotate-1 z-10' 
+                  : 'shadow-none border-[#D8C7B8]/30 opacity-[0.85] group hover:border-[#D8C7B8]/60 hover:-translate-y-1 hover:shadow-lg hover:opacity-100 z-0'
               }`}
             >
-              {/* Subtle accent line on top for active */}
+              {/* Subtle accent line and 3D glowing gradient on hover */}
               {program.isActive && (
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#EAD5D3] group-hover:bg-[#C47C76] transition-colors"></div>
+                <>
+                  <div className="absolute top-0 left-0 w-full h-1.5 bg-[#D8C7B8] group-hover:bg-[#7A4E5A] transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#7A4E5A]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                </>
               )}
               
               <div className="flex-1 space-y-4">
                 <div className="flex justify-between items-start">
-                  <span className={`font-bold tracking-widest text-xs uppercase ${program.isActive ? 'text-[#A8635D]' : 'text-[#A8635D]/70'}`}>
+                  <span className={`font-bold tracking-widest text-xs uppercase ${program.isActive ? 'text-[#7A4E5A]' : 'text-[#7A4E5A]/60'}`}>
                     {program.category}
                   </span>
                   
                   {program.isActive ? (
-                    <span className="bg-[#F9F0EE] text-[#A8635D] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-[#F2DFDD] flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C47C76] animate-pulse"></span>
+                    <span className="bg-[#7A4E5A]/10 text-[#7A4E5A] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-[#7A4E5A]/20 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#7A4E5A] animate-pulse"></span>
                       {program.status}
                     </span>
                   ) : (
-                    <span className="bg-gray-50 text-gray-400 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-gray-100">
+                    <span className="bg-[#F7F3EC] text-[#302A35]/40 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-[#D8C7B8]/40">
                       {program.status}
                     </span>
                   )}
                 </div>
                 
                 <h3 className={`text-2xl font-bold font-serif transition-colors ${
-                  program.isActive ? 'text-[#33252A] group-hover:text-[#C47C76]' : 'text-[#33252A]/80 group-hover:text-[#33252A]'
+                  program.isActive ? 'text-[#302A35] group-hover:text-[#7A4E5A]' : 'text-[#302A35]/80 group-hover:text-[#302A35]'
                 }`}>
                   {program.name}
                 </h3>
                 
-                <p className={`text-[15px] leading-relaxed ${program.isActive ? 'text-[#7C6971]' : 'text-[#7C6971]/80'}`}>
+                <p className={`text-[15px] leading-relaxed ${program.isActive ? 'text-[#302A35]/70' : 'text-[#302A35]/50'}`}>
                   {program.desc}
                 </p>
               </div>
               
-              <div className="pt-8 mt-auto">
+              <div className="pt-8 mt-auto relative z-10">
                 <Link 
                   href={program.link}
-                  className={`inline-flex items-center font-bold text-[13px] uppercase tracking-wider transition-colors ${
+                  className={`inline-flex items-center font-bold text-[13px] uppercase tracking-wider transition-all duration-300 ${
                     program.isActive 
-                      ? 'text-[#33252A] group-hover:text-[#C47C76]' 
-                      : 'text-[#33252A]/60 group-hover:text-[#A8635D]'
+                      ? 'text-[#302A35] group-hover:text-[#7A4E5A] group-hover:scale-105 origin-left' 
+                      : 'text-[#302A35]/50 group-hover:text-[#7A4E5A]/70 group-hover:translate-x-1'
                   }`}
                 >
                   Explore Program 
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                  <span className={`ml-2 transition-transform duration-300 ${program.isActive ? 'group-hover:translate-x-3' : 'group-hover:translate-x-1'}`}>→</span>
                 </Link>
               </div>
             </AnimatedSection>

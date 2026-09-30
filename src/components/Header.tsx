@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export function Header() {
   const pathname = usePathname();
-  const isCoursePage = pathname?.includes('/course');
+  const isCoursePage = pathname === '/course' || pathname?.startsWith('/course/') && !pathname.includes('marrywise');
   const isMarriageCouncilPage = pathname === '/course/marrywise';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,17 +20,23 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Custom theme colors for the marriage council page
+  // Premium themes: Espresso for MarryWise, Sage Green for Course listing
   const headerBg = isMarriageCouncilPage 
     ? (isScrolled ? 'bg-[#2A1E22]/50 backdrop-blur-md border-b border-[#EAD5D3]/20' : 'bg-[#2A1E22]/95 border-b border-[#EAD5D3]/10') 
-    : isCoursePage ? 'bg-[#0B7A75] md:bg-[#0B7A75]/90' : 'bg-[#0B7A75]/90';
-    
-  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#C47C76]' : 'hover:text-[#FDB813]';
+    : isCoursePage 
+      ? (isScrolled ? 'bg-[#5F7A6A]/20 backdrop-blur-lg border-b border-[#F7F3EC]/30 shadow-md' : 'bg-[#5F7A6A] border-b border-[#F7F3EC]/10 shadow-sm')
+      : 'bg-[#0B7A75]/90';
+      
+  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#C47C76]' : isCoursePage ? 'hover:text-[#D8C7B8]' : 'hover:text-[#FDB813]';
+  
   const buttonClass = isMarriageCouncilPage 
-    ? 'bg-[#C47C76] hover:bg-[#A8635D]' 
-    : 'bg-[#19A67A] hover:bg-[#148C66]';
-  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#C47C76]' : 'focus:ring-[#FDB813]';
-  const mobileMenuBg = isMarriageCouncilPage ? 'bg-[#2A1E22]' : 'bg-[#0B7A75]';
+    ? 'bg-[#C47C76] hover:bg-[#A8635D] shadow-sm' 
+    : isCoursePage
+      ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44] shadow-sm'
+      : 'bg-[#19A67A] hover:bg-[#148C66]';
+      
+  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#C47C76]' : isCoursePage ? 'focus:ring-[#D8C7B8]' : 'focus:ring-[#FDB813]';
+  const mobileMenuBg = isMarriageCouncilPage ? 'bg-[#2A1E22]' : isCoursePage ? 'bg-[#5F7A6A]' : 'bg-[#0B7A75]';
 
   return (
     <header className={`w-full fixed top-0 z-50 backdrop-blur-md shadow-md py-3 md:py-4 transition-colors duration-300 ${headerBg}`}>
