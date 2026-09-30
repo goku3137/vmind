@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, El_Messiri, Viga, Clicker_Script } from "next/font/google";
+import { Poppins, El_Messiri, Viga, Clicker_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -34,6 +34,14 @@ const clickerScript = Clicker_Script({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Best Psychologist in Trivandrum & Attingal | VMind Counselling Center",
   description: "VMind is a trusted counselling center serving Trivandrum and Attingal, Kerala. Ranjini Vijith is one of the best psychologists in Trivandrum.",
@@ -56,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${elMessiri.variable} ${viga.variable} ${clickerScript.variable} antialiased overflow-x-hidden`}
+        className={`${poppins.variable} ${elMessiri.variable} ${viga.variable} ${clickerScript.variable} ${playfair.variable} antialiased overflow-x-hidden`}
       >
         <Header />
         <main className="min-h-screen">
