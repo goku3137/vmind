@@ -102,7 +102,7 @@ export function Footer() {
           <AnimatedSection animation="fadeInRight" className="space-y-6 md:pl-16">
             <div className="flex items-center text-white tracking-widest text-sm uppercase font-bold">
               <span className="w-8 h-[1px] bg-white mr-4"></span>
-              Contact Us
+              Contact Uss
             </div>
             <ul className="space-y-6 pt-2">
               <li className="flex items-center text-white hover:translate-x-2 transition-transform duration-300">
