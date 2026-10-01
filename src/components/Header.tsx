@@ -22,24 +22,24 @@ export function Header() {
 
   // Premium themes: Deep Teal for MarryWise, Sage Green for Course listing
   const headerBg = isMarriageCouncilPage 
-    ? (isScrolled ? 'bg-[#0F4C5C]/50 backdrop-blur-md border-b border-[#E8E1D8]/20' : 'bg-[#0F4C5C]/95 border-b border-[#E8E1D8]/10') 
+    ? (isScrolled ? 'bg-[#7B0B2E]/70 backdrop-blur-md border-b border-[#F5C6D0]/20' : 'bg-[#7B0B2E]/95 border-b border-[#F5C6D0]/10') 
     : isCoursePage 
       ? (isScrolled ? 'bg-[#5F7A6A]/20 backdrop-blur-lg border-b border-[#F7F3EC]/30 shadow-md' : 'bg-[#5F7A6A] border-b border-[#F7F3EC]/10 shadow-sm')
       : 'bg-[#0B7A75]/90';
       
-  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#D98E48]' : isCoursePage ? 'hover:text-[#D8C7B8]' : 'hover:text-[#FDB813]';
-  const activeColor = isMarriageCouncilPage ? 'text-[#D98E48]' : isCoursePage ? 'text-[#D8C7B8]' : 'text-[#FDB813]';
+  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#FBBDD0]' : isCoursePage ? 'hover:text-[#D8C7B8]' : 'hover:text-[#FDB813]';
+  const activeColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isCoursePage ? 'text-[#D8C7B8]' : 'text-[#FDB813]';
   
   const buttonClass = isMarriageCouncilPage 
-    ? 'bg-gradient-to-br from-[#C97C6A] to-[#D98E48] text-white shadow-[0_10px_25px_rgba(201,124,106,0.3)] hover:shadow-[0_15px_30px_rgba(201,124,106,0.5)]' 
+    ? 'bg-[#E8185A] text-white shadow-[0_10px_25px_rgba(232,24,90,0.35)] hover:shadow-[0_15px_30px_rgba(232,24,90,0.5)] hover:bg-[#c9114a]' 
     : isCoursePage
       ? 'bg-gradient-to-br from-[#7A4E5A] to-[#5C3A44] text-white shadow-[0_10px_25px_rgba(122,78,90,0.3)] hover:shadow-[0_15px_30px_rgba(122,78,90,0.5)]'
       : 'bg-gradient-to-br from-[#19A67A] to-[#0B7A75] text-white shadow-[0_10px_25px_rgba(25,166,122,0.3)] hover:shadow-[0_15px_30px_rgba(25,166,122,0.5)]';
       
-  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#D98E48]' : isCoursePage ? 'focus:ring-[#D8C7B8]' : 'focus:ring-[#FDB813]';
+  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#E8185A]' : isCoursePage ? 'focus:ring-[#D8C7B8]' : 'focus:ring-[#FDB813]';
   
   const mobileMenuBg = isMarriageCouncilPage 
-    ? 'bg-gradient-to-b from-[#0F4C5C]/98 to-[#0a313b]/98 backdrop-blur-3xl' 
+    ? 'bg-gradient-to-b from-[#7B0B2E]/98 to-[#3d0517]/98 backdrop-blur-3xl' 
     : isCoursePage 
       ? 'bg-gradient-to-b from-[#5F7A6A]/98 to-[#394a40]/98 backdrop-blur-3xl' 
       : 'bg-gradient-to-b from-[#0B7A75]/98 to-[#06423f]/98 backdrop-blur-3xl';
