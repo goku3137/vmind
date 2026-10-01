@@ -1,545 +1,610 @@
 "use client";
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 
-// Animation variants for reusability
 const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
 };
-
-const staggerContainer: Variants = {
+const stagger: Variants = {
   hidden: { opacity: 0 },
-  visible: { 
-    opacity: 1, 
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 } 
-  }
+  visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.05 } }
 };
 
-const floatAnimation: Variants = {
-  animate: {
-    y: [0, -15, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
+// ── Colours ──────────────────────────────────────────────
+// blush:  #FDE8EF  crimson: #7B0B2E  hotpink: #E8185A  soft: #F5C6D0
+
+const C = {
+  blush:   '#FDE8EF',
+  crimson: '#7B0B2E',
+  pink:    '#E8185A',
+  soft:    '#F5C6D0',
+  text:    '#2A0A14',
+  muted:   '#5C1528',
 };
 
-export default function CourseLandingPage() {
+const WA = "https://wa.me/918157039987?text=I%20want%20to%20book%20a%201:1%20MARRyWISE%20Session";
+
+// ── Reusable pill badge ───────────────────────────────────
+function EyeBrow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full min-h-screen bg-[#FAF6F0] text-[#2D2A26] font-sans selection:bg-[#0F4C5C] selection:text-white font-medium overflow-hidden">
-      
+    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-4"
+      style={{ backgroundColor: C.blush, borderColor: C.soft }}>
+      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: C.pink }} />
+      <span className="text-[11px] tracking-[0.22em] uppercase font-bold" style={{ color: C.crimson }}>
+        {children}
+      </span>
+    </div>
+  );
+}
 
+// ── CTA button ────────────────────────────────────────────
+function CTAButton({ text = "BOOK MY 1:1 SESSION", sub }: { text?: string; sub?: string }) {
+  return (
+    <a href={WA} target="_blank" rel="noopener noreferrer"
+      className="inline-flex flex-col items-center justify-center gap-0.5 text-white font-bold text-[16px] py-4 px-10 rounded-full hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+      style={{ backgroundColor: C.pink, boxShadow: `0 12px 35px rgba(232,24,90,0.35)` }}>
+      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+      <span className="relative tracking-wide">{text}</span>
+      {sub && <span className="relative text-[12px] font-normal opacity-80">{sub}</span>}
+    </a>
+  );
+}
 
-      {/* Hero Section */}
-      <section className="relative px-4 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-visible">
-        {/* Animated Background Gradients (Warm Rose & Soft Peach) */}
-        <motion.div 
-          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3], rotate: [0, 10, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(201,124,106,0.12)_0%,transparent_60%)] pointer-events-none -translate-y-1/2 translate-x-1/4"
-        />
-        <motion.div 
-          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2], rotate: [0, -10, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(232,225,216,0.3)_0%,transparent_60%)] pointer-events-none translate-y-1/4 -translate-x-1/4"
-        />
+// ── FAQ data ──────────────────────────────────────────────
+const faqs = [
+  { q: "ഈ session ആർക്കൊക്കെ suitable ആണ്?", a: "Engaged couples, newly married couples, couples facing communication issues, or anyone who wants to understand themselves and their partner better. No prior therapy experience needed." },
+  { q: "Session online ആണോ offline ആണോ?", a: "Both options are available. Google Meet / Zoom through online, or in-person at our Trivandrum / Attingal centre. You can choose what's comfortable for you." },
+  { q: "ഇത് confidential ആണോ?", a: "100%. Everything shared in the session is strictly private. We follow professional ethical standards. Nothing leaves the room." },
+  { q: "ഒരാൾ മാത്രം attend ചെയ്യാൻ പറ്റുമോ?", a: "Yes. Individual sessions are also welcome. Understanding yourself is the first step to a healthier relationship." },
+  { q: "Session കഴിഞ്ഞ് follow-up ഉണ്ടോ?", a: "Yes. Based on the discovery session, Ranjini will recommend a personalised next step — whether it's a structured program, individual sessions, or couple's therapy." },
+];
 
-        {/* Therapeutic 3D Glassmorphic Floating Orbs */}
-        <motion.div 
-          animate={{ 
-            y: [0, -40, 0], 
-            rotateX: [0, 15, 0], 
-            rotateY: [0, -15, 0] 
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          style={{ perspective: 1000 }}
-          className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#C97C6A]/20 to-transparent backdrop-blur-2xl border border-white/40 shadow-[0_20px_40px_rgba(201,124,106,0.15)] -z-10 hidden md:block"
-        >
-          <div className="absolute inset-2 rounded-full border border-white/20"></div>
-        </motion.div>
-        
-        <motion.div 
-          animate={{ 
-            y: [0, 50, 0], 
-            rotateX: [0, -20, 0], 
-            rotateY: [0, 20, 0] 
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          style={{ perspective: 1000 }}
-          className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-gradient-to-bl from-[#0F4C5C]/10 to-transparent backdrop-blur-xl border border-white/30 shadow-[0_30px_60px_rgba(15,76,92,0.1)] -z-10 hidden md:block"
-        >
-          <div className="absolute inset-4 rounded-full border border-white/10 border-dashed"></div>
-        </motion.div>
+export default function MarryWiseLandingPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1.12fr_0.88fr] gap-12 items-center relative z-10">
-          <motion.div 
-            variants={staggerContainer} 
-            initial="hidden" 
-            animate="visible"
-            className="pt-10 lg:pt-0"
-          >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-[#E8E1D8] shadow-[0_4px_12px_rgba(201,124,106,0.08)] mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C97C6A] animate-pulse"></span>
-              <span className="text-[11.5px] tracking-[0.2em] uppercase text-[#D98E48] font-extrabold">
-                MARRYWISE™ EXCLUSIVE
-              </span>
+  return (
+    <div className="w-full min-h-screen font-sans selection:bg-[#E8185A] selection:text-white overflow-x-hidden"
+      style={{ backgroundColor: C.blush, color: C.text }}>
+
+      {/* ══ ANNOUNCEMENT BAR ════════════════════════════════ */}
+      <div className="text-white text-center py-2.5 px-4 text-[13px] font-semibold tracking-wide"
+        style={{ backgroundColor: C.crimson }}>
+        <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse mr-2 align-middle" />
+        Limited Slots Available — <span style={{ color: '#FBBDD0' }}>Book Your Private 1:1 Discovery Session</span>
+      </div>
+
+      {/* ══ HERO ════════════════════════════════════════════ */}
+      <section className="relative px-4 pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden flex items-center justify-center min-h-[90vh]">
+        <motion.div animate={{ scale: [1,1.12,1], opacity: [0.5,0.8,0.5] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 right-0 w-[700px] h-[700px] pointer-events-none -translate-y-1/3 translate-x-1/4"
+          style={{ background: 'radial-gradient(circle, rgba(232,24,90,0.09) 0%, transparent 65%)' }} />
+        <motion.div animate={{ scale: [1,1.2,1], opacity: [0.4,0.6,0.4] }} transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-0 left-0 w-[600px] h-[600px] pointer-events-none translate-y-1/3 -translate-x-1/4"
+          style={{ background: 'radial-gradient(circle, rgba(123,11,46,0.08) 0%, transparent 65%)' }} />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col items-center gap-6">
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-5 py-2 rounded-full border"
+              style={{ backgroundColor: 'rgba(255,255,255,0.75)', borderColor: C.soft, backdropFilter: 'blur(12px)' }}>
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: C.pink }} />
+              <span className="text-[12px] tracking-[0.25em] uppercase font-bold" style={{ color: C.crimson }}>MARRyWISE</span>
             </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-[48px] md:text-[64px] lg:text-[76px] font-black leading-[1.02] tracking-tighter text-[#0F4C5C] mb-6" style={{ perspective: 1000 }}>
-              <motion.span 
-                initial={{ rotateX: 90, opacity: 0 }}
-                animate={{ rotateX: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                className="inline-block origin-bottom"
-              >
-                From conflict to 
-              </motion.span>
-              <br/>
-              <motion.span 
-                initial={{ rotateX: 90, opacity: 0 }}
-                animate={{ rotateX: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-                className="inline-block origin-bottom font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-[#C97C6A] to-[#D98E48] pr-2"
-              >
-                connection 
-              </motion.span>
-              {' '}in one honest journey.
+
+            <motion.h1 variants={fadeInUp}
+              className="text-[38px] md:text-[58px] lg:text-[68px] font-serif font-bold leading-[1.1] tracking-tight"
+              style={{ color: C.crimson }}>
+              <span className="italic font-light" style={{ color: C.pink }}>Understanding yourself</span>
+              <br />and building a healthier<br className="hidden md:block" /> relationship together.
             </motion.h1>
-            
-            <motion.p variants={fadeInUp} className="text-[18px] md:text-[20px] leading-relaxed text-[#2D2A26] mb-8 max-w-[90%]">
-              A private, guided 1:1 marriage counseling program for couples who want to rebuild trust, fix communication, and heal deeply.
+
+            <motion.p variants={fadeInUp} className="text-[18px] md:text-[21px] leading-relaxed max-w-2xl font-light" style={{ color: C.muted }}>
+              Love is the beginning. Marriage is the journey.<br />Are you truly prepared to build a life together?
             </motion.p>
-            
-            <motion.div variants={staggerContainer} className="flex flex-col gap-4 mb-10">
-              {["Stop the endless arguments and silence.", "Break free from past resentments.", "Find clarity on the future of your relationship."].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp} className="flex gap-4 items-start">
-                  <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-[#C97C6A] to-[#D98E48] flex items-center justify-center shadow-md">
-                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-[#2D2A26] text-[17.5px] font-medium leading-relaxed tracking-wide">{item}</span>
-                </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <CTAButton text="BEGIN YOUR JOURNEY" sub="Book Private 1:1 Session →" />
+            </motion.div>
+
+            {/* Trust micro-badges */}
+            <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-6 pt-2 text-[13px]" style={{ color: C.muted }}>
+              {[
+                { icon: "🔒", label: "100% Confidential" },
+                { icon: "💬", label: "No Judgment" },
+                { icon: "⏱️", label: "30 Minutes" },
+              ].map(b => (
+                <span key={b.label} className="flex items-center gap-1.5 font-medium">
+                  <span>{b.icon}</span>{b.label}
+                </span>
               ))}
             </motion.div>
 
-            <motion.p variants={fadeInUp} className="font-serif italic text-[#C97C6A] text-[22px] mb-8">You deserve a marriage that feels like home.</motion.p>
-            
-            <motion.div variants={fadeInUp} className="w-full">
-              <a 
-                href="https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-[#C97C6A] to-[#D98E48] text-white font-extrabold text-[17.5px] py-4 px-8 rounded-2xl shadow-[0_10px_26px_rgba(201,124,106,0.35)] hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(201,124,106,0.45)] transition-all w-full md:max-w-[320px] group overflow-hidden relative"
-              >
-                <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-72 group-hover:h-56 opacity-10"></span>
-                <span className="relative tracking-wide">BOOK YOUR SESSION</span>
-                <span className="text-[12px] font-medium opacity-90 font-normal relative">Limited Slots Available • Secure Checkout</span>
-              </a>
-            </motion.div>
-          </motion.div>
 
-          {/* Coach Card with Glass Glow */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40, rotateY: 15 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-            style={{ perspective: 1200 }}
-            className="relative"
-          >
-            {/* Ambient Back Glow */}
-            <div className="absolute inset-0 bg-[#C97C6A] blur-[80px] opacity-20 translate-y-10 rounded-full z-0"></div>
-            
-            <motion.div 
-              whileHover={{ rotateY: 4, rotateX: -4, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="bg-white/70 backdrop-blur-xl rounded-[28px] shadow-[0_30px_80px_rgba(15,76,92,0.12)] border border-white/60 overflow-hidden max-w-[380px] mx-auto md:mx-0 w-full relative z-10"
-            >
-              <div className="aspect-[4/4.5] bg-[#E8E1D8] relative flex items-center justify-center overflow-hidden">
-                <Image src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" alt="Ranjini Vijith" fill sizes="(max-width: 768px) 100vw, 380px" className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                
-                {/* Overlay Vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F4C5C]/60 via-transparent to-transparent opacity-80"></div>
-
-                <div className="absolute left-4 bottom-4 bg-white/95 backdrop-blur-md rounded-2xl py-2.5 px-4 text-[12px] font-bold text-[#0F4C5C] shadow-xl flex items-center gap-2.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#19A67A] shadow-[0_0_8px_#19A67A] animate-pulse"></span>
-                  Accepting Couples
-                </div>
-              </div>
-              <div className="p-6 bg-white/90">
-                <h3 className="font-serif text-[26px] font-bold text-[#0F4C5C] mb-1">Ranjini Vijith</h3>
-                <p className="text-[12.5px] text-[#D98E48] font-bold tracking-wide uppercase mb-3">Lead Clinical Psychologist</p>
-                <div className="h-[1px] w-12 bg-[#E8E1D8] mb-3"></div>
-                <p className="text-[12.5px] text-[#4A4540] font-medium leading-relaxed">Founder & CEO, ORUMA | Clinical Hypnotherapist | Relationship & Family Therapist</p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Proof Strip */}
-      <section className="bg-[#0F4C5C] text-[#F9F5F4] py-6 relative overflow-hidden">
-        <motion.div 
-          animate={{ x: ["-10%", "10%"] }} 
-          transition={{ duration: 10, repeat: Infinity, repeatType: "mirror", ease: "linear" }}
-          className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.03)_50%,transparent_75%)] bg-[length:250%_250%] pointer-events-none"
-        />
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-white/10 relative z-10"
-        >
-          {[
-            { stat: "10+", label: "Years Experience" },
-            { stat: "1000+", label: "Couples Supported" },
-            { stat: "100%", label: "Confidentiality" },
-            { stat: "5/5", label: "Client Rating" }
-          ].map((item, i) => (
-            <motion.div key={i} variants={fadeInUp}>
-              <b className="font-serif text-2xl text-[#E8E1D8] block">{item.stat}</b>
-              <span className="text-[12.5px] text-[#9CAF88] tracking-[0.03em] uppercase">{item.label}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+      {/* ══ PROOF STRIP ════════════════════════════════════ */}
+      <section className="py-6 border-y" style={{ backgroundColor: C.crimson, borderColor: 'rgba(245,198,208,0.2)' }}>
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { stat: "10+", label: "Years Experience" },
+              { stat: "1000+", label: "Couples Supported" },
+              { stat: "100%", label: "Confidential" },
+              { stat: "5 ⭐", label: "Client Rating" },
+            ].map((s, i) => (
+              <motion.div key={i} variants={fadeInUp}>
+                <b className="block text-[28px] font-serif font-bold text-white">{s.stat}</b>
+                <span className="text-[12px] font-medium tracking-wide uppercase" style={{ color: '#FBBDD0' }}>{s.label}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+      {/* ══ INSIGHTS & PERSPECTIVES ═════════════════════════════ */}
+      <section className="py-24 px-4 relative overflow-hidden" style={{ backgroundColor: C.blush }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <EyeBrow>Insights</EyeBrow>
+            <h2 className="text-[30px] md:text-[42px] font-serif font-bold mb-4" style={{ color: C.crimson }}>
+              Why Prepare for Marriage?
+            </h2>
+            <p className="text-[17px] max-w-xl mx-auto font-light" style={{ color: C.muted }}>
+              Hear insights on the importance of understanding yourself and your partner.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+            {/* Video 1 (16:9 Landscape) */}
+            <div className="w-full md:w-[60%] rounded-[24px] overflow-hidden border bg-white shadow-xl">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/o7ob0xhcLcY"
+                  title="Why Marriage Counseling?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <div className="px-5 py-4" style={{ backgroundColor: C.blush }}>
+                <p className="font-serif font-semibold text-[15px]" style={{ color: C.crimson }}>The Need for Guidance</p>
+                <p className="text-[13px] mt-1 font-light" style={{ color: C.muted }}>Why marriage counseling is essential</p>
+              </div>
+            </div>
+
+            {/* Video 2 (9:16 Portrait) */}
+            <div className="w-[70%] sm:w-[50%] md:w-[35%] lg:w-[30%] rounded-[24px] overflow-hidden border bg-white shadow-xl">
+              <div className="relative w-full" style={{ paddingBottom: '177.77%' }}>
+                <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/rg_yUoac7yI"
+                  title="Counseling Recommendation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <div className="px-5 py-4" style={{ backgroundColor: C.blush }}>
+                <p className="font-serif font-semibold text-[15px]" style={{ color: C.crimson }}>A Word of Recommendation</p>
+                <p className="text-[13px] mt-1 font-light" style={{ color: C.muted }}>A perspective on Ranjini's sessions</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Pain Section - Ultra Premium Glass */}
-      <section className="py-24 px-4 relative overflow-hidden bg-white">
-        <motion.div variants={floatAnimation} animate="animate" className="absolute top-10 right-[10%] w-32 h-32 rounded-full bg-gradient-to-br from-[#E8E1D8] to-transparent blur-2xl -z-10" />
-        <motion.div variants={floatAnimation} animate="animate" style={{ animationDelay: "2s" }} className="absolute bottom-20 left-[5%] w-40 h-40 bg-gradient-to-tr from-[#E8E1D8] to-transparent blur-3xl -z-10" />
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.div variants={fadeInUp} className="text-center mb-16">
-            <span className="inline-block text-[#D98E48] font-bold tracking-[0.2em] text-[11px] uppercase mb-3 border border-[#E8E1D8] px-3 py-1 rounded-full">The Reality</span>
-            <h2 className="font-serif text-[40px] md:text-[52px] leading-[1.05] tracking-tight text-[#0F4C5C]">
-              Is this how your relationship <br className="hidden md:block"/> feels right now?
+      {/* ══ PREPARATION ════════════════════════════════════ */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="space-y-7">
+            <EyeBrow>Your Marriage Deserves Preparation Too</EyeBrow>
+            <h2 className="text-[32px] md:text-[42px] font-serif font-bold leading-tight uppercase tracking-tight" style={{ color: C.crimson }}>
+              YOUR MARRIAGE DESERVES <br />
+              <span className="italic font-light" style={{ color: C.pink }}>PREPARATION TOO.</span>
             </h2>
+            <div className="space-y-5 text-[17px] leading-relaxed" style={{ color: C.muted }}>
+              <p>Wedding-ന് വേണ്ടി നിങ്ങൾ months തയ്യാറെടുക്കും.</p>
+              <div className="flex flex-wrap gap-2">
+                {['Venue.', 'Dress.', 'Photography.', 'Food.', 'Guests.', 'Budget.'].map(w => (
+                  <span key={w} className="px-3 py-1 rounded-full text-[14px] font-semibold" style={{ backgroundColor: C.blush, color: C.crimson }}>{w}</span>
+                ))}
+              </div>
+              <div className="w-10 h-px" style={{ backgroundColor: C.soft }} />
+              <p className="font-semibold text-[20px]" style={{ color: C.text }}>പക്ഷേ…</p>
+              <p className="text-[21px] font-serif leading-snug" style={{ color: C.pink }}>
+                ഒരു ജീവിതം ഒരുമിച്ച് ജീവിക്കാൻ നിങ്ങൾ എത്രത്തോളം തയ്യാറെടുക്കുന്നു?
+              </p>
+              <p>കാരണം wedding ഒരു day ആണ്.<br /><b style={{ color: C.crimson }}>Marriage is a journey.</b></p>
+            </div>
           </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}
+            className="relative h-[520px] rounded-[32px] overflow-hidden flex items-center justify-center"
+            style={{ background: `linear-gradient(135deg, ${C.blush} 0%, #FBBDD0 100%)`, boxShadow: `0 20px 60px rgba(232,24,90,0.12)` }}>
+            <div className="w-5/6 h-5/6 rounded-[24px] flex items-center justify-center p-8 text-center relative border"
+              style={{ backgroundColor: 'rgba(255,255,255,0.45)', borderColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(10px)' }}>
+              <div className="absolute inset-0 rounded-[24px] overflow-hidden">
+                <div className="absolute top-0 right-0 w-56 h-56 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(232,24,90,0.1)' }} />
+                <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(123,11,46,0.08)' }} />
+              </div>
+              <p className="font-serif text-[24px] font-light leading-snug relative z-10" style={{ color: C.crimson }}>
+                &ldquo;Prepare for the <b className="font-bold">marriage</b>,<br />not just the{' '}
+                <span className="italic" style={{ color: C.pink }}>wedding</span>.&rdquo;
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ PAIN POINTS ════════════════════════════════════ */}
+      <section className="py-24 px-4" style={{ backgroundColor: C.blush }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="text-center mb-14">
+            <motion.div variants={fadeInUp}><EyeBrow>The Reality</EyeBrow></motion.div>
+            <motion.h2 variants={fadeInUp} className="text-[30px] md:text-[42px] font-serif font-bold mb-4" style={{ color: C.crimson }}>
+              Is This How Your Relationship Feels?
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-[17px] max-w-xl mx-auto font-light" style={{ color: C.muted }}>
+              Many couples struggle silently. You are not alone — and it doesn&apos;t have to stay this way.
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
-              { title: "Walking on eggshells", desc: "You constantly watch what you say to avoid triggering another massive argument." },
-              { title: "Emotional distance", desc: "You live together like roommates. The warmth, intimacy, and friendship are gone." },
-              { title: "Broken trust", desc: "Past hurts, betrayal, or lies make it impossible to feel secure and safe." },
-              { title: "Repeating cycles", desc: "You have the same fights over and over, but nothing ever gets resolved." }
-            ].map((pain, i) => (
-              <motion.div 
-                key={i} 
-                variants={fadeInUp}
-                whileHover={{ scale: 1.03, y: -5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="bg-[#FAF6F0]/80 backdrop-blur-lg border border-[#E8E1D8] rounded-2xl p-8 shadow-[0_8px_30px_rgba(15,76,92,0.03)] hover:shadow-[0_20px_40px_rgba(201,124,106,0.08)] flex gap-5 group"
-              >
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-[#E8E1D8] flex items-center justify-center shrink-0 group-hover:bg-[#C97C6A] group-hover:border-[#C97C6A] transition-colors duration-300">
-                  <svg className="w-4 h-4 text-[#C97C6A] group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              { title: "Walking on eggshells", desc: "You constantly watch what you say to avoid triggering another argument." },
+              { title: "Emotional distance", desc: "You live together like roommates — the warmth and intimacy are gone." },
+              { title: "Repeating cycles", desc: "The same fights happen over and over but nothing ever truly resolves." },
+              { title: "Feeling unheard", desc: "You share feelings but your partner doesn't seem to understand or care." },
+              { title: "Communication breakdowns", desc: "Simple conversations spiral into silence or shouting matches." },
+              { title: "Fear of the future", desc: "You love each other but wonder if you&apos;re truly compatible long-term." },
+            ].map((p, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-2xl p-6 flex gap-4 items-start border transition-all"
+                style={{ borderColor: C.soft, boxShadow: '0 4px 20px rgba(232,24,90,0.05)' }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: C.blush }}>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </div>
                 <div>
-                  <b className="font-serif text-[#0F4C5C] text-[20px] block mb-2 group-hover:text-[#D98E48] transition-colors">{pain.title}</b>
-                  <p className="text-[#4A4540] text-[16px] leading-relaxed tracking-wide">{pain.desc}</p>
+                  <b className="block font-serif text-[17px] mb-1" style={{ color: C.crimson }}>{p.title}</b>
+                  <p className="text-[14.5px] leading-relaxed" style={{ color: C.muted }}>{p.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-          <motion.p variants={fadeInUp} className="text-center text-[#C97C6A] font-bold text-[22px] mt-16 tracking-wide font-serif italic">
-            It doesn't have to stay this way.
+
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            className="text-center font-serif italic text-[22px] mt-14" style={{ color: C.pink }}>
+            It doesn&apos;t have to stay this way.
           </motion.p>
-        </motion.div>
+        </div>
       </section>
 
-      {/* Transformation Section with 2D/3D Animated SVG Connection Line */}
-      <section className="bg-[#FAF6F0] py-24 px-4 border-t border-[#E8E1D8] relative overflow-hidden">
-        {/* Animated Background Connection Wave */}
-        <div className="absolute inset-0 pointer-events-none opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <motion.path 
-              d="M0,500 C300,800 700,200 1000,500" 
-              fill="none" 
-              stroke="url(#gradient)" 
-              strokeWidth="4"
-              initial={{ pathLength: 0, opacity: 0 }}
-              whileInView={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 3, ease: "easeInOut" }}
-              viewport={{ once: true }}
-            />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#C97C6A" stopOpacity="0" />
-                <stop offset="50%" stopColor="#C97C6A" stopOpacity="1" />
-                <stop offset="100%" stopColor="#0F4C5C" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+      {/* ══ BEFORE / AFTER ════════════════════════════════ */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <EyeBrow>The Transformation</EyeBrow>
+            <h2 className="text-[30px] md:text-[42px] font-serif font-bold" style={{ color: C.crimson }}>
+              What Happens When You Do The Work
+            </h2>
+          </div>
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="max-w-5xl mx-auto relative z-10"
-        >
-          <motion.h2 variants={fadeInUp} className="font-serif text-[40px] md:text-[52px] leading-[1.05] tracking-tight text-[#0F4C5C] text-center mb-16">
-            What happens when you do the work
-          </motion.h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 items-center">
             {/* Before */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-              className="bg-white rounded-[24px] p-10 shadow-sm border border-[#E8E1D8] relative"
-            >
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#E8E1D8] to-[#EFEAE4] rounded-t-[24px]"></div>
-              <h3 className="text-[14px] tracking-[0.15em] uppercase text-[#8C857D] font-bold mb-8">Before Counseling</h3>
-              <ul className="space-y-6">
-                {["Constant misunderstandings", "Feeling unappreciated", "Loneliness inside marriage", "Avoiding difficult conversations"].map((item, i) => (
-                  <li key={i} className="flex gap-4 text-[16px] text-[#4A4540]">
-                    <span className="text-[#A39C95] shrink-0 mt-0.5">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6" /></svg>
-                    </span> 
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
+              className="rounded-[22px] p-8 border" style={{ backgroundColor: '#FFF5F7', borderColor: C.soft }}>
+              <div className="w-full h-1.5 rounded-full mb-7" style={{ backgroundColor: C.soft }} />
+              <h3 className="text-[12px] tracking-[0.2em] uppercase font-bold mb-6" style={{ color: '#9B7080' }}>Before</h3>
+              <ul className="space-y-4">
+                {["Constant misunderstandings", "Feeling unseen & unheard", "Loneliness inside marriage", "Avoiding hard conversations", "Arguments that go nowhere"].map((item, i) => (
+                  <li key={i} className="flex gap-3 items-start text-[15px]" style={{ color: C.muted }}>
+                    <span className="mt-1 shrink-0 w-4 h-4 flex items-center justify-center text-[#C4A0B0]">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6" /></svg>
+                    </span>
                     {item}
                   </li>
                 ))}
               </ul>
             </motion.div>
-            
+
             {/* Arrow */}
-            <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, type: "spring" }}
-              className="w-14 h-14 rounded-full bg-white shadow-lg border border-[#E8E1D8] flex items-center justify-center text-[#C97C6A] z-10 rotate-90 md:rotate-0 mx-auto"
-            >
-              <motion.svg animate={{ x: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4, type: "spring" }}
+              className="w-12 h-12 rounded-full flex items-center justify-center mx-auto rotate-90 md:rotate-0"
+              style={{ backgroundColor: C.blush, border: `1.5px solid ${C.soft}` }}>
+              <motion.svg animate={{ x: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </motion.svg>
             </motion.div>
-            
+
             {/* After */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring", bounce: 0.4, delay: 0.2 }}
-              className="bg-white rounded-[24px] p-10 shadow-[0_20px_60px_rgba(201,124,106,0.15)] border border-[#E8E1D8] relative overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#C97C6A] to-[#D98E48] rounded-t-[24px]"></div>
-              
-              {/* Shine effect */}
-              <motion.div 
-                animate={{ x: ["-100%", "200%"] }} 
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 4 }}
-                className="absolute inset-0 w-[50%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12 pointer-events-none"
-              />
-              <h3 className="text-[14px] tracking-[0.15em] uppercase text-[#D98E48] font-bold mb-8">After Counseling</h3>
-              <ul className="space-y-6">
-                {["Clear, calm communication", "Feeling seen & valued", "Deep emotional intimacy", "Healthy conflict resolution"].map((item, i) => (
-                  <motion.li 
-                    key={i} 
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 + (i * 0.1) }}
-                    viewport={{ once: true }}
-                    className="flex gap-4 text-[16px] font-medium text-[#0F4C5C]"
-                  >
-                    <span className="text-[#C97C6A] shrink-0 mt-0.5">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    </span> 
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
+              className="rounded-[22px] p-8 border relative overflow-hidden"
+              style={{ backgroundColor: 'white', borderColor: C.soft, boxShadow: `0 20px 50px rgba(232,24,90,0.1)` }}>
+              <div className="w-full h-1.5 rounded-full mb-7" style={{ background: `linear-gradient(90deg, ${C.pink}, #FBBDD0)` }} />
+              <h3 className="text-[12px] tracking-[0.2em] uppercase font-bold mb-6" style={{ color: C.pink }}>After</h3>
+              <ul className="space-y-4">
+                {["Clear, calm communication", "Feeling seen & deeply valued", "Emotional intimacy restored", "Healthy conflict resolution", "A shared vision for the future"].map((item, i) => (
+                  <motion.li key={i} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 + i * 0.08 }}
+                    className="flex gap-3 items-start text-[15px] font-medium" style={{ color: C.crimson }}>
+                    <span className="mt-0.5 shrink-0">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
                     {item}
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
           </div>
-          
-          <motion.p variants={fadeInUp} className="text-center mt-16 text-[20px] text-[#2D2A26]">
-            You are one <b className="text-[#C97C6A] font-serif italic text-[24px]">honest conversation</b> away from a breakthrough.
-          </motion.p>
-        </motion.div>
+
+          <p className="text-center text-[19px] mt-12" style={{ color: C.text }}>
+            You are one <b className="font-serif italic text-[22px]" style={{ color: C.pink }}>honest conversation</b> away from a breakthrough.
+          </p>
+        </div>
       </section>
 
-      {/* Offer / Pricing Section - Ultra Luxe */}
-      <section className="bg-[#0F4C5C] text-[#F9F5F4] py-32 px-4 relative overflow-hidden">
-        {/* Luxury Radial Mesh Gradients */}
-        <div className="absolute inset-0 z-0">
-          <motion.div 
-            animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,rgba(201,124,106,0.3)_0%,transparent_50%)]"
-          />
-          <motion.div 
-            animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-0 left-1/4 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(217,142,72,0.15)_0%,transparent_60%)]"
-          />
-        </div>
-        
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <motion.span variants={fadeInUp} className="inline-block border border-white/20 rounded-full px-4 py-1.5 text-[#E8E1D8] text-[11px] tracking-[0.25em] uppercase font-bold mb-6">The Program</motion.span>
-            <motion.h2 variants={fadeInUp} className="text-[56px] md:text-[80px] font-black text-white leading-[0.9] tracking-tighter mb-8">
-              MARRY<span className="text-[#EBB985] italic font-serif pr-2 drop-shadow-[0_4px_12px_rgba(217,142,72,0.4)]">WISE</span>
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-[#9CAF88] text-[19px] leading-relaxed">
-              A complete structured framework for couples. We don't just talk about problems; we provide <b className="text-white font-medium border-b border-[#D98E48]/50 pb-0.5">practical psychological tools</b> to fix them.
-            </motion.p>
+      {/* ══ THERAPIST ══════════════════════════════════════ */}
+      <section className="py-24 px-4 text-white relative overflow-hidden" style={{ backgroundColor: C.crimson }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at top right, rgba(232,24,90,0.25) 0%, transparent 60%)' }} />
+
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-center relative z-10">
+          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            className="w-full md:w-[36%] shrink-0">
+            <div className="aspect-[4/5] rounded-[24px] overflow-hidden relative" style={{ boxShadow: '0 30px 60px rgba(0,0,0,0.4)' }}>
+              <Image src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" alt="Ranjini Vijith" fill sizes="(max-width: 768px) 100vw, 380px" className="object-cover" />
+              <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${C.crimson} 0%, transparent 55%)`, opacity: 0.9 }} />
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 mt-20 items-center text-left">
-            {/* Value Stack */}
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={staggerContainer}
-              className="flex flex-col gap-6"
-            >
-              <div className="flex flex-col gap-6">
-                {/* Item 1 */}
-                <motion.div variants={fadeInUp} whileHover={{ x: 10 }} className="bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm border-l-4 border-[#C97C6A] rounded-r-2xl p-6 flex gap-6 hover:bg-white/15 transition-all duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#C97C6A]/20 flex items-center justify-center shrink-0 shadow-inner border border-[#C97C6A]/30">
-                    <svg className="w-6 h-6 text-[#C97C6A]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
-                  </div>
-                  <div>
-                    <b className="font-serif text-white text-[22px] block mb-2">Relationship Assessment</b>
-                    <p className="text-[#9CAF88] text-[15.5px] leading-relaxed">Deep dive into your core relationship dynamics and hidden triggers.</p>
-                  </div>
-                </motion.div>
+          <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full md:w-[64%] space-y-5">
+            <div className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border text-[12px] tracking-[0.2em] uppercase"
+              style={{ borderColor: 'rgba(245,198,208,0.3)', backgroundColor: 'rgba(255,255,255,0.05)', color: '#F5C6D0' }}>
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: '#FBBDD0' }}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              Meet Your Therapist
+            </div>
 
-                {/* Item 2 */}
-                <motion.div variants={fadeInUp} whileHover={{ x: 10 }} className="bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm border-l-4 border-[#D98E48] rounded-r-2xl p-6 flex gap-6 hover:bg-white/15 transition-all duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#D98E48]/20 flex items-center justify-center shrink-0 shadow-inner border border-[#D98E48]/30">
-                    <svg className="w-6 h-6 text-[#D98E48]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                  </div>
-                  <div>
-                    <b className="font-serif text-white text-[22px] block mb-2">Communication Toolkits</b>
-                    <p className="text-[#9CAF88] text-[15.5px] leading-relaxed">Learn the exact scripts and methods to communicate without fighting.</p>
-                  </div>
-                </motion.div>
+            <h2 className="text-[38px] md:text-[50px] font-serif font-bold text-white">RANJINI VIJITH</h2>
+            <p className="font-medium tracking-wide text-[14px] uppercase" style={{ color: '#FBBDD0' }}>
+              Psychologist · Clinical Hypnotherapist<br />Relationship &amp; Marriage Therapist
+            </p>
+            <div className="w-14 h-px" style={{ backgroundColor: 'rgba(245,198,208,0.3)' }} />
+            <p className="text-[16px] leading-relaxed max-w-lg" style={{ color: '#F5C6D0' }}>
+              Relationship, emotional wellbeing, marriage &amp; personal growth മേഖലകളിൽ structured guidance നൽകുന്നു.
+            </p>
 
-                {/* Item 3 */}
-                <motion.div variants={fadeInUp} whileHover={{ x: 10 }} className="bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm border-l-4 border-[#C97C6A] rounded-r-2xl p-6 flex gap-6 hover:bg-white/15 transition-all duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#C97C6A]/20 flex items-center justify-center shrink-0 shadow-inner border border-[#C97C6A]/30">
-                    <svg className="w-6 h-6 text-[#C97C6A]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                  </div>
-                  <div>
-                    <b className="font-serif text-white text-[22px] block mb-2">Trust Rebuilding Framework</b>
-                    <p className="text-[#9CAF88] text-[15.5px] leading-relaxed">Step-by-step guidance to restore emotional safety and fidelity.</p>
-                  </div>
-                </motion.div>
+            {/* Credentials */}
+            <ul className="space-y-3 pt-2">
+              {[
+                "10+ years clinical experience in relationship & marriage therapy",
+                "Certified Clinical Hypnotherapist — specialised in emotional healing",
+                "Founder of ORUMA — a trusted mental wellness brand in Kerala",
+                "Trilingual sessions: Malayalam, English, Hindi",
+              ].map((c, i) => (
+                <li key={i} className="flex gap-3 items-start text-[14.5px]" style={{ color: '#F5C6D0' }}>
+                  <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ backgroundColor: C.pink }} />
+                  {c}
+                </li>
+              ))}
+            </ul>
 
-                {/* Item 4 */}
-                <motion.div variants={fadeInUp} whileHover={{ x: 10 }} className="bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm border-l-4 border-[#D98E48] rounded-r-2xl p-6 flex gap-6 hover:bg-white/15 transition-all duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#D98E48]/20 flex items-center justify-center shrink-0 shadow-inner border border-[#D98E48]/30">
-                    <svg className="w-6 h-6 text-[#D98E48]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                  </div>
-                  <div>
-                    <b className="font-serif text-white text-[22px] block mb-2">100% Confidentiality</b>
-                    <p className="text-[#9CAF88] text-[15.5px] leading-relaxed">A safe, non-judgmental space for both partners to be heard.</p>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {['Professional.', 'Confidential.', 'Compassionate.'].map(tag => (
+                <span key={tag} className="px-4 py-2 rounded-xl text-sm font-medium"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(245,198,208,0.15)', color: '#F5C6D0' }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="font-bold text-xl uppercase tracking-[0.3em] pt-2" style={{ color: 'rgba(255,255,255,0.3)' }}>ORUMA</p>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Buy Card with Ultra 3D Gold Hologram Effect */}
-            <motion.div 
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-              style={{ perspective: 1500 }}
-              className="sticky top-28 z-20"
-            >
-              <motion.div 
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                whileHover={{ rotateY: -4, rotateX: 4, scale: 1.03 }}
-                className="bg-white text-[#2D2A26] rounded-[24px] shadow-[0_40px_100px_rgba(15,76,92,0.3)] border border-[#EBB985]/50 overflow-hidden transform-gpu relative"
-              >
-                {/* 3D Holographic Inner Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-[#D98E48]/5 pointer-events-none"></div>
-                <div className="bg-gradient-to-r from-[#D98E48] to-[#EBB985] text-[#4A2C10] text-center font-extrabold text-[13.5px] py-2.5 tracking-[0.08em] uppercase relative overflow-hidden">
-                  <motion.div 
-                    animate={{ x: ["-100%", "100%"] }} 
-                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3 }}
-                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
-                  />
-                  Currently Accepting Couples
-                </div>
-                <div className="p-7 md:p-8">
-                  <h3 className="font-serif text-[22px] text-[#0F4C5C] font-bold text-center">Private 1:1 Session</h3>
-                  <div className="text-center my-5">
-                    <div className="text-[15px] font-medium text-[#4A4540] leading-relaxed px-4">
-                      Rebuild your foundation with our exclusive 60-minute private counseling sessions.
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-center mb-6">
-                  </div>
+      {/* ══ WHAT YOU'LL EXPLORE ════════════════════════════ */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <EyeBrow>What You&apos;ll Explore</EyeBrow>
+            <h2 className="text-[30px] md:text-[42px] font-serif font-bold" style={{ color: C.crimson }}>
+              What Happens in Your 1:1 Session
+            </h2>
+            <p className="text-[17px] max-w-xl mx-auto mt-4 font-light" style={{ color: C.muted }}>
+              A safe, guided 30-minute conversation to understand where you are and what you need.
+            </p>
+          </div>
 
-                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                    <a 
-                      href="https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-[#C97C6A] to-[#D98E48] text-white font-extrabold text-[17.5px] py-4 px-6 rounded-xl shadow-[0_14px_32px_rgba(201,124,106,0.3)] hover:shadow-[0_20px_40px_rgba(201,124,106,0.5)] transition-all w-full text-center relative overflow-hidden group"
-                    >
-                      <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-full group-hover:h-56 opacity-10"></span>
-                      <span className="relative tracking-wide">SECURE YOUR SLOT</span>
-                      <span className="text-[12px] font-medium opacity-90 font-normal relative">Book via WhatsApp / UPI</span>
-                    </a>
-                  </motion.div>
-
-                  <div className="grid grid-cols-3 gap-2 mt-8 text-center pt-6 border-t border-[#E8E1D8]">
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-[#FAF6F0] border border-[#E8E1D8] flex items-center justify-center">
-                        <svg className="w-4 h-4 text-[#C97C6A]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                      </div>
-                      <span className="text-[11.5px] text-[#4A4540] font-bold">100% Secure</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-[#FAF6F0] border border-[#E8E1D8] flex items-center justify-center">
-                        <svg className="w-4 h-4 text-[#D98E48]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                      </div>
-                      <span className="text-[11.5px] text-[#4A4540] font-bold">Private</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-[#FAF6F0] border border-[#E8E1D8] flex items-center justify-center">
-                        <svg className="w-4 h-4 text-[#C97C6A]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                      </div>
-                      <span className="text-[11.5px] text-[#4A4540] font-bold">Flexible</span>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: "💬", title: "Your Relationship Story", desc: "We listen to your journey — how you met, where you are now, and what feels stuck." },
+              { icon: "🧠", title: "Current Concerns", desc: "Communication gaps, emotional distance, family concerns, trust — we map it all out clearly." },
+              { icon: "🔮", title: "Future Questions", desc: "What do you want your relationship to look like? We help you visualise and plan for it." },
+              { icon: "👤", title: "Self-Understanding", desc: "Understand your own patterns, attachment style, and how it impacts your relationship." },
+              { icon: "🤝", title: "Expectations Alignment", desc: "Clarity on what you and your partner need from each other — without assumptions." },
+              { icon: "🗺️", title: "Your Next Step", desc: "You leave with a clear, personalised recommendation for your journey forward." },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
+                whileHover={{ y: -5 }}
+                className="rounded-2xl p-7 border transition-all"
+                style={{ backgroundColor: C.blush, borderColor: C.soft }}>
+                <div className="text-2xl mb-4">{item.icon}</div>
+                <h3 className="font-serif font-bold text-[18px] mb-2" style={{ color: C.crimson }}>{item.title}</h3>
+                <p className="text-[14px] leading-relaxed" style={{ color: C.muted }}>{item.desc}</p>
               </motion.div>
-            </motion.div>
+            ))}
           </div>
         </div>
       </section>
-      
+
+      {/* ══ TEXT TESTIMONIALS ══════════════════════════════ */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <EyeBrow>Client Reviews</EyeBrow>
+            <h2 className="text-[30px] md:text-[40px] font-serif font-bold" style={{ color: C.crimson }}>
+              What Couples Say
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Arun & Divya", role: "Married 2 years", text: "We were constantly arguing about small things. Ranjini helped us see the real patterns. Now we actually listen to each other.", initials: "AD" },
+              { name: "Priya M.", role: "Engaged", text: "Before our wedding I wanted to understand myself better. This session gave me more clarity than months of self-reflection alone.", initials: "P" },
+              { name: "Shyam & Meera", role: "Married 5 years", text: "We had drifted apart emotionally. The session was the turning point. We finally started talking — really talking.", initials: "SM" },
+            ].map((t, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl p-7 border relative" style={{ backgroundColor: '#FFF8FA', borderColor: C.soft }}>
+                <div className="text-5xl font-black leading-none mb-4 opacity-10 absolute top-4 left-5" style={{ color: C.pink }}>&ldquo;</div>
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, s) => <span key={s} className="text-yellow-400 text-sm">★</span>)}
+                </div>
+                <p className="italic text-[14px] leading-relaxed mb-5" style={{ color: C.muted }}>{t.text}</p>
+                <div className="flex items-center gap-3 border-t pt-4" style={{ borderColor: C.soft }}>
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-[12px] font-bold shrink-0"
+                    style={{ backgroundColor: C.pink }}>{t.initials}</div>
+                  <div>
+                    <p className="font-bold text-[13px]" style={{ color: C.crimson }}>{t.name}</p>
+                    <p className="text-[11px]" style={{ color: C.muted }}>{t.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ BOOKING / OFFER ════════════════════════════════ */}
+      <section id="booking" className="py-24 px-4" style={{ backgroundColor: C.blush }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            className="bg-white rounded-[32px] p-10 md:p-16 relative overflow-hidden border"
+            style={{ borderColor: C.soft, boxShadow: `0 24px 80px rgba(232,24,90,0.09)` }}>
+            <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'rgba(232,24,90,0.08)' }} />
+            <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: 'rgba(123,11,46,0.05)' }} />
+
+            <div className="text-center space-y-7 relative z-10">
+              <div>
+                <EyeBrow>Your First Step</EyeBrow>
+                <h2 className="text-[28px] md:text-[38px] font-serif font-bold" style={{ color: C.crimson }}>
+                  Private 1:1 Relationship<br className="hidden md:block" /> Discovery Session
+                </h2>
+              </div>
+
+              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border" style={{ backgroundColor: C.blush, borderColor: C.soft }}>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="font-bold tracking-wide text-[15px]" style={{ color: C.text }}>30 Minutes · Private · Online or In-Person</span>
+              </div>
+
+              <p className="text-[16px] leading-relaxed max-w-2xl mx-auto" style={{ color: C.muted }}>
+                <span className="font-bold" style={{ color: C.crimson }}>MARRyWISE</span> journey തുടങ്ങുന്നതിന് മുമ്പ് നിങ്ങളുടെ relationship, current concerns, expectations, communication, family concerns, future questions എന്നിവയെക്കുറിച്ച് ഒരു private conversation.
+              </p>
+
+              <div className="rounded-2xl p-6 border inline-block mx-auto" style={{ backgroundColor: 'rgba(253,232,239,0.6)', borderColor: C.soft }}>
+                <p className="font-serif italic text-[20px]" style={{ color: C.pink }}>
+                  <span className="font-bold">No judgement.</span> No pressure. Just clarity.
+                </p>
+              </div>
+
+              {/* Checklist */}
+              <ul className="text-left grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+                {["Understand your relationship patterns", "Identify communication gaps", "Align on future expectations", "Gain clarity with no pressure", "100% confidential conversation", "Personalised next-step recommendation"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-[14.5px]" style={{ color: C.muted }}>
+                    <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="pt-2">
+                <CTAButton text="[ BOOK MY 1:1 SESSION ]" sub="Limited slots available — Book via WhatsApp" />
+              </div>
+
+              {/* Trust row */}
+              <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-[12px] font-medium border-t" style={{ borderColor: C.soft, color: C.muted }}>
+                <span className="flex items-center gap-1.5"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg> 100% Secure</span>
+                <span className="flex items-center gap-1.5"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> Private Session</span>
+                <span className="flex items-center gap-1.5"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: C.pink }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> Flexible Timing</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══ FAQ ════════════════════════════════════════════ */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <EyeBrow>FAQ</EyeBrow>
+            <h2 className="text-[30px] md:text-[40px] font-serif font-bold" style={{ color: C.crimson }}>
+              Common Questions
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {faqs.map((f, i) => (
+              <div key={i} className="rounded-xl border overflow-hidden transition-all"
+                style={{ borderColor: openFaq === i ? C.pink : C.soft }}>
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-[15px]"
+                  style={{ color: C.crimson }}>
+                  {f.q}
+                  <span className="w-7 h-7 shrink-0 rounded-full flex items-center justify-center border text-[18px] font-bold transition-all"
+                    style={{ borderColor: openFaq === i ? C.pink : C.soft, backgroundColor: openFaq === i ? C.pink : C.blush, color: openFaq === i ? 'white' : C.pink, transform: openFaq === i ? 'rotate(45deg)' : 'none' }}>
+                    +
+                  </span>
+                </button>
+                <div style={{ maxHeight: openFaq === i ? '400px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease' }}>
+                  <p className="px-6 pb-5 text-[14.5px] leading-relaxed border-t pt-4" style={{ color: C.muted, borderColor: C.soft }}>{f.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ FINAL CTA ══════════════════════════════════════ */}
+      <section className="py-24 px-4 text-center text-white relative overflow-hidden" style={{ backgroundColor: C.crimson }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at bottom, rgba(232,24,90,0.2) 0%, transparent 65%)' }} />
+        <div className="max-w-3xl mx-auto space-y-8 relative z-10">
+          <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center"
+            style={{ backgroundColor: 'rgba(245,198,208,0.15)', border: '1px solid rgba(245,198,208,0.3)' }}>
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: '#FBBDD0' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+
+          <h3 className="text-[12px] tracking-[0.25em] font-bold uppercase" style={{ color: '#FBBDD0' }}>One Question To Begin With</h3>
+
+          <p className="text-[26px] md:text-[34px] font-serif font-medium leading-snug italic px-4 text-white">
+            &ldquo;We love each other. But are we truly prepared to build a life together?&rdquo;
+          </p>
+
+          <div className="w-12 h-px mx-auto" style={{ backgroundColor: 'rgba(245,198,208,0.3)' }} />
+
+          <p className="text-[18px]" style={{ color: '#F5C6D0' }}>
+            If that question made you pause…<br />
+            <span className="font-semibold text-white">Maybe this journey is for you.</span>
+          </p>
+
+          <div className="space-y-3">
+            <h4 className="text-[20px] font-serif font-bold tracking-tight text-white">MARRyWISE</h4>
+            <div className="inline-block px-8 py-4 rounded-full border" style={{ backgroundColor: 'rgba(255,255,255,0.05)', borderColor: 'rgba(245,198,208,0.2)' }}>
+              <p className="font-bold tracking-widest text-[13px] uppercase" style={{ color: '#FBBDD0' }}>
+                <span className="text-white">LOVE IS THE BEGINNING.</span><br />MARRIAGE IS THE JOURNEY.
+              </p>
+            </div>
+          </div>
+
+          <div className="pb-4">
+            <CTAButton text="[ BOOK YOUR 30-MINUTE 1:1 SESSION ]" />
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
