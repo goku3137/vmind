@@ -11,8 +11,8 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/wp-content/uploads/2026/02/Untitled-design-85.png" 
-            alt="Hero Background" 
+            src="/images/ranjini_group_therapy.jpg" 
+            alt="ORUMA Therapy Session Background" 
             fill 
             sizes="100vw"
             className="object-cover object-top"
@@ -118,7 +118,7 @@ export default function Home() {
           <AnimatedSection animation="fadeInRight" className="flex flex-col items-center">
             <div className="relative w-full aspect-[4/3] max-w-lg mx-auto group">
               <Image 
-                src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" 
+                src="/images/ranjini_desk.jpg" 
                 alt="Therapist Ranjini Vijith"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -136,8 +136,8 @@ export default function Home() {
 
       {/* Available 24/7 Section */}
       <section className="w-full relative py-24 bg-[#19A67A] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image src="/wp-content/uploads/2026/02/IMG_8055.JPG-scaled.jpeg" alt="Background" fill sizes="100vw" className="object-cover" priority />
+        <div className="absolute inset-0 opacity-30">
+          <Image src="/images/ranjini_speaking.jpg" alt="Ranjini Speaking Background" fill sizes="100vw" className="object-cover" priority />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <AnimatedSection animation="fadeInLeft" className="space-y-6">
