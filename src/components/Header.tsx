@@ -50,16 +50,29 @@ export function Header() {
         <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div className="logo flex items-center">
-          <Link href="/">
-            <Image 
-              src="/wp-content/uploads/2026/02/Untitled-design-86.png" 
-              alt="VMind Counselling Center" 
-              width={40}
-              height={40}
-              priority
-              className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover p-0.5 bg-white shadow-sm"
-            />
-          </Link>
+          {isMarriageCouncilPage ? (
+            <Link href="/" className="block">
+              <Image 
+                src="/images/together_gently_logo.png" 
+                alt="Together, Gently" 
+                width={200}
+                height={60}
+                priority
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            </Link>
+          ) : (
+            <Link href="/">
+              <Image 
+                src="/wp-content/uploads/2026/02/Untitled-design-86.png" 
+                alt="VMind Counselling Center" 
+                width={40}
+                height={40}
+                priority
+                className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover p-0.5 bg-white shadow-sm"
+              />
+            </Link>
+          )}
         </div>
 
         {/* Desktop Navigation */}
