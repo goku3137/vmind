@@ -62,6 +62,11 @@ export function Footer() {
                 <p className="text-white/40 uppercase tracking-widest text-xs font-bold">Connect</p>
                 <p className="text-white text-base font-light hover:text-[#D48C8C] transition-colors cursor-pointer">Email Us</p>
                 <p className="text-white text-base font-light hover:text-[#D48C8C] transition-colors cursor-pointer">+91 8157039987</p>
+                <div className="flex gap-4 pt-2 justify-start md:justify-end">
+                  <a href="https://www.instagram.com/ranjinivijith_psychologist?stkn=MXJpZGp1YWw3NngzMA==" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D48C8C] transition-colors">Instagram</a>
+                  <a href="https://www.facebook.com/share/19Nt53qCQ6/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D48C8C] transition-colors">Facebook</a>
+                  <a href="https://youtube.com/@orumacounselling?si=tCrLS43-AqY8q4OK" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D48C8C] transition-colors">YouTube</a>
+                </div>
               </div>
             </div>
 
@@ -140,6 +145,19 @@ export function Footer() {
                 +91 8157039987
               </li>
             </ul>
+            
+            <div className="pt-6">
+              <div className="flex items-center text-white tracking-widest text-sm uppercase font-bold mb-4">
+                <span className="w-8 h-[1px] bg-white mr-4"></span>
+                Follow Us
+              </div>
+              <div className="flex gap-4">
+                <a href="https://www.instagram.com/ranjinivijith_psychologist?stkn=MXJpZGp1YWw3NngzMA==" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FDB813] transition-colors text-sm font-bold tracking-wider">INSTAGRAM</a>
+                <a href="https://oruma.me" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FDB813] transition-colors text-sm font-bold tracking-wider">WEBSITE</a>
+                <a href="https://www.facebook.com/share/19Nt53qCQ6/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FDB813] transition-colors text-sm font-bold tracking-wider">FACEBOOK</a>
+                <a href="https://youtube.com/@orumacounselling?si=tCrLS43-AqY8q4OK" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FDB813] transition-colors text-sm font-bold tracking-wider">YOUTUBE</a>
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </div>
