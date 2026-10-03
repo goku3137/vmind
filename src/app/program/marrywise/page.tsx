@@ -51,14 +51,15 @@ export default function MarryWiseLandingPage() {
       {/* 2. HEADER */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b shadow-sm transition-all duration-300" style={{ borderColor: C.soft }}>
         <div className="max-w-[1080px] mx-auto px-4 md:px-6 flex items-center justify-between h-[72px]">
-          <a href="#top" className="flex items-center gap-3 no-underline group">
-            <div className="w-[42px] h-[42px] rounded-full flex items-center justify-center shadow-sm transition-transform group-hover:scale-105" style={{ backgroundColor: C.crimson }}>
-              <Heart size={18} className="text-white" fill="currentColor" />
-            </div>
-            <div className="flex flex-col">
-              <b className="font-serif text-[22px] tracking-tight leading-none" style={{ color: C.crimson }}>ORUMA</b>
-              <small className="text-[10px] tracking-[0.15em] uppercase leading-none mt-1 font-bold" style={{ color: C.muted }}>Workshop</small>
-            </div>
+          <a href="#top" className="flex items-center no-underline group">
+            <Image 
+              src="/images/together_gently_logo.png" 
+              alt="Together, Gently" 
+              width={160}
+              height={48}
+              priority
+              className="h-9 md:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </a>
           <nav className="hidden md:flex items-center gap-8 font-medium">
             <a href="#about" className="text-[14px] hover:text-[#E8185A] transition-colors" style={{ color: C.text }}>About</a>
@@ -85,6 +86,22 @@ export default function MarryWiseLandingPage() {
         <div className="max-w-[800px] mx-auto relative z-10">
           <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col items-center">
             
+            <motion.div variants={fadeInUp} className="mb-10 w-full flex flex-col items-center">
+              <h2 className="text-[20px] md:text-[24px] font-bold mb-6 text-center tracking-tight leading-relaxed max-w-[600px]" style={{ color: C.crimson }}>
+                വിവാഹത്തിന് മുമ്പ് നിങ്ങൾ ഈ കാര്യങ്ങളൊക്കെ സംസാരിച്ചിട്ടുണ്ടോ?
+              </h2>
+              <div className="w-full max-w-[320px] mx-auto rounded-[24px] overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.3)] border-[4px] border-white bg-black">
+                <video 
+                  src="/videos/oruma_short.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  controls
+                  className="w-full aspect-[9/16] object-cover"
+                />
+              </div>
+            </motion.div>
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-sm mb-8 font-semibold text-[13px] tracking-wide" style={{ border: `1px solid ${C.soft}`, color: C.crimson }}>
               <Star size={14} className="text-[#E8185A]" fill="currentColor" />
               An ORUMA Couple Workshop
@@ -98,39 +115,7 @@ export default function MarryWiseLandingPage() {
               <b style={{ color: C.crimson }}>ORUMA</b> — വിവാഹത്തിന് മുമ്പാണോ, പുതിയതായി വിവാഹിതരാണോ, അതോ long distance relationship ലാണോ? മൂന്നു സാഹചര്യത്തിലും therapist guided ആയി ORUMA നിങ്ങൾക്കൊപ്പമുണ്ട്.
             </motion.p>
 
-            {/* Collage from HTML */}
-            <motion.div variants={fadeInUp} className="relative flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-[200px_160px] gap-3 sm:gap-4 mt-2 mb-14 max-w-[540px] mx-auto z-20 w-full">
-              <div className="relative rounded-[24px] overflow-hidden shadow-md col-span-1 sm:row-span-2 aspect-[4/5] sm:aspect-auto bg-gray-100 group">
-                <img src="/images/new_traditional_couple.jpg" alt="Kerala wedding couple" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                <span className="absolute left-4 bottom-4 bg-white/95 text-[#7B0B2E] text-[12px] font-bold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
-                  <Heart size={14} className="text-[#E8185A]" fill="currentColor" /> Pre Marriage
-                </span>
-              </div>
-              <div className="relative rounded-[24px] overflow-hidden shadow-md aspect-[4/3] sm:aspect-auto bg-gray-100 group">
-                <img src="/images/new_kitchen_couple.jpg" alt="Newly married couple" className="w-full h-full object-cover object-center sm:object-top transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                <span className="absolute left-4 bottom-4 bg-white/95 text-[#7B0B2E] text-[12px] font-bold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
-                  <Users size={14} className="text-[#0E7C7B]" /> Newly Married
-                </span>
-              </div>
-              <div className="relative rounded-[24px] overflow-hidden shadow-md aspect-[4/3] sm:aspect-auto bg-gray-100 group">
-                <img src="/images/new_long_distance.jpg" alt="Long distance couple on video call" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                <span className="absolute left-4 bottom-4 bg-white/95 text-[#7B0B2E] text-[12px] font-bold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
-                  <MapPin size={14} className="text-[#E8185A]" /> Long Distance
-                </span>
-              </div>
-              <div className="absolute -right-6 -bottom-6 bg-white rounded-2xl p-4 px-5 shadow-xl text-[14px] flex gap-3 items-center z-10 border border-gray-100">
-                <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center bg-[#FDE8EF]">
-                  <MessageCircle size={18} className="text-[#E8185A]" />
-                </div>
-                <div className="flex flex-col text-left">
-                  <b className="text-[#7B0B2E] text-[14px] leading-tight font-bold">Therapist Guided</b>
-                  <span className="text-[#5C1528] text-[12px] font-medium leading-tight mt-0.5">Not just videos</span>
-                </div>
-              </div>
-            </motion.div>
+            {/* Individual photos have been moved below */}
 
             <motion.div variants={fadeInUp} className="w-full flex flex-col items-center">
               <motion.a href={WA} target="_blank" rel="noopener noreferrer" 
@@ -155,27 +140,16 @@ export default function MarryWiseLandingPage() {
 
       {/* 4. ABOUT ORUMA */}
       <section id="about" className="py-[50px] md:py-[80px] px-4 md:px-6 bg-white">
-        <div className="max-w-[1000px] mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div variants={fadeInUp} className="relative w-full max-w-[320px] mx-auto aspect-[9/16] rounded-[24px] overflow-hidden shadow-lg bg-gray-100">
-              <video 
-                src="/videos/oruma_short.mp4" 
-                className="w-full h-full object-cover" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                controls
-              ></video>
-            </motion.div>
+        <div className="max-w-[800px] mx-auto text-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger}>
             <motion.div variants={stagger}>
               <motion.p variants={fadeInUp} className="text-[13px] font-bold tracking-[0.18em] uppercase mb-4" style={{ color: C.pink }}>About ORUMA</motion.p>
               <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-6 leading-[1.2] tracking-tight" style={{ color: C.crimson }}>ORUMA — സന്തോഷമുള്ള ദാമ്പത്യത്തിലേക്കുള്ള വഴി</motion.h2>
-              <motion.p variants={fadeInUp} className="text-[15px] md:text-[17px] leading-[1.7] mb-8 font-medium" style={{ color: C.muted }}>
+              <motion.p variants={fadeInUp} className="text-[15px] md:text-[17px] leading-[1.7] mb-10 font-medium max-w-[700px] mx-auto" style={{ color: C.muted }}>
                 ORUMA ഒരു couple focused psychological support platform ആണ്. വിവാഹത്തിന് മുമ്പും ശേഷവും couples ന് വേണ്ട clarity, communication skills, emotional connection എന്നിവ qualified therapists ന്റെ guidance ലൂടെ നൽകുന്നു. <b className="font-bold" style={{ color: C.crimson }}>ORUMA</b> ഞങ്ങളുടെ signature couple workshop ആണ്.
               </motion.p>
               
-              <motion.div variants={stagger} className="grid grid-cols-3 gap-4">
+              <motion.div variants={stagger} className="grid grid-cols-3 gap-4 max-w-[600px] mx-auto">
                 <motion.div variants={fadeInUp} className="rounded-2xl p-5 text-center shadow-sm" style={{ backgroundColor: C.blush, border: `1px solid ${C.soft}` }}>
                   <b className="block font-serif text-[28px] mb-1" style={{ color: C.pink }}>500+</b>
                   <span className="text-[13px] font-semibold tracking-wide" style={{ color: C.muted }}>Couples guided</span>
@@ -242,6 +216,11 @@ export default function MarryWiseLandingPage() {
                 </motion.span>
               ))}
             </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-[50px] w-full max-w-[500px] mx-auto rounded-[24px] overflow-hidden shadow-md">
+              <Image src="/images/new_traditional_couple.jpg" alt="Pre marriage couple" width={500} height={600} style={{ width: '100%', height: 'auto' }} className="object-cover object-top" />
+            </motion.div>
+
           </motion.div>
         </div>
       </section>
@@ -289,6 +268,10 @@ export default function MarryWiseLandingPage() {
               നിങ്ങൾ കേരളത്തിലായാലും, Gulf, UK, Canada, USA, Australia അല്ലെങ്കിൽ ലോകത്തിന്റെ മറ്റേതെങ്കിലും ഭാഗത്തായാലും — partner മറ്റൊരു city/country ൽ ആണെങ്കിലും, രണ്ടുപേർക്കും ഒരുമിച്ച് online ആയി participate ചെയ്യാം.
             </p>
           </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-[40px] w-full max-w-[600px] mx-auto rounded-[24px] overflow-hidden shadow-md">
+            <Image src="/images/new_long_distance.jpg" alt="Long distance couple" width={600} height={400} style={{ width: '100%', height: 'auto' }} className="object-cover object-top" />
+          </motion.div>
         </div>
       </section>
 
@@ -301,14 +284,17 @@ export default function MarryWiseLandingPage() {
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="flex justify-center">
-            {/* Normal video (16:9) */}
+            {/* Native Video */}
             <motion.div variants={fadeInUp} className="w-full max-w-[800px] aspect-video rounded-[24px] overflow-hidden shadow-lg relative bg-white ring-1 ring-black/5" style={{ border: `6px solid white` }}>
-              <iframe
-                src="https://www.youtube.com/embed/o7ob0xhcLcY?rel=0&amp;modestbranding=1"
-                className="absolute inset-0 w-full h-full rounded-[18px]"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <video 
+                src="/videos/glimpse.mp4" 
+                className="w-full h-full object-cover rounded-[18px]" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                controls
+              ></video>
             </motion.div>
           </motion.div>
         </div>
@@ -319,7 +305,7 @@ export default function MarryWiseLandingPage() {
         <div className="max-w-[1000px] mx-auto text-center md:text-left">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={stagger}>
-              <motion.div variants={fadeInUp} className="text-[13px] font-bold mb-4 tracking-[0.15em] uppercase" style={{ color: '#FBBDD0' }}>WE DON&apos;T START WITH THE COURSE</motion.div>
+              <motion.div variants={fadeInUp} className="text-[13px] font-bold mb-4 tracking-[0.15em] uppercase" style={{ color: '#FBBDD0' }}>WE DON&apos;T START WITH THE PROGRAM</motion.div>
               <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-6 leading-[1.2] text-white tracking-tight">ഞങ്ങൾ തുടങ്ങുന്നത് നിങ്ങളെ മനസ്സിലാക്കിക്കൊണ്ടാണ്.</motion.h2>
               <motion.p variants={fadeInUp} className="text-[15px] md:text-[17px] mb-8 font-medium leading-relaxed" style={{ color: C.blush }}>
                 Program നേരിട്ട് videos കൊണ്ട് തുടങ്ങുന്നില്ല. ആദ്യം ഒരു <strong className="text-white font-bold bg-[#E8185A] px-2.5 py-1 rounded-md ml-1 shadow-sm">One to One Orientation Session</strong>. ഈ session ൽ നിങ്ങളുടെ —
@@ -339,8 +325,8 @@ export default function MarryWiseLandingPage() {
               </motion.p>
             </motion.div>
             
-            <motion.div variants={fadeInUp} className="hidden md:block w-full aspect-square rounded-[24px] overflow-hidden border-[6px] border-white/10 shadow-2xl relative bg-[#a04a63]">
-              <img src="/images/ranjini_desk.jpg" alt="Therapist talking" className="w-full h-full object-cover mix-blend-overlay opacity-90" />
+            <motion.div variants={fadeInUp} className="hidden md:block w-full aspect-square rounded-[24px] overflow-hidden border-[6px] border-white/10 shadow-2xl relative">
+              <Image src="/images/ranjini_desk.jpg" alt="Therapist talking" fill className="object-cover" />
             </motion.div>
           </motion.div>
         </div>
@@ -376,7 +362,7 @@ export default function MarryWiseLandingPage() {
               <span>Learn</span><span className="font-normal italic" style={{ color: '#D4A5B5' }}>→</span>
               <span>Reflect</span><span className="font-normal italic" style={{ color: '#D4A5B5' }}>→</span>
               <span>Discuss</span><span className="font-normal italic" style={{ color: '#D4A5B5' }}>→</span>
-              <span>Practise</span>
+              <span>Practice </span>
             </motion.div>
           </motion.div>
         </div>
@@ -388,14 +374,14 @@ export default function MarryWiseLandingPage() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger}>
             <motion.p variants={fadeInUp} className="text-[13px] font-bold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: C.pink }}>Why choose ORUMA?</motion.p>
             <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-5 leading-[1.2] text-center tracking-tight" style={{ color: C.crimson }}>എന്തുകൊണ്ട് ORUMA?</motion.h2>
-            <motion.p variants={fadeInUp} className="text-[15px] md:text-[17px] text-center max-w-[700px] mx-auto mb-12 font-medium leading-relaxed" style={{ color: C.muted }}>ഇത് വെറും ഒരു online course അല്ല. Generic marriage tips അല്ല — നിങ്ങൾ രണ്ടുപേർക്കും വേണ്ടി personalise ചെയ്ത ഒരു journey.</motion.p>
+            <motion.p variants={fadeInUp} className="text-[15px] md:text-[17px] text-center max-w-[700px] mx-auto mb-12 font-medium leading-relaxed" style={{ color: C.muted }}>ഇത് വെറും ഒരു online program അല്ല. Generic marriage tips അല്ല — നിങ്ങൾ രണ്ടുപേർക്കും വേണ്ടി personalise ചെയ്ത ഒരു journey.</motion.p>
             
             <motion.div variants={stagger} className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: <CheckCircle2 size={24} className="text-[#E8185A]" />, title: "Qualified Therapists", text: "Trained psychologists & relationship counsellors ആണ് ഓരോ session ഉം guide ചെയ്യുന്നത്." },
                 { icon: <CheckCircle2 size={24} className="text-[#E8185A]" />, title: "Personalised Journey", text: "Orientation ൽ നിങ്ങളെ മനസ്സിലാക്കിയ ശേഷം മാത്രം program plan ചെയ്യുന്നു." },
                 { icon: <MessageCircle size={24} className="text-[#E8185A]" />, title: "നമ്മുടെ ഭാഷയിൽ", text: "Malayalam ൽ, Kerala family culture മനസ്സിലാക്കി — comfortable ആയി സംസാരിക്കാം." },
-                { icon: <Users size={24} className="text-[#E8185A]" />, title: "Both Partners Together", text: "രണ്ടുപേരും ഒരുമിച്ച് പഠിക്കുന്നു, സംസാരിക്കുന്നു, practise ചെയ്യുന്നു." },
+                { icon: <Users size={24} className="text-[#E8185A]" />, title: "Both Partners Together", text: "രണ്ടുപേരും ഒരുമിച്ച് പഠിക്കുന്നു, സംസാരിക്കുന്നു, practice ചെയ്യുന്നു." },
                 { icon: <Shield size={24} className="text-[#E8185A]" />, title: "100% Confidential", text: "നിങ്ങളുടെ കാര്യങ്ങൾ നിങ്ങൾക്കിടയിൽ മാത്രം. No judgement." },
                 { icon: <MapPin size={24} className="text-[#E8185A]" />, title: "Anywhere, Anytime", text: "Kerala, Gulf, abroad — online ആയി എവിടെ നിന്നും join ചെയ്യാം." }
               ].map((item, i) => (
@@ -415,7 +401,11 @@ export default function MarryWiseLandingPage() {
         <div className="max-w-[800px] mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={fadeInUp} className="text-[13px] font-bold mb-4 tracking-[0.15em] uppercase text-center md:text-left" style={{ color: C.pink }}>WHAT MAKES THIS DIFFERENT</motion.div>
-            <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-10 leading-[1.2] text-center md:text-left tracking-tight" style={{ color: C.crimson }}>ഇത് വെറും ഒരു online course അല്ല.</motion.h2>
+            <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-10 leading-[1.2] text-center md:text-left tracking-tight" style={{ color: C.crimson }}>ഇത് വെറും ഒരു online program അല്ല.</motion.h2>
+            
+            <motion.div variants={fadeInUp} className="mb-[40px] w-full max-w-[500px] mx-auto rounded-[24px] overflow-hidden shadow-md">
+              <Image src="/images/new_kitchen_couple.jpg" alt="Newly married couple" width={500} height={600} style={{ width: '100%', height: 'auto' }} className="object-cover object-top" />
+            </motion.div>
             
             <motion.div variants={fadeInUp} className="flex flex-col gap-4 mt-6">
               <div className="flex gap-4 bg-white/80 rounded-[20px] p-6 items-center justify-center md:justify-start" style={{ border: `1px solid ${C.soft}` }}>
@@ -462,6 +452,20 @@ export default function MarryWiseLandingPage() {
             </motion.div>
           </motion.div>
         </div>
+      </section>
+
+      {/* 14.5 NEW COUPLE IMAGE */}
+      <section className="py-[30px] px-4 md:px-6 flex justify-center bg-white">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <Image
+            src="/images/couple.jpg"
+            alt="Happy couple in traditional wedding attire"
+            width={600}
+            height={750}
+            className="rounded-[24px] shadow-lg object-cover"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </motion.div>
       </section>
 
       {/* 15. BONUS OFFER */}
@@ -695,9 +699,10 @@ export default function MarryWiseLandingPage() {
             </div>
             <div>
               <h4 className="text-white font-bold text-[15px] md:text-[17px] mb-6">Follow</h4>
-              <a href="#" className="block mb-4 hover:text-white transition-colors text-[15px]">Instagram</a>
-              <a href="#" className="block mb-4 hover:text-white transition-colors text-[15px]">Facebook</a>
-              <a href="#" className="block hover:text-white transition-colors text-[15px]">YouTube</a>
+              <a href="https://www.instagram.com/ranjinivijith_psychologist?stkn=MXJpZGp1YWw3NngzMA==" target="_blank" rel="noopener noreferrer" className="block mb-4 hover:text-white transition-colors text-[15px]">Instagram</a>
+              <a href="https://oruma.me" target="_blank" rel="noopener noreferrer" className="block mb-4 hover:text-white transition-colors text-[15px]">Website (oruma.me)</a>
+              <a href="https://www.facebook.com/share/19Nt53qCQ6/" target="_blank" rel="noopener noreferrer" className="block mb-4 hover:text-white transition-colors text-[15px]">Facebook</a>
+              <a href="https://youtube.com/@orumacounselling?si=tCrLS43-AqY8q4OK" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors text-[15px]">YouTube</a>
             </div>
           </div>
           <div className="border-t border-white/10 mt-[60px] pt-[30px] text-center text-[13px] opacity-70">

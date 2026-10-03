@@ -11,11 +11,12 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/ranjini_group_therapy.jpg" 
+            src="/images/ranjini_desk.jpg" 
             alt="ORUMA Therapy Session Background" 
             fill 
             sizes="100vw"
-            className="object-cover object-top"
+            className="object-cover object-[center_30%]"
+            quality={100}
             priority
           />
           {/* Subtle gradient overlay to make text readable */}
