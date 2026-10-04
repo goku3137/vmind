@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description: 'Explore psychology, coaching, mindset transformation, and wellness programs offered by ORUMA.',
 };
 
-export default function CoursesListPage() {
+export default function ProgramsListPage() {
   const programs = [
     {
       category: "Relationship & Marriage",
       name: "MARRYWISE",
       desc: "Marriage & Relationship Transformation Program for couples who want to rebuild trust and connection.",
-      link: "/course/marrywise", 
+      link: "/program/marrywise", 
       status: "Limited Slots",
       isActive: true
     },
@@ -158,7 +158,7 @@ export default function CoursesListPage() {
           </p>
         </AnimatedSection>
         
-        {/* Course Grid */}
+        {/* Program Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
           {programs.map((program, idx) => (
             <AnimatedSection 
