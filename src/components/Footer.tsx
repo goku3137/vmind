@@ -6,15 +6,15 @@ import { usePathname } from 'next/navigation';
 
 export function Footer() {
   const pathname = usePathname();
-  const isPremiumPage = pathname === '/course' || pathname === '/course/marrywise';
-  const isMarriageCouncilPage = pathname === '/course/marrywise';
-  const isCourseListPage = pathname === '/course';
+  const isPremiumPage = pathname === '/program' || pathname === '/program/marrywise';
+  const isMarriageCouncilPage = pathname === '/program/marrywise';
+  const isProgramListPage = pathname === '/program';
   
-  const footerBg = isMarriageCouncilPage ? 'bg-[#7B0B2E] border-[#F5C6D0]/20' : isCourseListPage ? 'bg-[#302A35] border-[#D8C7B8]/20' : 'bg-[#0B7A75] border-[#148C66]';
-  const glowColor = isMarriageCouncilPage ? 'bg-[#E8185A]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#19A67A]';
-  const brandColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isCourseListPage ? 'text-[#5F7A6A]' : 'text-[#F4E6E3]';
-  const lineBg = isMarriageCouncilPage ? 'bg-[#E8185A]' : isCourseListPage ? 'bg-[#5F7A6A]' : 'bg-[#F4E6E3]';
-  const buttonBg = isMarriageCouncilPage ? 'bg-[#E8185A] text-white hover:bg-[#c9114a] shadow-[0_0_20px_rgba(232,24,90,0.3)] hover:shadow-[0_0_30px_rgba(232,24,90,0.5)]' : isCourseListPage ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
+  const footerBg = isMarriageCouncilPage ? 'bg-[#7B0B2E] border-[#F5C6D0]/20' : isProgramListPage ? 'bg-[#302A35] border-[#D8C7B8]/20' : 'bg-[#0B7A75] border-[#148C66]';
+  const glowColor = isMarriageCouncilPage ? 'bg-[#E8185A]' : isProgramListPage ? 'bg-[#5F7A6A]' : 'bg-[#19A67A]';
+  const brandColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isProgramListPage ? 'text-[#5F7A6A]' : 'text-[#F4E6E3]';
+  const lineBg = isMarriageCouncilPage ? 'bg-[#E8185A]' : isProgramListPage ? 'bg-[#5F7A6A]' : 'bg-[#F4E6E3]';
+  const buttonBg = isMarriageCouncilPage ? 'bg-[#E8185A] text-white hover:bg-[#c9114a] shadow-[0_0_20px_rgba(232,24,90,0.3)] hover:shadow-[0_0_30px_rgba(232,24,90,0.5)]' : isProgramListPage ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
   const footerLink = isMarriageCouncilPage ? 'https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling' : '/contact';
 
   if (isPremiumPage) {
@@ -30,7 +30,7 @@ export function Footer() {
           {[...Array(300)].map((_, i) => (
             <div 
               key={i} 
-              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#E8185A]/10 hover:bg-[#E8185A]/20' : isCourseListPage ? 'border-[#5F7A6A]/10 hover:bg-[#5F7A6A]/30' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
+              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#E8185A]/10 hover:bg-[#E8185A]/20' : isProgramListPage ? 'border-[#5F7A6A]/10 hover:bg-[#5F7A6A]/30' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
             />
           ))}
         </div>
@@ -46,7 +46,7 @@ export function Footer() {
             <div className="max-w-2xl pointer-events-auto">
               <h3 className={`${brandColor} uppercase tracking-[0.2em] text-sm font-bold mb-4 flex items-center`}>
                 <span className={`w-8 h-[1px] mr-4 ${lineBg}`}></span>
-                VMIND COUNSELLING
+                ORUMA COUNSELLING
               </h3>
               <p className="text-2xl md:text-4xl font-light text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
                 Your mind is your most powerful tool.<br />Let us help you sharpen it.
@@ -81,7 +81,7 @@ export function Footer() {
                 </span>
               ) : (
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/30">
-                  {isCourseListPage ? 'ORUMA PATHWAYS.' : 'MASTER YOUR MIND.'}
+                  {isProgramListPage ? 'ORUMA PATHWAYS.' : 'MASTER YOUR MIND.'}
                 </span>
               )}
             </h2>
