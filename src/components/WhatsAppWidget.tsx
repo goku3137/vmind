@@ -1,9 +1,16 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export function WhatsAppWidget() {
   const [isHovered, setIsHovered] = useState(false);
+  const pathname = usePathname();
+
+  // Hide the floating widget on the marrywise page as it has its own CTAs
+  if (pathname === '/program/marrywise') {
+    return null;
+  }
 
   return (
     <div 
