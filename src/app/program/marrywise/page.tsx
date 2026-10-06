@@ -105,15 +105,19 @@ export default function MarryWiseLandingPage() {
             </motion.div>
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-sm mb-8 font-semibold text-[13px] tracking-wide" style={{ border: `1px solid ${C.soft}`, color: C.crimson }}>
               <Star size={14} className="text-[#E8185A]" fill="currentColor" />
-              An ORUMA Couple Workshop
+              MARRYWISE
             </motion.div>
 
-            <motion.h1 variants={fadeInUp} className="text-[32px] sm:text-[40px] md:text-[52px] font-serif font-bold leading-[1.2] mb-[24px] max-w-[700px] mx-auto tracking-tight" style={{ color: C.crimson }}>
-              സ്നേഹം മാത്രം പോരാ. <em className="italic font-medium pr-1" style={{ color: C.pink }}>ഒരുമിച്ച്</em> ഒരു ജീവിതം build ചെയ്യാനും തയ്യാറാകണം.
+            <motion.h1 variants={fadeInUp} className="text-[32px] sm:text-[40px] md:text-[52px] font-serif font-bold leading-[1.2] mb-[16px] max-w-[700px] mx-auto tracking-tight" style={{ color: C.crimson }}>
+              Build a Healthier, Happier Relationship
             </motion.h1>
 
+            <motion.p variants={fadeInUp} className="text-[16px] md:text-[20px] font-bold mb-[24px] tracking-wide uppercase" style={{ color: C.pink }}>
+              Guidance | Clarity | Lasting Change
+            </motion.p>
+
             <motion.p variants={fadeInUp} className="text-[15px] sm:text-[16px] md:text-[18px] leading-[1.7] max-w-[640px] mx-auto mb-[40px] font-medium" style={{ color: C.muted }}>
-              <b style={{ color: C.crimson }}>ORUMA</b> — വിവാഹത്തിന് മുമ്പാണോ, പുതിയതായി വിവാഹിതരാണോ, അതോ long distance relationship ലാണോ? മൂന്നു സാഹചര്യത്തിലും therapist guided ആയി ORUMA നിങ്ങൾക്കൊപ്പമുണ്ട്.
+              Relationship &amp; Marriage-നെ കുറിച്ച് practical guidance നേടാനും, നിങ്ങളുടെ journey-ന് അനുയോജ്യമായ next step തിരഞ്ഞെടുക്കാനും.
             </motion.p>
 
             {/* Individual photos have been moved below */}
@@ -639,91 +643,168 @@ export default function MarryWiseLandingPage() {
       </section>
 
       {/* 20. PRICING / BOOKING */}
-      <section id="book" className="py-[50px] md:py-[80px] px-4 md:px-6">
-        <div className="max-w-[800px] mx-auto">
+      <section id="book" className="py-[60px] md:py-[100px] px-4 md:px-6 bg-white relative">
+        <div className="max-w-[1000px] mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeInUp} className="text-[13px] font-bold mb-4 tracking-[0.15em] uppercase text-center" style={{ color: C.pink }}>YOUR NEXT STEP</motion.div>
-            <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-6 leading-[1.2] text-center tracking-tight" style={{ color: C.crimson }}>Book Your One to One Orientation</motion.h2>
-            <motion.p variants={fadeInUp} className="text-[15px] md:text-[17px] mb-12 font-medium leading-relaxed text-center max-w-[640px] mx-auto" style={{ color: C.muted }}>
-              നിങ്ങളുടെ relationship നെക്കുറിച്ച് സംസാരിക്കാനും, program എങ്ങനെ നിങ്ങളെ guide ചെയ്യുമെന്ന് മനസ്സിലാക്കാനും — ഇപ്പോൾ തന്നെ session book ചെയ്യൂ.
-            </motion.p>
+            
+            <motion.div variants={fadeInUp} className="text-center mb-16">
+              <div className="inline-block text-[13px] font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6 border" style={{ color: C.pink, borderColor: C.soft }}>YOUR NEXT STEP</div>
+              <h2 className="font-serif text-[32px] sm:text-[40px] md:text-[48px] font-bold mb-6 leading-[1.2] tracking-tight" style={{ color: C.crimson }}>Choose Your MarryWise Journey</h2>
+              <p className="text-[16px] md:text-[18px] font-medium leading-relaxed max-w-[600px] mx-auto" style={{ color: C.muted }}>
+                നിങ്ങളുടെ relationship &amp; marriage journey-ൽ നിങ്ങൾക്ക് ആവശ്യമുള്ള option തിരഞ്ഞെടുക്കാം.
+              </p>
+            </motion.div>
 
-            <motion.div variants={fadeInUp} className="rounded-[32px] p-[48px_32px] md:p-[64px_48px] text-center shadow-[0_20px_60px_rgba(123,11,46,0.15)] relative overflow-hidden mb-12" style={{ backgroundColor: C.crimson }}>
-              {/* Decorative background glow */}
-              <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none opacity-20 -translate-y-1/2 translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
-              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full blur-[80px] pointer-events-none opacity-10 translate-y-1/2 -translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
-
-              <div className="relative z-10 max-w-[500px] mx-auto">
-                <div className="text-[13px] font-bold tracking-[0.18em] uppercase mb-6 inline-block bg-white/10 px-5 py-2 rounded-full" style={{ color: '#FBBDD0' }}>ORUMA ORIENTATION SESSION</div>
-                <div className="mb-3">
-                  <span className="bg-[#E8185A] text-white text-[12px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(232,24,90,0.4)] border border-[#ff4d85]">🔥 Only 5 Slots Left</span>
-                </div>
-                <h3 className="font-serif text-[26px] sm:text-[30px] md:text-[36px] font-bold mb-[20px] text-white">One to One Orientation</h3>
+            {/* TWO OPTIONS */}
+            <motion.div variants={stagger} className="grid md:grid-cols-2 gap-8 mb-[80px]">
+              
+              {/* Option 1: Webinar */}
+              <motion.div variants={fadeInUp} className="rounded-[32px] p-8 md:p-10 text-center shadow-[0_20px_50px_rgba(123,11,46,0.15)] flex flex-col relative overflow-hidden" style={{ backgroundColor: C.crimson }}>
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[80px] pointer-events-none opacity-20 -translate-y-1/2 translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
+                <div className="absolute bottom-0 left-0 w-[200px] h-[200px] rounded-full blur-[60px] pointer-events-none opacity-10 translate-y-1/2 -translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
                 
-                <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="font-serif text-[32px] md:text-[40px] font-bold text-white/50 line-through leading-none">₹2,500</div>
-                  <div className="font-serif text-[64px] font-bold text-white leading-none">₹1,499</div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="mb-8">
+                    <span className="bg-white/10 text-white/90 text-[12px] font-bold uppercase tracking-widest px-5 py-2 rounded-full border border-white/10">Option 1</span>
+                  </div>
+                  
+                  <h3 className="font-serif text-[28px] md:text-[32px] font-bold mb-2 text-white">MARRYWISE WEBINAR</h3>
+                  <div className="text-[13px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: '#FBBDD0' }}>Learn &amp; Explore</div>
+                  
+                  <div className="font-serif text-[56px] md:text-[64px] font-bold tracking-tight mb-8 leading-none text-white drop-shadow-md">₹499</div>
+                  
+                  <p className="text-[15px] md:text-[16px] font-medium mb-10 leading-relaxed text-left text-white/90 flex-grow">
+                    Relationship &amp; Marriage-നെ കുറിച്ച് കൂടുതൽ learn ചെയ്യാനും, MarryWise Program എന്താണെന്ന് മനസ്സിലാക്കാനും, ഇത് നിങ്ങൾക്ക് suitable ആണോ എന്ന് decide ചെയ്യാനും webinar-ൽ പങ്കെടുക്കാം.
+                  </p>
+                  
+                  <div className="bg-black/20 rounded-[20px] p-6 mb-10 text-left border border-white/5 backdrop-blur-sm">
+                    <div className="font-bold text-[14px] mb-3 text-white flex items-center gap-2"><Star size={16} className="text-[#FBBDD0]"/> Best for you if:</div>
+                    <p className="text-[14.5px] font-medium leading-relaxed m-0 text-white/80">ആദ്യം program മനസ്സിലാക്കി, ശേഷം നിങ്ങളുടെ next step decide ചെയ്യാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ.</p>
+                  </div>
+                  
+                  <a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer"
+                    className="w-full text-white font-bold text-[16px] py-[20px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.4)] transition-all hover:scale-[1.02] flex items-center justify-center gap-2 border border-[#ff4d85]/30"
+                    style={{ backgroundColor: C.pink }}>
+                    JOIN ₹499 WEBINAR <ArrowRight size={20} />
+                  </a>
                 </div>
+              </motion.div>
 
-                <div className="text-[15px] font-medium mb-10 mt-5 bg-black/20 inline-block px-5 py-1.5 rounded-full text-white/90">One time · 60 minute private session</div>
-
-                <div className="text-left flex flex-col gap-5 my-[40px] text-[16px] font-medium text-white/95 bg-white/10 p-8 rounded-[24px] backdrop-blur-sm border border-white/15">
-                  {[
-                    "60 min private session, online",
-                    "Understand your relationship stage & goals",
-                    "A guided walkthrough of your personalized journey",
-                    "Both partners can join, from anywhere"
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-4 items-start">
-                      <CheckCircle2 size={20} className="text-[#FBBDD0] shrink-0 mt-0.5" />
-                      <span className="leading-snug">{item}</span>
-                    </div>
-                  ))}
+              {/* Option 2: 1-to-1 */}
+              <motion.div variants={fadeInUp} className="rounded-[32px] p-8 md:p-10 text-center shadow-[0_20px_50px_rgba(123,11,46,0.15)] flex flex-col relative overflow-hidden" style={{ backgroundColor: C.crimson }}>
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[80px] pointer-events-none opacity-20 -translate-y-1/2 translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
+                <div className="absolute bottom-0 left-0 w-[200px] h-[200px] rounded-full blur-[60px] pointer-events-none opacity-10 translate-y-1/2 -translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="mb-8">
+                    <span className="bg-white/10 text-white/90 text-[12px] font-bold uppercase tracking-widest px-5 py-2 rounded-full border border-white/10">Option 2</span>
+                  </div>
+                  
+                  <h3 className="font-serif text-[28px] md:text-[32px] font-bold mb-2 text-white">ONE-TO-ONE GUIDANCE</h3>
+                  <div className="text-[13px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: '#FBBDD0' }}>Personalised Guidance</div>
+                  
+                  <div className="flex items-center justify-center gap-4 mb-8">
+                    <div className="font-serif text-[24px] md:text-[28px] font-bold line-through opacity-40 text-white drop-shadow-sm">₹2,500</div>
+                    <div className="font-serif text-[56px] md:text-[64px] font-bold tracking-tight leading-none text-white drop-shadow-md">₹1,499</div>
+                  </div>
+                  
+                  <p className="text-[15px] md:text-[16px] font-medium mb-10 leading-relaxed text-left text-white/90 flex-grow">
+                    നിങ്ങളുടെ personal relationship / marriage situation നേരിട്ട് discuss ചെയ്ത്, നിങ്ങളുടെ specific situation അനുസരിച്ചുള്ള personalised guidance നേടാം.
+                  </p>
+                  
+                  <div className="bg-black/20 rounded-[20px] p-6 mb-10 text-left border border-white/5 backdrop-blur-sm">
+                    <div className="font-bold text-[14px] mb-3 text-white flex items-center gap-2"><Star size={16} className="text-[#FBBDD0]"/> Best for you if:</div>
+                    <p className="text-[14.5px] font-medium leading-relaxed m-0 text-white/80">നിങ്ങളുടെ situation നേരിട്ട് discuss ചെയ്ത് personalised guidance ആവശ്യമാണെങ്കിൽ.</p>
+                  </div>
+                  
+                  <a href={WA} target="_blank" rel="noopener noreferrer"
+                    className="w-full text-white font-bold text-[16px] py-[20px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.4)] transition-all hover:scale-[1.02] flex items-center justify-center gap-2 border border-[#ff4d85]/30"
+                    style={{ backgroundColor: C.pink }}>
+                    BOOK ₹1,499 SESSION <ArrowRight size={20} />
+                  </a>
                 </div>
+              </motion.div>
 
-                <motion.a href={WA} target="_blank" rel="noopener noreferrer"
-                  animate={{ scale: [1, 1.03, 1] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="block w-full text-white font-bold text-[16px] md:text-[18px] py-[22px] rounded-full shadow-[0_12px_28px_rgba(232,24,90,0.35)] text-center flex items-center justify-center gap-2"
-                  style={{ backgroundColor: C.pink }}>
-                  Secure Your Slot <ArrowRight size={20} />
-                </motion.a>
+            </motion.div>
+
+            {/* NOT SURE */}
+            <motion.div variants={fadeInUp} className="bg-[#FDF2F5] rounded-[32px] p-10 md:p-12 mb-[80px] text-center max-w-[900px] mx-auto shadow-sm border border-[#F5C6D0]/50 relative overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#E8185A] opacity-5 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#E8185A] opacity-5 rounded-full blur-2xl"></div>
+              <h3 className="font-serif text-[24px] md:text-[30px] font-bold mb-8 relative z-10" style={{ color: C.crimson }}>NOT SURE WHICH ONE TO CHOOSE?</h3>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10">
+                <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Start with the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">₹499 Webinar</b><br className="hidden md:block"/> if you want to learn &amp; explore.</p>
+                <div className="hidden md:block w-[2px] h-[60px] bg-gradient-to-b from-transparent via-[#E8185A]/30 to-transparent"></div>
+                <div className="md:hidden h-[2px] w-[80px] bg-gradient-to-r from-transparent via-[#E8185A]/30 to-transparent"></div>
+                <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Choose the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">₹1,499 Session</b><br className="hidden md:block"/> if you need personalised guidance.</p>
               </div>
             </motion.div>
 
-            {/* Webinar / Invitation Session */}
-            <motion.div variants={fadeInUp} className="rounded-[32px] p-[32px] md:p-[48px] text-center mt-8 relative overflow-hidden" style={{ backgroundColor: '#FDF2F5', border: `1px solid ${C.soft}` }}>
-              <div className="relative z-10 max-w-[500px] mx-auto">
-                <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full mb-6 border" style={{ borderColor: C.soft, color: C.crimson }}>
-                  <PlayCircle size={16} className="text-[#E8185A]" />
-                  <span className="text-[12px] font-bold uppercase tracking-widest">Details Webinar</span>
+            {/* WHAT HAPPENS NEXT */}
+            <motion.div variants={fadeInUp} className="max-w-[1000px] mx-auto text-center mb-[80px]">
+              <div className="inline-block text-[13px] font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-8 border" style={{ color: C.pink, borderColor: C.soft }}>THE FLOW</div>
+              <h3 className="font-serif text-[32px] md:text-[40px] font-bold mb-12" style={{ color: C.crimson }}>WHAT HAPPENS NEXT?</h3>
+              
+              <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 md:gap-8 mb-8">
+                <div className="bg-white rounded-[24px] p-8 w-full md:w-1/2 shadow-lg border border-[#F5C6D0]/40 flex flex-col justify-center relative overflow-hidden group hover:-translate-y-1 transition-transform">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-[#E8185A] opacity-20 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="font-serif text-[20px] font-bold tracking-tight mb-4" style={{ color: C.pink }}>₹499 WEBINAR</div>
+                  <div className="text-[15px] md:text-[17px] font-medium flex items-center justify-center flex-wrap gap-2" style={{ color: C.muted }}>
+                    <span>Learn</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
+                    <span>Understand</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
+                    <b style={{ color: C.crimson }}>Explore MarryWise</b>
+                  </div>
                 </div>
                 
-                <h3 className="font-serif text-[24px] sm:text-[28px] font-bold mb-[15px] leading-snug" style={{ color: C.crimson }}>
-                  ORUMA യെക്കുറിച്ച് കൂടുതൽ അറിയണോ?
-                </h3>
+                <div className="flex items-center justify-center">
+                  <div className="font-serif font-bold text-[24px] italic text-[#E8185A]/40 bg-[#FDF2F5] px-4 py-2 rounded-full">OR</div>
+                </div>
                 
-                <p className="text-[15px] md:text-[16px] font-medium mb-8 leading-relaxed" style={{ color: C.muted }}>
-                  1-to-1 session book ചെയ്യുന്നതിന് മുൻപ് program നെക്കുറിച്ച് കൂടുതൽ മനസ്സിലാക്കാനും നിങ്ങളുടെ സംശയങ്ങൾ ചോദിച്ചറിയാനും ഈ webinar ൽ പങ്കെടുക്കാം.
+                <div className="bg-white rounded-[24px] p-8 w-full md:w-1/2 shadow-lg border border-[#F5C6D0]/40 flex flex-col justify-center relative overflow-hidden group hover:-translate-y-1 transition-transform">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-[#E8185A] opacity-20 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="font-serif text-[20px] font-bold tracking-tight mb-4" style={{ color: C.pink }}>₹1,499 ONE-TO-ONE</div>
+                  <div className="text-[15px] md:text-[17px] font-medium flex items-center justify-center flex-wrap gap-2" style={{ color: C.muted }}>
+                    <span>Personalised Guidance</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
+                    <span>Clarity</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
+                    <b style={{ color: C.crimson }}>Explore MarryWise</b>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex justify-center mb-8">
+                <div className="bg-[#FDF2F5] p-3 rounded-full border border-[#F5C6D0]">
+                  <ArrowRight size={28} className="rotate-90 text-[#E8185A]" />
+                </div>
+              </div>
+              
+              <div className="text-white rounded-[32px] p-10 md:p-14 shadow-[0_20px_50px_rgba(123,11,46,0.15)] relative overflow-hidden" style={{ backgroundColor: C.crimson }}>
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none opacity-20 -translate-y-1/2 translate-x-1/3" style={{ backgroundColor: C.pink }}></div>
+                <h4 className="font-serif text-[28px] md:text-[36px] font-bold mb-6 relative z-10">MARRYWISE COMPLETE PROGRAM</h4>
+                <p className="text-[16px] md:text-[18px] font-medium leading-relaxed opacity-90 m-0 max-w-[800px] mx-auto relative z-10">
+                  Webinar attend ചെയ്തതിന് ശേഷമോ, One-to-One Guidance Session കഴിഞ്ഞതിന് ശേഷമോ, MarryWise Program നിങ്ങൾക്ക് suitable ആണെന്ന് തോന്നുന്നുവെങ്കിൽ course-ലേക്ക് join ചെയ്യാം.
                 </p>
-                
-                <div className="flex items-center justify-center gap-3 mb-8">
-                  <div className="h-[1px] w-12 bg-black/10"></div>
-                  <div className="font-serif text-[42px] font-bold leading-none" style={{ color: C.crimson }}>₹499</div>
-                  <div className="h-[1px] w-12 bg-black/10"></div>
-                </div>
-                
-                <motion.a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer" 
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="w-full font-bold text-[16px] py-[18px] rounded-full shadow-[0_8px_20px_rgba(123,11,46,0.12)] flex items-center justify-center gap-2 transition-all hover:bg-white"
-                  style={{ backgroundColor: 'white', color: C.crimson, border: `2px solid ${C.soft}` }}>
-                  Register for Details Webinar <ArrowRight size={20} />
-                </motion.a>
               </div>
             </motion.div>
+
+            {/* START YOUR JOURNEY */}
+            <motion.div variants={fadeInUp} className="text-center max-w-[600px] mx-auto mb-10">
+              <h3 className="font-serif text-[28px] md:text-[36px] font-bold mb-6" style={{ color: C.crimson }}>START YOUR MARRYWISE JOURNEY</h3>
+              <p className="text-[16px] md:text-[18px] font-medium mb-10" style={{ color: C.muted }}>നിങ്ങൾക്ക് അനുയോജ്യമായ വഴി തിരഞ്ഞെടുക്കൂ.</p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer"
+                  className="w-full sm:w-auto text-white font-bold text-[16px] py-[20px] px-[40px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.3)] transition-transform hover:scale-105 flex items-center justify-center gap-2"
+                  style={{ backgroundColor: C.pink }}>
+                  JOIN ₹499 WEBINAR <ArrowRight size={20} />
+                </a>
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="w-full sm:w-auto text-white font-bold text-[16px] py-[20px] px-[40px] rounded-full shadow-[0_10px_25px_rgba(123,11,46,0.3)] transition-transform hover:scale-105 flex items-center justify-center gap-2"
+                  style={{ backgroundColor: C.crimson }}>
+                  BOOK ₹1,499 ONE-TO-ONE <ArrowRight size={20} />
+                </a>
+              </div>
+            </motion.div>
+
           </motion.div>
         </div>
       </section>
@@ -756,20 +837,19 @@ export default function MarryWiseLandingPage() {
       </footer>
 
       {/* 22. STICKY BAR */}
-      <div className="fixed left-0 right-0 bottom-0 bg-white/95 backdrop-blur-md p-[16px_24px] flex items-center justify-between z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border-t pl-[96px] md:pl-6"
+      <div className="fixed left-0 right-0 bottom-0 bg-white/95 backdrop-blur-md p-[12px_16px] flex items-center justify-center gap-3 md:gap-6 z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border-t"
         style={{ borderColor: C.soft }}>
-        <div className="flex flex-col leading-[1.2]">
-          <div className="flex items-baseline gap-2">
-            <span className="font-serif font-bold text-[22px]" style={{ color: C.crimson }}>₹1,499</span>
-            <span className="font-serif text-[14px] font-bold line-through opacity-60" style={{ color: C.muted }}>₹2,500</span>
-          </div>
-          <span className="text-[12px] font-semibold" style={{ color: C.muted }}>One to One Orientation</span>
-        </div>
+        <motion.a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer"
+          whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+          className="flex-1 max-w-[240px] text-center font-bold text-[14px] md:text-[16px] py-[12px] md:py-[14px] px-2 rounded-full shadow-sm transition-all"
+          style={{ backgroundColor: 'white', color: C.crimson, border: `2px solid ${C.soft}` }}>
+          Join ₹499 Webinar
+        </motion.a>
         <motion.a href={WA} target="_blank" rel="noopener noreferrer"
-          whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-          className="text-white font-bold text-[16px] py-[14px] px-8 rounded-full flex-shrink-0 shadow-[0_4px_14px_rgba(232,24,90,0.3)] transition-shadow"
+          whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+          className="flex-1 max-w-[240px] text-center text-white font-bold text-[14px] md:text-[16px] py-[14px] px-2 rounded-full shadow-[0_4px_14px_rgba(232,24,90,0.3)] transition-shadow"
           style={{ backgroundColor: C.pink }}>
-          Secure Your Slot →
+          Book ₹1,499 Session
         </motion.a>
       </div>
 
