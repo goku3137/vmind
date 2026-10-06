@@ -463,7 +463,7 @@ export default function MarryWiseLandingPage() {
       <section className="py-[30px] px-4 md:px-6 flex justify-center bg-white">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
           <Image
-            src="/images/ranjini_group_therapy.jpg"
+            src="/images/ranjini_desk.jpg"
             alt="Ranjini Vijith Group Therapy"
             width={600}
             height={750}
