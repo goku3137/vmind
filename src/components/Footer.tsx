@@ -10,11 +10,11 @@ export function Footer() {
   const isMarriageCouncilPage = pathname === '/program/marrywise';
   const isProgramListPage = pathname === '/program';
   
-  const footerBg = isMarriageCouncilPage ? 'bg-[#7B0B2E] border-[#F5C6D0]/20' : isProgramListPage ? 'bg-[#302A35] border-[#D8C7B8]/20' : 'bg-[#0B7A75] border-[#148C66]';
-  const glowColor = isMarriageCouncilPage ? 'bg-[#E8185A]' : isProgramListPage ? 'bg-[#5F7A6A]' : 'bg-[#19A67A]';
-  const brandColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isProgramListPage ? 'text-[#5F7A6A]' : 'text-[#F4E6E3]';
-  const lineBg = isMarriageCouncilPage ? 'bg-[#E8185A]' : isProgramListPage ? 'bg-[#5F7A6A]' : 'bg-[#F4E6E3]';
-  const buttonBg = isMarriageCouncilPage ? 'bg-[#E8185A] text-white hover:bg-[#c9114a] shadow-[0_0_20px_rgba(232,24,90,0.3)] hover:shadow-[0_0_30px_rgba(232,24,90,0.5)]' : isProgramListPage ? 'bg-[#7A4E5A] text-white hover:bg-[#5C3A44]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
+  const footerBg = isMarriageCouncilPage ? 'bg-[#7B0B2E] border-[#F5C6D0]/20' : isProgramListPage ? 'bg-[#75AADB] border-[#C5E0F2]/20' : 'bg-[#0B7A75] border-[#148C66]';
+  const glowColor = isMarriageCouncilPage ? 'bg-[#E8185A]' : isProgramListPage ? 'bg-[#5BA4DA]' : 'bg-[#19A67A]';
+  const brandColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isProgramListPage ? 'text-[#E8F4FA]' : 'text-[#F4E6E3]';
+  const lineBg = isMarriageCouncilPage ? 'bg-[#E8185A]' : isProgramListPage ? 'bg-[#E8F4FA]' : 'bg-[#F4E6E3]';
+  const buttonBg = isMarriageCouncilPage ? 'bg-[#E8185A] text-white hover:bg-[#c9114a] shadow-[0_0_20px_rgba(232,24,90,0.3)] hover:shadow-[0_0_30px_rgba(232,24,90,0.5)]' : isProgramListPage ? 'bg-[#3A82B8] text-white hover:bg-[#2e6d9b] shadow-[0_0_20px_rgba(58,130,184,0.3)] hover:shadow-[0_0_30px_rgba(58,130,184,0.5)]' : 'bg-[#D48C8C] text-white hover:bg-[#B36B6B]';
   const footerLink = isMarriageCouncilPage ? 'https://wa.me/918157039987?text=I%20want%20to%20book%20for%20marriage%20counseling' : '/contact';
 
   if (isPremiumPage) {
@@ -30,7 +30,7 @@ export function Footer() {
           {[...Array(300)].map((_, i) => (
             <div 
               key={i} 
-              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#E8185A]/10 hover:bg-[#E8185A]/20' : isProgramListPage ? 'border-[#5F7A6A]/10 hover:bg-[#5F7A6A]/30' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
+              className={`w-full h-full border-[0.5px] transition-colors duration-1000 hover:duration-0 ${isMarriageCouncilPage ? 'border-[#E8185A]/10 hover:bg-[#E8185A]/20' : isProgramListPage ? 'border-[#E8F4FA]/20 hover:bg-[#E8F4FA]/40' : 'border-[#D48C8C]/10 hover:bg-[#D48C8C]/40'}`}
             />
           ))}
         </div>

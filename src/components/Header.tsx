@@ -24,24 +24,24 @@ export function Header() {
   const headerBg = isMarriageCouncilPage 
     ? (isScrolled ? 'bg-[#7B0B2E]/70 backdrop-blur-md border-b border-[#F5C6D0]/20' : 'bg-[#7B0B2E]/95 border-b border-[#F5C6D0]/10') 
     : isProgramPage 
-      ? (isScrolled ? 'bg-[#5F7A6A]/20 backdrop-blur-lg border-b border-[#F7F3EC]/30 shadow-md' : 'bg-[#5F7A6A] border-b border-[#F7F3EC]/10 shadow-sm')
+      ? (isScrolled ? 'bg-[#75AADB]/90 backdrop-blur-lg border-b border-[#C5E0F2]/50 shadow-md' : 'bg-[#75AADB] border-b border-[#C5E0F2]/30 shadow-sm')
       : 'bg-[#0B7A75]/90';
       
-  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#FBBDD0]' : isProgramPage ? 'hover:text-[#D8C7B8]' : 'hover:text-[#FDB813]';
-  const activeColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isProgramPage ? 'text-[#D8C7B8]' : 'text-[#FDB813]';
+  const hoverAccent = isMarriageCouncilPage ? 'hover:text-[#FBBDD0]' : isProgramPage ? 'hover:text-[#E8F4FA]' : 'hover:text-[#FDB813]';
+  const activeColor = isMarriageCouncilPage ? 'text-[#FBBDD0]' : isProgramPage ? 'text-[#E8F4FA]' : 'text-[#FDB813]';
   
   const buttonClass = isMarriageCouncilPage 
     ? 'bg-[#E8185A] text-white shadow-[0_10px_25px_rgba(232,24,90,0.35)] hover:shadow-[0_15px_30px_rgba(232,24,90,0.5)] hover:bg-[#c9114a]' 
     : isProgramPage
-      ? 'bg-gradient-to-br from-[#7A4E5A] to-[#5C3A44] text-white shadow-[0_10px_25px_rgba(122,78,90,0.3)] hover:shadow-[0_15px_30px_rgba(122,78,90,0.5)]'
+      ? 'bg-[#3A82B8] text-white shadow-[0_8px_20px_rgba(58,130,184,0.3)] hover:shadow-[0_12px_25px_rgba(58,130,184,0.5)] hover:bg-[#2e6d9b]'
       : 'bg-gradient-to-br from-[#19A67A] to-[#0B7A75] text-white shadow-[0_10px_25px_rgba(25,166,122,0.3)] hover:shadow-[0_15px_30px_rgba(25,166,122,0.5)]';
       
-  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#E8185A]' : isProgramPage ? 'focus:ring-[#D8C7B8]' : 'focus:ring-[#FDB813]';
+  const mobileFocusRing = isMarriageCouncilPage ? 'focus:ring-[#E8185A]' : isProgramPage ? 'focus:ring-[#C5E0F2]' : 'focus:ring-[#FDB813]';
   
   const mobileMenuBg = isMarriageCouncilPage 
     ? 'bg-gradient-to-b from-[#7B0B2E]/98 to-[#3d0517]/98 backdrop-blur-3xl' 
     : isProgramPage 
-      ? 'bg-gradient-to-b from-[#5F7A6A]/98 to-[#394a40]/98 backdrop-blur-3xl' 
+      ? 'bg-gradient-to-b from-[#75AADB]/98 to-[#4a87b8]/98 backdrop-blur-3xl' 
       : 'bg-gradient-to-b from-[#0B7A75]/98 to-[#06423f]/98 backdrop-blur-3xl';
 
   const headerVisibilityClass = isMarriageCouncilPage && !isScrolled 
