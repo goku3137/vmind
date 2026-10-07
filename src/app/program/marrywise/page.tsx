@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import { MapPin, Heart, Star, Users, MessageCircle, Shield, ArrowRight, CheckCircle2, Clock, Calendar, PlayCircle } from 'lucide-react';
+import RazorpayButton from '@/components/RazorpayButton';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 35, filter: 'blur(6px)' },
@@ -682,11 +683,13 @@ export default function MarryWiseLandingPage() {
                     <p className="text-[14.5px] font-medium leading-relaxed m-0 text-white/80">ആദ്യം program മനസ്സിലാക്കി, ശേഷം നിങ്ങളുടെ next step decide ചെയ്യാൻ ആഗ്രഹിക്കുന്നുവെങ്കിൽ.</p>
                   </div>
                   
-                  <a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer"
+                  <RazorpayButton 
+                    programId="marrywise-webinar" 
+                    programName="MarryWise Webinar"
                     className="w-full text-white font-bold text-[16px] py-[20px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.4)] transition-all hover:scale-[1.02] flex items-center justify-center gap-2 border border-[#ff4d85]/30"
                     style={{ backgroundColor: C.pink }}>
                     JOIN ₹499 WEBINAR <ArrowRight size={20} />
-                  </a>
+                  </RazorpayButton>
                 </div>
               </motion.div>
 
@@ -703,10 +706,7 @@ export default function MarryWiseLandingPage() {
                   <h3 className="font-serif text-[28px] md:text-[32px] font-bold mb-2 text-white">ONE-TO-ONE GUIDANCE</h3>
                   <div className="text-[13px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: '#FBBDD0' }}>Personalised Guidance</div>
                   
-                  <div className="flex items-center justify-center gap-4 mb-8">
-                    <div className="font-serif text-[24px] md:text-[28px] font-bold line-through opacity-40 text-white drop-shadow-sm">₹2,500</div>
-                    <div className="font-serif text-[56px] md:text-[64px] font-bold tracking-tight leading-none text-white drop-shadow-md">₹1,499</div>
-                  </div>
+                  
                   
                   <p className="text-[15px] md:text-[16px] font-medium mb-10 leading-relaxed text-left text-white/90 flex-grow">
                     നിങ്ങളുടെ personal relationship / marriage situation നേരിട്ട് discuss ചെയ്ത്, നിങ്ങളുടെ specific situation അനുസരിച്ചുള്ള personalised guidance നേടാം.
@@ -720,7 +720,7 @@ export default function MarryWiseLandingPage() {
                   <a href={WA} target="_blank" rel="noopener noreferrer"
                     className="w-full text-white font-bold text-[16px] py-[20px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.4)] transition-all hover:scale-[1.02] flex items-center justify-center gap-2 border border-[#ff4d85]/30"
                     style={{ backgroundColor: C.pink }}>
-                    BOOK ₹1,499 SESSION <ArrowRight size={20} />
+                    BOOK ONE-TO-ONE SESSION <ArrowRight size={20} />
                   </a>
                 </div>
               </motion.div>
@@ -736,7 +736,7 @@ export default function MarryWiseLandingPage() {
                 <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Start with the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">₹499 Webinar</b><br className="hidden md:block"/> if you want to learn &amp; explore.</p>
                 <div className="hidden md:block w-[2px] h-[60px] bg-gradient-to-b from-transparent via-[#E8185A]/30 to-transparent"></div>
                 <div className="md:hidden h-[2px] w-[80px] bg-gradient-to-r from-transparent via-[#E8185A]/30 to-transparent"></div>
-                <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Choose the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">₹1,499 Session</b><br className="hidden md:block"/> if you need personalised guidance.</p>
+                <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Choose the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">Session</b><br className="hidden md:block"/> if you need personalised guidance.</p>
               </div>
             </motion.div>
 
@@ -762,7 +762,7 @@ export default function MarryWiseLandingPage() {
                 
                 <div className="bg-white rounded-[24px] p-8 w-full md:w-1/2 shadow-lg border border-[#F5C6D0]/40 flex flex-col justify-center relative overflow-hidden group hover:-translate-y-1 transition-transform">
                   <div className="absolute top-0 left-0 w-full h-1 bg-[#E8185A] opacity-20 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="font-serif text-[20px] font-bold tracking-tight mb-4" style={{ color: C.pink }}>₹1,499 ONE-TO-ONE</div>
+                  <div className="font-serif text-[20px] font-bold tracking-tight mb-4" style={{ color: C.pink }}>ONE-TO-ONE</div>
                   <div className="text-[15px] md:text-[17px] font-medium flex items-center justify-center flex-wrap gap-2" style={{ color: C.muted }}>
                     <span>Personalised Guidance</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
                     <span>Clarity</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
@@ -792,15 +792,17 @@ export default function MarryWiseLandingPage() {
               <p className="text-[16px] md:text-[18px] font-medium mb-10" style={{ color: C.muted }}>നിങ്ങൾക്ക് അനുയോജ്യമായ വഴി തിരഞ്ഞെടുക്കൂ.</p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer"
+                <RazorpayButton 
+                  programId="marrywise-webinar"
+                  programName="MarryWise Webinar"
                   className="w-full sm:w-auto text-white font-bold text-[16px] py-[20px] px-[40px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.3)] transition-transform hover:scale-105 flex items-center justify-center gap-2"
                   style={{ backgroundColor: C.pink }}>
                   JOIN ₹499 WEBINAR <ArrowRight size={20} />
-                </a>
+                </RazorpayButton>
                 <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="w-full sm:w-auto text-white font-bold text-[16px] py-[20px] px-[40px] rounded-full shadow-[0_10px_25px_rgba(123,11,46,0.3)] transition-transform hover:scale-105 flex items-center justify-center gap-2"
                   style={{ backgroundColor: C.crimson }}>
-                  BOOK ₹1,499 ONE-TO-ONE <ArrowRight size={20} />
+                  BOOK ONE-TO-ONE SESSION <ArrowRight size={20} />
                 </a>
               </div>
             </motion.div>
@@ -839,17 +841,18 @@ export default function MarryWiseLandingPage() {
       {/* 22. STICKY BAR */}
       <div className="fixed left-0 right-0 bottom-0 bg-white/95 backdrop-blur-md p-[12px_16px] flex items-center justify-center gap-3 md:gap-6 z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border-t"
         style={{ borderColor: C.soft }}>
-        <motion.a href={WA_WEBINAR} target="_blank" rel="noopener noreferrer"
-          whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+        <RazorpayButton 
+          programId="marrywise-webinar"
+          programName="MarryWise Webinar"
           className="flex-1 max-w-[240px] text-center font-bold text-[14px] md:text-[16px] py-[12px] md:py-[14px] px-2 rounded-full shadow-sm transition-all"
           style={{ backgroundColor: 'white', color: C.crimson, border: `2px solid ${C.soft}` }}>
           Join ₹499 Webinar
-        </motion.a>
+        </RazorpayButton>
         <motion.a href={WA} target="_blank" rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
           className="flex-1 max-w-[240px] text-center text-white font-bold text-[14px] md:text-[16px] py-[14px] px-2 rounded-full shadow-[0_4px_14px_rgba(232,24,90,0.3)] transition-shadow"
           style={{ backgroundColor: C.pink }}>
-          Book ₹1,499 Session
+          Book One-to-One Session
         </motion.a>
       </div>
 
