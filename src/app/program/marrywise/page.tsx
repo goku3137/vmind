@@ -4,6 +4,10 @@ import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import { MapPin, Heart, Star, Users, MessageCircle, Shield, ArrowRight, CheckCircle2, Clock, Calendar, PlayCircle } from 'lucide-react';
 import RazorpayButton from '@/components/RazorpayButton';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 35, filter: 'blur(6px)' },
@@ -522,35 +526,77 @@ export default function MarryWiseLandingPage() {
         <div className="max-w-[1100px] mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger}>
             <motion.p variants={fadeInUp} className="text-[13px] font-bold tracking-[0.18em] uppercase mb-4 text-center" style={{ color: C.pink }}>Couple Stories</motion.p>
-            <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-12 leading-[1.2] text-center tracking-tight" style={{ color: C.crimson }}>ORUMA യിലൂടെ കടന്നുപോയ couples പറയുന്നു</motion.h2>
+            <motion.h2 variants={fadeInUp} className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-bold mb-8 leading-[1.2] text-center tracking-tight" style={{ color: C.crimson }}>ORUMA യിലൂടെ കടന്നുപോയ couples പറയുന്നു</motion.h2>
 
-            <motion.div variants={stagger} className="flex overflow-x-auto pb-10 snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 md:overflow-visible md:pb-0" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
-              {[
-                { text: "\"Engagement കഴിഞ്ഞ് ഞങ്ങൾക്ക് ഒരുപാട് doubts ഉണ്ടായിരുന്നു. Orientation കഴിഞ്ഞപ്പോൾ തന്നെ ഒരുപാട് clarity കിട്ടി.\"", initial: "A", name: "Anjali & Vishnu", details: "Pre marriage" },
-                { text: "\"Gulf ൽ നിന്ന് നാട്ടിലേക്ക് വന്നപ്പോൾ ഉള്ള adjustments ന് ഈ program വലിയ help ആയി.\"", initial: "S", name: "Sruthy & Rahul", details: "Long distance" },
-                { text: "\"In laws വിഷയം സംസാരിക്കുമ്പോൾ എപ്പോഴും വഴക്കായിരുന്നു. ഇപ്പോൾ calm ആയി സംസാരിക്കാൻ പഠിച്ചു.\"", initial: "R", name: "Reshma & Kiran", details: "Newly married" },
-                { text: "\"Couple workbook ലെ exercises ഞങ്ങൾ ഇപ്പോഴും weekend ൽ ചെയ്യാറുണ്ട്.\"", initial: "N", name: "Neethu & Amal", details: "Pre marriage" },
-                { text: "\"Money management നെക്കുറിച്ച് ആദ്യമായി open ആയി സംസാരിച്ചത് ഈ program ലാണ്.\"", initial: "J", name: "Jiji & Thomas", details: "Newly married" },
-                { text: "\"Therapist വളരെ friendly ആയിരുന്നു. Judgement ഇല്ലാതെ എല്ലാം സംസാരിക്കാൻ പറ്റി.\"", initial: "M", name: "Meera & Haris", details: "Long distance" }
-              ].map((t, i) => (
-                <motion.div key={i} variants={fadeInUp} className="bg-white rounded-[24px] p-8 flex flex-col gap-5 min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-start shadow-sm hover:shadow-md transition-shadow" style={{ border: `1px solid ${C.soft}` }}>
-                  <div className="flex gap-1 text-[#E8185A]">
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                  </div>
-                  <p className="text-[16px] font-medium leading-relaxed italic" style={{ color: C.text }}>{t.text}</p>
-                  <div className="flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
-                    <div className="w-[44px] h-[44px] rounded-full flex items-center justify-center font-bold text-[16px] md:text-[18px]" style={{ backgroundColor: C.blush, color: C.crimson }}>{t.initial}</div>
-                    <div className="flex flex-col">
-                      <b className="text-[15px]" style={{ color: C.crimson }}>{t.name}</b>
-                      <small className="text-[13px] font-semibold" style={{ color: C.muted }}>{t.details}</small>
+            <motion.div variants={fadeInUp} className="md:hidden flex items-center justify-center gap-2 mb-6 text-[14px] font-medium opacity-80" style={{ color: C.crimson }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+                <path d="M14 7.5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v.5"/>
+                <path d="M10 9.5V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10"/>
+                <path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+              </svg>
+              <span>Swipe for more</span>
+              <ArrowRight size={16} className="animate-pulse" />
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="w-full relative pb-4">
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                spaceBetween={24}
+                slidesPerView={1}
+                pagination={{ clickable: true, dynamicBullets: true }}
+                autoplay={{ delay: 4000, disableOnInteraction: true }}
+                breakpoints={{
+                  640: { slidesPerView: 1.2 },
+                  768: { slidesPerView: 2.2 },
+                  1024: { slidesPerView: 3 },
+                }}
+                className="w-full !pb-14"
+              >
+                {[
+                  { text: "\"Engagement കഴിഞ്ഞ് ഞങ്ങൾക്ക് ഒരുപാട് doubts ഉണ്ടായിരുന്നു. Orientation കഴിഞ്ഞപ്പോൾ തന്നെ ഒരുപാട് clarity കിട്ടി.\"", initial: "A", name: "Anjali & Vishnu", details: "Pre marriage" },
+                  { text: "\"Gulf ൽ നിന്ന് നാട്ടിലേക്ക് വന്നപ്പോൾ ഉള്ള adjustments ന് ഈ program വലിയ help ആയി.\"", initial: "S", name: "Sruthy & Rahul", details: "Long distance" },
+                  { text: "\"In laws വിഷയം സംസാരിക്കുമ്പോൾ എപ്പോഴും വഴക്കായിരുന്നു. ഇപ്പോൾ calm ആയി സംസാരിക്കാൻ പഠിച്ചു.\"", initial: "R", name: "Reshma & Kiran", details: "Newly married" },
+                  { text: "\"Couple workbook ലെ exercises ഞങ്ങൾ ഇപ്പോഴും weekend ൽ ചെയ്യാറുണ്ട്.\"", initial: "N", name: "Neethu & Amal", details: "Pre marriage" },
+                  { text: "\"Money management നെക്കുറിച്ച് ആദ്യമായി open ആയി സംസാരിച്ചത് ഈ program ലാണ്.\"", initial: "J", name: "Jiji & Thomas", details: "Newly married" },
+                  { text: "\"Therapist വളരെ friendly ആയിരുന്നു. Judgement ഇല്ലാതെ എല്ലാം സംസാരിക്കാൻ പറ്റി.\"", initial: "M", name: "Meera & Haris", details: "Long distance" }
+                ].map((t, i) => (
+                  <SwiperSlide key={i} className="h-auto">
+                    <div className="bg-white rounded-[24px] p-8 flex flex-col gap-5 h-full shadow-sm hover:shadow-md transition-shadow relative" style={{ border: `1px solid ${C.soft}` }}>
+                      
+                      <div className="flex justify-between items-start">
+                        <div className="flex gap-1 text-[#E8185A]">
+                          <Star size={16} fill="currentColor" />
+                          <Star size={16} fill="currentColor" />
+                          <Star size={16} fill="currentColor" />
+                          <Star size={16} fill="currentColor" />
+                          <Star size={16} fill="currentColor" />
+                        </div>
+                        
+                        <div className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider opacity-50" style={{ color: C.crimson }}>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
+                            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+                            <path d="M14 7.5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v.5"/>
+                            <path d="M10 9.5V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10"/>
+                            <path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+                          </svg>
+                          Swipe
+                        </div>
+                      </div>
+
+                      <p className="text-[16px] font-medium leading-relaxed italic" style={{ color: C.text }}>{t.text}</p>
+                      
+                      <div className="flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                        <div className="w-[44px] h-[44px] rounded-full flex items-center justify-center font-bold text-[16px] md:text-[18px]" style={{ backgroundColor: C.blush, color: C.crimson }}>{t.initial}</div>
+                        <div className="flex flex-col">
+                          <b className="text-[15px]" style={{ color: C.crimson }}>{t.name}</b>
+                          <small className="text-[13px] font-semibold" style={{ color: C.muted }}>{t.details}</small>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </motion.div>
           </motion.div>
         </div>
@@ -848,12 +894,6 @@ export default function MarryWiseLandingPage() {
           style={{ backgroundColor: 'white', color: C.crimson, border: `2px solid ${C.soft}` }}>
           Join ₹499 Webinar
         </RazorpayButton>
-        <motion.a href={WA} target="_blank" rel="noopener noreferrer"
-          whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-          className="flex-1 max-w-[240px] text-center text-white font-bold text-[14px] md:text-[16px] py-[14px] px-2 rounded-full shadow-[0_4px_14px_rgba(232,24,90,0.3)] transition-shadow"
-          style={{ backgroundColor: C.pink }}>
-          Book One-to-One Session
-        </motion.a>
       </div>
 
       {/* WhatsApp Floating Icon Removed */}
