@@ -891,7 +891,7 @@ export default function MarryWiseLandingPage() {
           programId="marrywise-webinar"
           programName="MarryWise Webinar"
           className="flex-1 max-w-[240px] text-center font-bold text-[14px] md:text-[16px] py-[12px] md:py-[14px] px-2 rounded-full shadow-sm transition-all"
-          style={{ backgroundColor: 'white', color: C.crimson, border: `2px solid ${C.soft}` }}>
+          style={{ backgroundColor: C.pink, color: 'white', border: `2px solid ${C.pink}` }}>
           Join ₹499 Webinar
         </RazorpayButton>
       </div>
