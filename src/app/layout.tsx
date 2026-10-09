@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, El_Messiri, Viga, Clicker_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
@@ -66,11 +67,15 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${elMessiri.variable} ${viga.variable} ${clickerScript.variable} ${playfair.variable} antialiased overflow-x-hidden`}
       >
-        <Header />
+        <Suspense fallback={<div className="h-16 md:h-20 bg-[#7B0B2E]" />}>
+          <Header />
+        </Suspense>
         <main className="min-h-screen">
           {children}
         </main>
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
         <WhatsAppWidget />
       </body>
     </html>

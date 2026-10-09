@@ -763,11 +763,13 @@ export default function MarryWiseLandingPage() {
                     <p className="text-[14.5px] font-medium leading-relaxed m-0 text-white/80">നിങ്ങളുടെ situation നേരിട്ട് discuss ചെയ്ത് personalised guidance ആവശ്യമാണെങ്കിൽ.</p>
                   </div>
                   
-                  <a href={WA} target="_blank" rel="noopener noreferrer"
+                  <RazorpayButton 
+                    programId="marrywise-session"
+                    programName="MarryWise 1-to-1 Guidance Session"
                     className="w-full text-white font-bold text-[16px] py-[20px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.4)] transition-all hover:scale-[1.02] flex items-center justify-center gap-2 border border-[#ff4d85]/30"
                     style={{ backgroundColor: C.pink }}>
                     BOOK ONE-TO-ONE SESSION <ArrowRight size={20} />
-                  </a>
+                  </RazorpayButton>
                 </div>
               </motion.div>
 
@@ -845,11 +847,13 @@ export default function MarryWiseLandingPage() {
                   style={{ backgroundColor: C.pink }}>
                   JOIN ₹499 WEBINAR <ArrowRight size={20} />
                 </RazorpayButton>
-                <a href={WA} target="_blank" rel="noopener noreferrer"
+                <RazorpayButton 
+                  programId="marrywise-session"
+                  programName="MarryWise 1-to-1 Guidance Session"
                   className="w-full sm:w-auto text-white font-bold text-[16px] py-[20px] px-[40px] rounded-full shadow-[0_10px_25px_rgba(123,11,46,0.3)] transition-transform hover:scale-105 flex items-center justify-center gap-2"
                   style={{ backgroundColor: C.crimson }}>
                   BOOK ONE-TO-ONE SESSION <ArrowRight size={20} />
-                </a>
+                </RazorpayButton>
               </div>
             </motion.div>
 
@@ -891,7 +895,7 @@ export default function MarryWiseLandingPage() {
           programId="marrywise-webinar"
           programName="MarryWise Webinar"
           className="flex-1 max-w-[240px] text-center font-bold text-[14px] md:text-[16px] py-[12px] md:py-[14px] px-2 rounded-full shadow-sm transition-all"
-          style={{ backgroundColor: 'white', color: C.crimson, border: `2px solid ${C.soft}` }}>
+          style={{ backgroundColor: C.pink, color: 'white', border: `2px solid ${C.pink}` }}>
           Join ₹499 Webinar
         </RazorpayButton>
       </div>
