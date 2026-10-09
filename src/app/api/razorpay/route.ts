@@ -1,43 +1,72 @@
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
+import { getCatalogItem } from "@/data/catalog";
 
 const razorpay = new Razorpay({
   key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID || "",
   key_secret: process.env.RAZORPAY_KEY_SECRET || "",
 });
 
-// SECURE: We store all our prices safely on the server.
-// The frontend only sends the ID, and we look up the real price here.
-const PROGRAM_CATALOG: Record<string, number> = {
-  "marrywise-webinar": 499,
-  "future-program-1": 999,
-  "future-program-2": 1999,
-};
-
 export async function POST(request: Request) {
   try {
-    const { programId } = await request.json();
+    const body = await request.json().catch(() => ({}));
+    const { 
+      programId, 
+      itemId, 
+      courseId, 
+      bookingId, 
+      amount: rawAmount,
+      customerName, 
+      customerEmail, 
+      customerPhone 
+    } = body;
 
-    const amount = PROGRAM_CATALOG[programId];
+    const requestedId = programId || itemId || courseId || bookingId;
+    
+    // Resolve item safely from our catalog
+    let item = requestedId ? getCatalogItem(requestedId) : null;
 
-    if (!amount) {
-      return NextResponse.json(
-        { error: "Invalid program selected" },
-        { status: 400 }
-      );
+    // Fallback: If rawAmount is provided (e.g., from older webinar page), match 499 to marrywise-webinar
+    if (!item && rawAmount === 499) {
+      item = getCatalogItem("marrywise-webinar");
     }
 
+    if (!item) {
+      // Default to marrywise-webinar if nothing resolved
+      item = getCatalogItem("marrywise-webinar");
+    }
+
+    const finalAmountInPaise = Math.round(item.price * 100);
+
     const order = await razorpay.orders.create({
-      amount: amount * 100, // Razorpay amount is in paise
+      amount: finalAmountInPaise,
       currency: "INR",
-      receipt: "receipt_" + Math.random().toString(36).substring(7),
+      receipt: "rcpt_" + Date.now().toString(36) + "_" + Math.random().toString(36).substring(2, 6),
+      notes: {
+        itemId: item.id,
+        itemTitle: item.title,
+        itemCategory: item.category,
+        customerName: customerName || "Guest",
+        customerEmail: customerEmail || "",
+        customerPhone: customerPhone || "",
+        domain: "vmind.in"
+      }
     });
 
-    return NextResponse.json(order);
+    return NextResponse.json({
+      ...order,
+      item: {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        category: item.category
+      },
+      keyId: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
+    });
   } catch (error) {
     console.error("Error creating Razorpay order:", error);
     return NextResponse.json(
-      { error: "Failed to create order" },
+      { error: "Failed to create order with Razorpay" },
       { status: 500 }
     );
   }
