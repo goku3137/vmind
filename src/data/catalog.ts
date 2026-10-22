@@ -21,7 +21,7 @@ export const CATALOG: CatalogItem[] = [
     title: "MarryWise Webinar",
     category: "webinar",
     categoryLabel: "Live Webinar",
-    price: 1, // Testing mode: changed from 499 to 1 INR
+    price: 10, // Testing mode: changed to 10 INR
     originalPrice: 499,
     badge: "Most Popular",
     tagmangoServiceId: "6ad86d03aa1a5b2f036ee3d9",

@@ -245,7 +245,7 @@ function RazorpayCheckoutContent() {
                     className="w-full bg-white border border-[#F5C6D0] rounded-lg px-2.5 py-1.5 text-xs text-[#7B0B2E] font-medium focus:outline-none focus:ring-1 focus:ring-[#E8185A] cursor-pointer"
                   >
                     <optgroup label="Webinars & Masterclasses">
-                      <option value="marrywise-webinar">MarryWise Webinar — ₹1 (Test)</option>
+                      <option value="marrywise-webinar">MarryWise Webinar — ₹10 (Test)</option>
                     </optgroup>
                     <optgroup label="1-on-1 Guidance & Therapy">
                       <option value="marrywise-session">MarryWise 1-to-1 Guidance Session — ₹1,999</option>
