@@ -718,7 +718,7 @@ export default function MarryWiseLandingPage() {
                   <h3 className="font-serif text-[28px] md:text-[32px] font-bold mb-2 text-white">MARRYWISE WEBINAR</h3>
                   <div className="text-[13px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: '#FBBDD0' }}>Learn &amp; Explore</div>
                   
-                  <div className="font-serif text-[56px] md:text-[64px] font-bold tracking-tight mb-8 leading-none text-white drop-shadow-md">₹499</div>
+                  <div className="font-serif text-[56px] md:text-[64px] font-bold tracking-tight mb-8 leading-none text-white drop-shadow-md">₹1</div>
                   
                   <p className="text-[15px] md:text-[16px] font-medium mb-10 leading-relaxed text-left text-white/90 flex-grow">
                     Relationship &amp; Marriage-നെ കുറിച്ച് കൂടുതൽ learn ചെയ്യാനും, MarryWise Program എന്താണെന്ന് മനസ്സിലാക്കാനും, ഇത് നിങ്ങൾക്ക് suitable ആണോ എന്ന് decide ചെയ്യാനും webinar-ൽ പങ്കെടുക്കാം.
@@ -734,7 +734,7 @@ export default function MarryWiseLandingPage() {
                     programName="MarryWise Webinar"
                     className="w-full text-white font-bold text-[16px] py-[20px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.4)] transition-all hover:scale-[1.02] flex items-center justify-center gap-2 border border-[#ff4d85]/30"
                     style={{ backgroundColor: C.pink }}>
-                    JOIN ₹499 WEBINAR <ArrowRight size={20} />
+                    JOIN ₹1 WEBINAR <ArrowRight size={20} />
                   </RazorpayButton>
                 </div>
               </motion.div>
@@ -781,7 +781,7 @@ export default function MarryWiseLandingPage() {
               <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#E8185A] opacity-5 rounded-full blur-2xl"></div>
               <h3 className="font-serif text-[24px] md:text-[30px] font-bold mb-8 relative z-10" style={{ color: C.crimson }}>NOT SURE WHICH ONE TO CHOOSE?</h3>
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10">
-                <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Start with the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">₹499 Webinar</b><br className="hidden md:block"/> if you want to learn &amp; explore.</p>
+                <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Start with the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">₹1 Webinar</b><br className="hidden md:block"/> if you want to learn &amp; explore.</p>
                 <div className="hidden md:block w-[2px] h-[60px] bg-gradient-to-b from-transparent via-[#E8185A]/30 to-transparent"></div>
                 <div className="md:hidden h-[2px] w-[80px] bg-gradient-to-r from-transparent via-[#E8185A]/30 to-transparent"></div>
                 <p className="text-[16px] md:text-[18px] font-medium m-0 leading-relaxed" style={{ color: C.muted }}>Choose the <b style={{ color: C.crimson }} className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[#F5C6D0] ml-1">Session</b><br className="hidden md:block"/> if you need personalised guidance.</p>
@@ -796,7 +796,7 @@ export default function MarryWiseLandingPage() {
               <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 md:gap-8 mb-8">
                 <div className="bg-white rounded-[24px] p-8 w-full md:w-1/2 shadow-lg border border-[#F5C6D0]/40 flex flex-col justify-center relative overflow-hidden group hover:-translate-y-1 transition-transform">
                   <div className="absolute top-0 left-0 w-full h-1 bg-[#E8185A] opacity-20 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="font-serif text-[20px] font-bold tracking-tight mb-4" style={{ color: C.pink }}>₹499 WEBINAR</div>
+                  <div className="font-serif text-[20px] font-bold tracking-tight mb-4" style={{ color: C.pink }}>₹1 WEBINAR</div>
                   <div className="text-[15px] md:text-[17px] font-medium flex items-center justify-center flex-wrap gap-2" style={{ color: C.muted }}>
                     <span>Learn</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
                     <span>Understand</span> <ArrowRight size={14} className="text-[#E8185A]/50"/>
@@ -845,7 +845,7 @@ export default function MarryWiseLandingPage() {
                   programName="MarryWise Webinar"
                   className="w-full sm:w-auto text-white font-bold text-[16px] py-[20px] px-[40px] rounded-full shadow-[0_10px_25px_rgba(232,24,90,0.3)] transition-transform hover:scale-105 flex items-center justify-center gap-2"
                   style={{ backgroundColor: C.pink }}>
-                  JOIN ₹499 WEBINAR <ArrowRight size={20} />
+                  JOIN ₹1 WEBINAR <ArrowRight size={20} />
                 </RazorpayButton>
                 <RazorpayButton 
                   programId="marrywise-session"
@@ -896,7 +896,7 @@ export default function MarryWiseLandingPage() {
           programName="MarryWise Webinar"
           className="flex-1 max-w-[240px] text-center font-bold text-[14px] md:text-[16px] py-[12px] md:py-[14px] px-2 rounded-full shadow-sm transition-all"
           style={{ backgroundColor: C.pink, color: 'white', border: `2px solid ${C.pink}` }}>
-          Join ₹499 Webinar
+          Join ₹1 Webinar
         </RazorpayButton>
       </div>
 

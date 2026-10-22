@@ -34,12 +34,14 @@ function RazorpayCheckoutContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // URL param can be ?item=, ?program=, ?course=, ?booking=, ?id=
+  // URL param can be ?item=, ?program=, ?course=, ?booking=, ?serviceId=, ?id=
   const paramId = 
     searchParams.get("item") || 
     searchParams.get("program") || 
     searchParams.get("course") || 
     searchParams.get("booking") || 
+    searchParams.get("serviceId") || 
+    searchParams.get("service_id") || 
     searchParams.get("id");
 
   const [selectedItem, setSelectedItem] = useState<CatalogItem>(() => getCatalogItem(paramId));
@@ -243,7 +245,7 @@ function RazorpayCheckoutContent() {
                     className="w-full bg-white border border-[#F5C6D0] rounded-lg px-2.5 py-1.5 text-xs text-[#7B0B2E] font-medium focus:outline-none focus:ring-1 focus:ring-[#E8185A] cursor-pointer"
                   >
                     <optgroup label="Webinars & Masterclasses">
-                      <option value="marrywise-webinar">MarryWise Webinar — ₹499</option>
+                      <option value="marrywise-webinar">MarryWise Webinar — ₹1 (Test)</option>
                     </optgroup>
                     <optgroup label="1-on-1 Guidance & Therapy">
                       <option value="marrywise-session">MarryWise 1-to-1 Guidance Session — ₹1,999</option>
