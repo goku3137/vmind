@@ -27,8 +27,8 @@ export async function POST(request: Request) {
     // Resolve item safely from our catalog
     let item = requestedId ? getCatalogItem(requestedId) : null;
 
-    // Fallback: If rawAmount is provided (e.g., from older webinar page), match 499 or 1 to marrywise-webinar
-    if (!item && (rawAmount === 499 || rawAmount === 1)) {
+    // Fallback: If rawAmount is provided (e.g., from older webinar page), match 499, 1, or 10 to marrywise-webinar
+    if (!item && (rawAmount === 499 || rawAmount === 1 || rawAmount === 10)) {
       item = getCatalogItem("marrywise-webinar");
     }
 
