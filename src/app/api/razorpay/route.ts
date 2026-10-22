@@ -15,19 +15,20 @@ export async function POST(request: Request) {
       itemId, 
       courseId, 
       bookingId, 
+      serviceId,
       amount: rawAmount,
       customerName, 
       customerEmail, 
       customerPhone 
     } = body;
 
-    const requestedId = programId || itemId || courseId || bookingId;
+    const requestedId = programId || itemId || courseId || bookingId || serviceId;
     
     // Resolve item safely from our catalog
     let item = requestedId ? getCatalogItem(requestedId) : null;
 
-    // Fallback: If rawAmount is provided (e.g., from older webinar page), match 499 to marrywise-webinar
-    if (!item && rawAmount === 499) {
+    // Fallback: If rawAmount is provided (e.g., from older webinar page), match 499 or 1 to marrywise-webinar
+    if (!item && (rawAmount === 499 || rawAmount === 1)) {
       item = getCatalogItem("marrywise-webinar");
     }
 
@@ -44,6 +45,8 @@ export async function POST(request: Request) {
       receipt: "rcpt_" + Date.now().toString(36) + "_" + Math.random().toString(36).substring(2, 6),
       notes: {
         itemId: item.id,
+        serviceId: item.tagmangoServiceId || "6ad86d03aa1a5b2f036ee3d9",
+        tagmangoServiceId: item.tagmangoServiceId || "6ad86d03aa1a5b2f036ee3d9",
         itemTitle: item.title,
         itemCategory: item.category,
         customerName: customerName || "Guest",
@@ -59,7 +62,8 @@ export async function POST(request: Request) {
         id: item.id,
         title: item.title,
         price: item.price,
-        category: item.category
+        category: item.category,
+        tagmangoServiceId: item.tagmangoServiceId
       },
       keyId: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
     });

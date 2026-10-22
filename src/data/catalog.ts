@@ -11,6 +11,7 @@ export interface CatalogItem {
   features: string[];
   duration?: string;
   language?: string;
+  tagmangoServiceId?: string;
 }
 
 export const CATALOG: CatalogItem[] = [
@@ -20,9 +21,10 @@ export const CATALOG: CatalogItem[] = [
     title: "MarryWise Webinar",
     category: "webinar",
     categoryLabel: "Live Webinar",
-    price: 499,
-    originalPrice: 1999,
+    price: 1, // Testing mode: changed from 499 to 1 INR
+    originalPrice: 499,
     badge: "Most Popular",
+    tagmangoServiceId: "6ad86d03aa1a5b2f036ee3d9",
     shortDescription: "Marriage & Relationship Transformation Masterclass with Senior Psychologist Ranjini Vijith.",
     description: "Learn essential psychology frameworks to rebuild trust, improve emotional intimacy, and understand if the complete MarryWise program is right for your relationship.",
     features: [
@@ -315,6 +317,8 @@ export const ALIASES: Record<string, string> = {
   "dreammind": "dream-mind",
   "stress": "stress-healing",
   "money": "money-blocks",
+  // TagMango Service ID aliases
+  "6ad86d03aa1a5b2f036ee3d9": "marrywise-webinar",
   // Backwards compatibility with previous test IDs
   "future-program-1": "marrywise-session",
   "future-program-2": "marrywise-complete"
