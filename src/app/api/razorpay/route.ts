@@ -1,13 +1,30 @@
 import { NextResponse } from "next/server";
-import Razorpay from "razorpay";
-import { getCatalogItem } from "@/data/catalog";
+// import Razorpay from "razorpay";
+// import { getCatalogItem } from "@/data/catalog";
 
-const razorpay = new Razorpay({
-  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID || "",
-  key_secret: process.env.RAZORPAY_KEY_SECRET || "",
-});
+// const razorpay = new Razorpay({
+//   key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID || "",
+//   key_secret: process.env.RAZORPAY_KEY_SECRET || "",
+// });
 
-export async function POST(request: Request) {
+/**
+ * Razorpay API route disabled and commented out.
+ * Direct checkout handled via TagMango:
+ * https://learn.dreammind.in/web/checkout/6ad86d03aa1a5b2f036ee3d9
+ */
+export async function POST() {
+  return NextResponse.json(
+    { 
+      status: "disabled", 
+      message: "Razorpay integration is currently disabled. Please use the direct TagMango checkout link: https://learn.dreammind.in/web/checkout/6ad86d03aa1a5b2f036ee3d9",
+      checkoutUrl: "https://learn.dreammind.in/web/checkout/6ad86d03aa1a5b2f036ee3d9"
+    },
+    { status: 200 }
+  );
+}
+
+/*
+export async function POST_PREVIOUS(request: Request) {
   try {
     const body = await request.json().catch(() => ({}));
     const { 
@@ -33,7 +50,6 @@ export async function POST(request: Request) {
     }
 
     if (!item) {
-      // Default to marrywise-webinar if nothing resolved
       item = getCatalogItem("marrywise-webinar");
     }
 
@@ -75,3 +91,4 @@ export async function POST(request: Request) {
     );
   }
 }
+*/
