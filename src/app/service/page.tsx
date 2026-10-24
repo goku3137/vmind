@@ -97,15 +97,17 @@ export default function Services() {
                 </p>
 
                 <div className="w-full pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <Link 
-                    href={`/razorpay?item=${service.id}`}
+                  <a 
+                    href={`https://wa.me/918157039987?text=I%20want%20to%20book%20for%20${encodeURIComponent(service.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 font-bold text-sm text-[#0B7A75] hover:text-[#19A67A] transition-colors group-hover:translate-x-1 duration-200"
                   >
-                    Book Online <ArrowRight size={16} />
-                  </Link>
+                    Book Consultation <ArrowRight size={16} />
+                  </a>
 
                   <span className="text-xs text-gray-400 flex items-center gap-1">
-                    <ShieldCheck size={14} className="text-[#19A67A]" /> Razorpay
+                    <ShieldCheck size={14} className="text-[#19A67A]" /> Verified
                   </span>
                 </div>
               </div>
@@ -119,12 +121,13 @@ export default function Services() {
         <AnimatedSection animation="zoomIn" className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold font-heading mb-6">Ready to start your journey?</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/razorpay?item=individual-therapy"
+            {/* Direct TagMango Course Checkout */}
+            <a 
+              href="https://learn.dreammind.in/web/checkout/6ad86d03aa1a5b2f036ee3d9"
               className="inline-block bg-white text-[#00d084] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 hover:scale-105 transition-all w-full sm:w-auto shadow-lg"
             >
-              Book Consultation via Razorpay
-            </Link>
+              Join Course / Masterclass
+            </a>
             <Link 
               href="https://wa.me/918157039987"
               target="_blank"
