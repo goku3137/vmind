@@ -46,7 +46,8 @@ export function Footer() {
             🔒 256-Bit SSL Encrypted
           </span>
           <span className="hidden sm:inline text-gray-300">•</span>
-          <span>Secured by Razorpay</span>
+          {/* <span>Secured by Razorpay</span> */}
+          <span>Secured Checkout</span>
           <span className="hidden sm:inline text-gray-300">•</span>
           <span>© 2026 VMind • Ranjini Vijith</span>
         </div>
